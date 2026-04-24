@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Link } from "@tanstack/react-router";
+
 import { Menu, X, ArrowUpRight, Phone } from "lucide-react";
 import { JordalLogo } from "./JordalLogo";
 
@@ -61,7 +61,7 @@ export function SiteHeader() {
         ].join(" ")}
       >
         <div className="mx-auto flex h-20 max-w-[1400px] items-center justify-between gap-6 px-6 lg:h-24">
-          <Link href="/" className="shrink-0" aria-label="Jordal — Accueil">
+          <a href="/" className="shrink-0" aria-label="Jordal — Accueil">
             <JordalLogo className="text-[14px] lg:text-[16px]" />
           </a>
 
@@ -70,9 +70,8 @@ export function SiteHeader() {
             {NAV.map((item) => (
               <a
                 key={item.href}
-                to={item.href}
+                href={item.href}
                 className="group relative flex items-center gap-1.5 rounded-full px-4 py-2 text-sm font-medium text-ink/80 transition-colors hover:text-ink"
-                activeProps={{ className: "text-ink bg-ink/5" }}
               >
                 {item.label}
                 {item.badge && (
@@ -129,7 +128,7 @@ export function SiteHeader() {
               {NAV.map((item) => (
                 <a
                   key={item.href}
-                  to={item.href}
+                  href={item.href}
                   onClick={() => setOpen(false)}
                   className="flex items-center justify-between rounded-2xl px-4 py-4 text-lg font-semibold text-ink hover:bg-ink/5"
                 >
