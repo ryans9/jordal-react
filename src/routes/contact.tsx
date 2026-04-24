@@ -18,17 +18,17 @@ export const Route = createFileRoute("/contact")({
   component: ContactPage,
   head: () => ({
     meta: [
-      { title: "Contact — Jordal · Vêtements & objets promotionnels" },
+      { title: "Contact — Jordal · Apparel & promotional products" },
       {
         name: "description",
         content:
-          "Demandez une soumission ou planifiez un appel avec notre équipe. Trois ateliers au Québec — Saint-Jérôme, Rive-Sud, Estrie.",
+          "Request a quote or schedule a call with our team. Three workshops in Quebec — Saint-Jérôme, South Shore, Eastern Townships.",
       },
       { property: "og:title", content: "Contact — Jordal" },
       {
         property: "og:description",
         content:
-          "Discutons de votre prochain projet corporatif. Réponse sous 24 h ouvrables.",
+          "Let's talk about your next corporate project. Reply within 24 business hours.",
       },
     ],
   }),
@@ -42,56 +42,56 @@ const contactSchema = z.object({
   name: z
     .string()
     .trim()
-    .min(2, "Nom trop court")
-    .max(100, "Nom trop long"),
+    .min(2, "Name too short")
+    .max(100, "Name too long"),
   email: z
     .string()
     .trim()
-    .email("Courriel invalide")
-    .max(255, "Courriel trop long"),
+    .email("Invalid email")
+    .max(255, "Email too long"),
   phone: z
     .string()
     .trim()
-    .max(40, "Numéro trop long")
+    .max(40, "Number too long")
     .optional()
     .or(z.literal("")),
   company: z.string().trim().max(120).optional().or(z.literal("")),
   subject: z
     .string()
     .trim()
-    .min(2, "Objet requis")
-    .max(150, "Objet trop long"),
-  service: z.string().min(1, "Sélectionnez un service"),
+    .min(2, "Subject required")
+    .max(150, "Subject too long"),
+  service: z.string().min(1, "Please select a service"),
   budget: z.string().optional(),
   message: z
     .string()
     .trim()
-    .min(10, "Au moins 10 caractères")
-    .max(2000, "Message trop long"),
+    .min(10, "At least 10 characters")
+    .max(2000, "Message too long"),
   consent: z
     .boolean()
-    .refine((v) => v === true, "Vous devez accepter la politique"),
+    .refine((v) => v === true, "You must accept the policy"),
 });
 
 type ContactInput = z.infer<typeof contactSchema>;
 type Errors = Partial<Record<keyof ContactInput, string>>;
 
 const SERVICES = [
-  "Vêtements corporatifs",
-  "Articles promotionnels",
-  "Broderie",
-  "Sérigraphie",
-  "Transfert DTF",
+  "Corporate apparel",
+  "Promotional items",
+  "Embroidery",
+  "Screen printing",
+  "DTF transfer",
   "Sublimation",
-  "Conseil & branding",
-  "Autre",
+  "Branding & advice",
+  "Other",
 ];
 
-const BUDGETS = ["< 1 000 $", "1 000 – 5 000 $", "5 000 – 25 000 $", "25 000 $ +"];
+const BUDGETS = ["< $1,000", "$1,000 – $5,000", "$5,000 – $25,000", "$25,000+"];
 
 const LOCATIONS = [
   {
-    tag: "Siège social",
+    tag: "Headquarters",
     city: "Saint-Jérôme",
     address: "247 Boul. Maisonneuve, J5L 0A1, QC",
     email: "carl@jordal.ca",
@@ -99,16 +99,16 @@ const LOCATIONS = [
     accent: "lime" as const,
   },
   {
-    tag: "Salle de montre mobile",
-    city: "Rive-Sud de Montréal",
-    address: "Service mobile sur rendez-vous",
+    tag: "Mobile showroom",
+    city: "Montreal South Shore",
+    address: "Mobile service by appointment",
     email: "julie@jordal.ca",
     phone: "514 797-1201",
     accent: "ink" as const,
   },
   {
-    tag: "Bureau",
-    city: "Estrie · Sherbrooke",
+    tag: "Office",
+    city: "Eastern Townships · Sherbrooke",
     address: "4050 Lesage St., suite 201, J1C 0B6, QC",
     email: "hugo@jordal.ca",
     phone: "819 446-6355",
@@ -164,21 +164,21 @@ function ContactHero() {
       <div className="relative mx-auto max-w-[1400px] px-6 pt-24 pb-32 lg:pt-36 lg:pb-44">
         <span className="inline-flex items-center gap-2 rounded-full border border-cream/15 bg-cream/[0.04] px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.22em] text-cream/70 backdrop-blur">
           <Sparkles className="h-3 w-3 text-lime" />
-          Parlons de votre projet
+          Let's talk about your project
         </span>
 
         <h1 className="mt-8 max-w-5xl font-display text-[clamp(3rem,9vw,8.5rem)] font-bold leading-[0.88] tracking-tight text-balance">
-          Demandez un{" "}
+          Request a{" "}
           <em className="font-script font-normal not-italic text-lime">
-            rappel
+            callback
           </em>
           .<br />
-          On s'occupe du reste.
+          We'll handle the rest.
         </h1>
 
         <p className="mt-8 max-w-xl text-lg leading-relaxed text-cream/65">
-          Trois ateliers au Québec. Réponse sous{" "}
-          <span className="text-cream">24 h ouvrables</span>.
+          Three workshops in Quebec. Reply within{" "}
+          <span className="text-cream">24 business hours</span>.
         </p>
 
         <div className="mt-12 flex flex-wrap items-center gap-x-10 gap-y-6 text-sm">
@@ -188,7 +188,7 @@ function ContactHero() {
             </span>
             <span>
               <span className="block text-[10px] font-semibold uppercase tracking-[0.22em] text-cream/40">
-                Appelez-nous
+                Call us
               </span>
               <span className="font-display text-lg font-semibold">450 419-8855</span>
             </span>
@@ -202,7 +202,7 @@ function ContactHero() {
             </span>
             <span>
               <span className="block text-[10px] font-semibold uppercase tracking-[0.22em] text-cream/40">
-                Écrivez-nous
+                Email us
               </span>
               <span className="font-display text-lg font-semibold">carl@jordal.ca</span>
             </span>
@@ -236,39 +236,39 @@ function SidePanel() {
         <div className="rounded-[20px] bg-gradient-to-br from-stone to-cream p-8 lg:p-10">
           <div className="flex items-center gap-2 text-[11px] font-bold uppercase tracking-[0.22em] text-ink/55">
             <Clock className="h-3.5 w-3.5 text-lime" />
-            Heures d'ouverture
+            Business hours
           </div>
 
           <dl className="mt-6 space-y-4">
-            <Row label="Lundi → Jeudi" value="07h00 — 16h00" />
-            <Row label="Vendredi" value="07h00 — 13h00" />
-            <Row label="Pause du midi" value="12h00 — 13h00" muted />
-            <Row label="Samedi & Dimanche" value="Fermé" muted />
+            <Row label="Monday → Thursday" value="7:00 AM — 4:00 PM" />
+            <Row label="Friday" value="7:00 AM — 1:00 PM" />
+            <Row label="Lunch break" value="12:00 — 1:00 PM" muted />
+            <Row label="Saturday & Sunday" value="Closed" muted />
           </dl>
 
           <div className="mt-10 rounded-2xl bg-ink p-6 text-cream">
             <p className="font-display text-2xl font-semibold leading-tight tracking-tight">
-              Besoin urgent ?
+              Need it urgently?
             </p>
             <p className="mt-2 text-sm text-cream/65">
-              Pour les délais serrés, mentionnez-le dans votre message — un
-              représentant vous rappellera en priorité.
+              For tight deadlines, mention it in your message — a representative
+              will call you back as a priority.
             </p>
             <a
               href="tel:4504198855"
               className="group mt-5 inline-flex items-center gap-2 rounded-full bg-lime px-5 py-3 text-sm font-semibold text-ink transition-shadow hover:shadow-glow"
             >
               <Phone className="h-4 w-4" />
-              Appel direct
+              Call directly
               <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
             </a>
           </div>
 
           <ul className="mt-10 space-y-3 text-sm">
             {[
-              "Devis gratuit et sans engagement",
-              "Échantillons sur demande",
-              "Production 100 % au Québec",
+              "Free quote, no commitment",
+              "Samples available on request",
+              "100% made in Quebec",
             ].map((item) => (
               <li key={item} className="flex items-start gap-3 text-ink/75">
                 <span className="mt-0.5 inline-flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-lime text-ink">
@@ -340,7 +340,7 @@ function FormCard() {
         if (!fieldErrors[k]) fieldErrors[k] = issue.message;
       }
       setErrors(fieldErrors);
-      toast.error("Vérifiez les champs en rouge");
+      toast.error("Please check the highlighted fields");
       return;
     }
     setSubmitting(true);
@@ -348,7 +348,7 @@ function FormCard() {
     await new Promise((r) => setTimeout(r, 900));
     setSubmitting(false);
     setDone(true);
-    toast.success("Message envoyé. Merci !");
+    toast.success("Message sent. Thank you!");
   };
 
   if (done) {
@@ -364,12 +364,12 @@ function FormCard() {
             <Check className="h-6 w-6" strokeWidth={3} />
           </span>
           <h3 className="mt-6 font-display text-4xl font-bold tracking-tight">
-            Reçu, on s'en occupe.
+            Got it — we're on it.
           </h3>
           <p className="mt-4 max-w-md text-cream/70">
-            Merci {values.name.split(" ")[0]} ! Votre demande est entre les
-            mains de l'équipe Jordal. Vous aurez une réponse personnalisée sous
-            24 heures ouvrables.
+            Thanks {values.name.split(" ")[0]}! Your request is in the hands of
+            the Jordal team. You'll get a personalized reply within 24 business
+            hours.
           </p>
           <button
             onClick={() => {
@@ -388,7 +388,7 @@ function FormCard() {
             }}
             className="mt-8 inline-flex items-center gap-2 rounded-full border border-cream/20 px-5 py-3 text-sm font-semibold text-cream transition-colors hover:border-lime hover:text-lime"
           >
-            Envoyer un autre message
+            Send another message
             <ArrowUpRight className="h-4 w-4" />
           </button>
         </div>
@@ -406,20 +406,20 @@ function FormCard() {
         <div>
           <span className="inline-flex items-center gap-2 rounded-full bg-lime/15 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.22em] text-ink">
             <span className="h-1.5 w-1.5 rounded-full bg-lime" />
-            Nouveau projet
+            New project
           </span>
           <h2 className="mt-4 font-display text-4xl font-bold tracking-tight text-ink lg:text-5xl">
-            Dites-nous tout.
+            Tell us everything.
           </h2>
           <p className="mt-2 text-sm text-ink/60">
-            Plus on en sait, plus précise sera notre proposition.
+            The more we know, the sharper our proposal will be.
           </p>
         </div>
       </div>
 
       <div className="mt-10 grid gap-5 md:grid-cols-2">
         <Field
-          label="Nom complet"
+          label="Full name"
           required
           value={values.name}
           onChange={(v) => set("name", v)}
@@ -427,7 +427,7 @@ function FormCard() {
           autoComplete="name"
         />
         <Field
-          label="Courriel"
+          label="Email"
           type="email"
           required
           value={values.email}
@@ -436,7 +436,7 @@ function FormCard() {
           autoComplete="email"
         />
         <Field
-          label="Téléphone"
+          label="Phone"
           type="tel"
           value={values.phone || ""}
           onChange={(v) => set("phone", v)}
@@ -444,7 +444,7 @@ function FormCard() {
           autoComplete="tel"
         />
         <Field
-          label="Entreprise"
+          label="Company"
           value={values.company || ""}
           onChange={(v) => set("company", v)}
           error={errors.company}
@@ -454,7 +454,7 @@ function FormCard() {
 
       <div className="mt-5">
         <Field
-          label="Objet"
+          label="Subject"
           required
           value={values.subject}
           onChange={(v) => set("subject", v)}
@@ -464,7 +464,7 @@ function FormCard() {
 
       <div className="mt-8">
         <p className="text-[11px] font-bold uppercase tracking-[0.22em] text-ink/55">
-          Service souhaité <span className="text-lime">*</span>
+          Service of interest <span className="text-lime">*</span>
         </p>
         <div className="mt-4 flex flex-wrap gap-2">
           {SERVICES.map((s) => {
@@ -495,7 +495,7 @@ function FormCard() {
 
       <div className="mt-8">
         <p className="text-[11px] font-bold uppercase tracking-[0.22em] text-ink/55">
-          Budget estimé
+          Estimated budget
         </p>
         <div className="mt-4 grid grid-cols-2 gap-2 sm:grid-cols-4">
           {BUDGETS.map((b) => {
@@ -521,7 +521,7 @@ function FormCard() {
 
       <div className="mt-6">
         <Field
-          label="Décrivez votre projet"
+          label="Describe your project"
           textarea
           required
           value={values.message}
@@ -542,15 +542,15 @@ function FormCard() {
           className="mt-0.5 h-4 w-4 shrink-0 accent-lime"
         />
         <span>
-          J'accepte la{" "}
-          <a href="/confidentialite" className="font-semibold text-ink underline-grow">
-            politique de confidentialité
+          I accept Jordal's{" "}
+          <a href="/privacy" className="font-semibold text-ink underline-grow">
+            privacy policy
           </a>{" "}
-          et les{" "}
-          <a href="/temoins" className="font-semibold text-ink underline-grow">
-            témoins
-          </a>{" "}
-          de Jordal.
+          and{" "}
+          <a href="/cookies" className="font-semibold text-ink underline-grow">
+            cookies
+          </a>
+          .
         </span>
       </label>
       {errors.consent && (
@@ -561,14 +561,14 @@ function FormCard() {
 
       <div className="mt-8 flex flex-col-reverse items-stretch justify-between gap-4 border-t border-ink/10 pt-6 sm:flex-row sm:items-center">
         <p className="text-xs text-ink/55">
-          Nous répondons sous <span className="font-semibold text-ink">24h ouvrables</span>.
+          We reply within <span className="font-semibold text-ink">24 business hours</span>.
         </p>
         <button
           type="submit"
           disabled={submitting}
           className="group inline-flex items-center justify-center gap-2 rounded-full bg-ink px-7 py-4 text-sm font-semibold text-cream transition-all hover:bg-lime hover:text-ink hover:shadow-glow disabled:opacity-60"
         >
-          {submitting ? "Envoi en cours…" : "Envoyer la demande"}
+          {submitting ? "Sending…" : "Send request"}
           <Send className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
         </button>
       </div>
@@ -670,10 +670,10 @@ function QuickContactStrip() {
         <div className="flex items-end justify-between gap-6">
           <div>
             <span className="text-[11px] font-bold uppercase tracking-[0.22em] text-ink/55">
-              Trois adresses au Québec
+              Three locations across Quebec
             </span>
             <h2 className="mt-3 font-display text-4xl font-bold tracking-tight text-ink lg:text-5xl">
-              Passez nous voir.
+              Come visit us.
             </h2>
           </div>
         </div>

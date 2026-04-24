@@ -10,10 +10,10 @@ type NavItem = {
 };
 
 const NAV: NavItem[] = [
-  { label: "Représentants", href: "/representants" },
-  { label: "Catalogue", href: "/catalogue", badge: "Nouveau" },
-  { label: "Produits", href: "/produits" },
-  { label: "Impression", href: "/impression" },
+  { label: "Reps", href: "/representants" },
+  { label: "Catalog", href: "/catalogue", badge: "New" },
+  { label: "Products", href: "/produits" },
+  { label: "Printing", href: "/impression" },
   { label: "Contact", href: "/contact" },
 ];
 
@@ -37,7 +37,7 @@ export function SiteHeader() {
           <div className="flex items-center gap-6 text-cream/70">
             <span className="flex items-center gap-2">
               <span className="inline-block h-1.5 w-1.5 rounded-full bg-lime animate-pulse" />
-              En atelier · Saint-Jérôme · Sherbrooke
+              In workshop · Saint-Jérôme · Sherbrooke
             </span>
           </div>
           <div className="flex items-center gap-6 text-cream/80">
@@ -61,7 +61,7 @@ export function SiteHeader() {
         ].join(" ")}
       >
         <div className="mx-auto flex h-20 max-w-[1400px] items-center justify-between gap-6 px-6 lg:h-24">
-          <a href="/" className="shrink-0" aria-label="Jordal — Accueil">
+          <a href="/" className="shrink-0" aria-label="Jordal — Home">
             <JordalLogo className="text-[14px] lg:text-[16px]" />
           </a>
 
@@ -106,7 +106,7 @@ export function SiteHeader() {
               href="/contact"
               className="group hidden items-center gap-2 rounded-full bg-ink px-5 py-3 text-sm font-semibold text-cream transition-all hover:bg-lime hover:text-ink hover:shadow-glow md:inline-flex"
             >
-              Soumission
+              Get a quote
               <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
             </a>
 
@@ -141,7 +141,7 @@ export function SiteHeader() {
                 onClick={() => setOpen(false)}
                 className="mt-3 flex items-center justify-center gap-2 rounded-full bg-ink px-5 py-4 text-sm font-semibold text-cream"
               >
-                Demander une soumission
+                Request a quote
                 <ArrowUpRight className="h-4 w-4" />
               </a>
             </nav>
