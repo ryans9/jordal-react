@@ -9,6 +9,7 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as RepresentantsRouteImport } from './routes/representants'
 import { Route as ImpressionRouteImport } from './routes/impression'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as IndexRouteImport } from './routes/index'
@@ -17,6 +18,11 @@ import { Route as ImpressionSilkscreenRouteImport } from './routes/impression.si
 import { Route as ImpressionEmbroideryRouteImport } from './routes/impression.embroidery'
 import { Route as ImpressionDtfRouteImport } from './routes/impression.dtf'
 
+const RepresentantsRoute = RepresentantsRouteImport.update({
+  id: '/representants',
+  path: '/representants',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ImpressionRoute = ImpressionRouteImport.update({
   id: '/impression',
   path: '/impression',
@@ -57,6 +63,7 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/contact': typeof ContactRoute
   '/impression': typeof ImpressionRouteWithChildren
+  '/representants': typeof RepresentantsRoute
   '/impression/dtf': typeof ImpressionDtfRoute
   '/impression/embroidery': typeof ImpressionEmbroideryRoute
   '/impression/silkscreen': typeof ImpressionSilkscreenRoute
@@ -65,6 +72,7 @@ export interface FileRoutesByFullPath {
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/contact': typeof ContactRoute
+  '/representants': typeof RepresentantsRoute
   '/impression/dtf': typeof ImpressionDtfRoute
   '/impression/embroidery': typeof ImpressionEmbroideryRoute
   '/impression/silkscreen': typeof ImpressionSilkscreenRoute
@@ -75,6 +83,7 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/contact': typeof ContactRoute
   '/impression': typeof ImpressionRouteWithChildren
+  '/representants': typeof RepresentantsRoute
   '/impression/dtf': typeof ImpressionDtfRoute
   '/impression/embroidery': typeof ImpressionEmbroideryRoute
   '/impression/silkscreen': typeof ImpressionSilkscreenRoute
@@ -86,6 +95,7 @@ export interface FileRouteTypes {
     | '/'
     | '/contact'
     | '/impression'
+    | '/representants'
     | '/impression/dtf'
     | '/impression/embroidery'
     | '/impression/silkscreen'
@@ -94,6 +104,7 @@ export interface FileRouteTypes {
   to:
     | '/'
     | '/contact'
+    | '/representants'
     | '/impression/dtf'
     | '/impression/embroidery'
     | '/impression/silkscreen'
@@ -103,6 +114,7 @@ export interface FileRouteTypes {
     | '/'
     | '/contact'
     | '/impression'
+    | '/representants'
     | '/impression/dtf'
     | '/impression/embroidery'
     | '/impression/silkscreen'
@@ -113,10 +125,18 @@ export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   ContactRoute: typeof ContactRoute
   ImpressionRoute: typeof ImpressionRouteWithChildren
+  RepresentantsRoute: typeof RepresentantsRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/representants': {
+      id: '/representants'
+      path: '/representants'
+      fullPath: '/representants'
+      preLoaderRoute: typeof RepresentantsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/impression': {
       id: '/impression'
       path: '/impression'
@@ -191,6 +211,7 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   ContactRoute: ContactRoute,
   ImpressionRoute: ImpressionRouteWithChildren,
+  RepresentantsRoute: RepresentantsRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
