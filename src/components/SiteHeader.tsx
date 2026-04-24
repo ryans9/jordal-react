@@ -116,7 +116,7 @@ export function SiteHeader() {
                   <div className="invisible absolute left-1/2 top-full z-50 w-[320px] -translate-x-1/2 pt-3 opacity-0 transition-all duration-200 group-hover/nav:visible group-hover/nav:opacity-100">
                     <div className="overflow-hidden rounded-2xl border border-ink/10 bg-cream shadow-[0_20px_60px_-15px_oklch(0_0_0/0.25)]">
                       <div className="border-b border-ink/10 bg-ink px-5 py-3 text-[10px] font-bold uppercase tracking-[0.2em] text-lime">
-                        Printing methods
+                        {item.label}
                       </div>
                       <div className="p-2">
                         {item.children.map((child) => (
