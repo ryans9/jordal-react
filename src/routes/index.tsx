@@ -211,18 +211,18 @@ function Index() {
               <a
                 key={cat.label}
                 href="/contact"
-                className={`group relative block overflow-hidden rounded-2xl bg-stone ${
+                className={`group relative block overflow-hidden rounded-2xl bg-white ring-1 ring-ink/5 ${
                   i % 2 === 1 ? "lg:translate-y-8" : ""
                 }`}
               >
-                <div className="aspect-[3/4] overflow-hidden">
+                <div className="aspect-square overflow-hidden bg-white">
                   <img
                     src={cat.img}
                     alt={cat.label}
                     loading="lazy"
-                    width={768}
-                    height={960}
-                    className="h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.04]"
+                    width={480}
+                    height={480}
+                    className="h-full w-full object-contain p-6 transition-transform duration-700 ease-out group-hover:scale-[1.04]"
                   />
                 </div>
                 {/* Hover overlay */}
