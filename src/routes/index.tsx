@@ -1,5 +1,9 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowUpRight, Sparkles } from "lucide-react";
+import silkscreenImg from "@/assets/print-silkscreen.jpg";
+import embroideryImg from "@/assets/print-embroidery.jpg";
+import dtfImg from "@/assets/print-dtf.jpg";
+import promoImg from "@/assets/print-promo.jpg";
 
 export const Route = createFileRoute("/")({
   component: Index,
