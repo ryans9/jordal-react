@@ -66,7 +66,7 @@ function Index() {
 
                 <p className="mt-8 max-w-xl text-lg leading-relaxed text-cream/80">
                   Quels que soient vos besoins, nous pouvons vous aider à
-                  consolider votre image de marque — du concept jusqu'à la
+                  consolider votre image de marque, du concept jusqu'à la
                   production.
                 </p>
 
@@ -138,7 +138,7 @@ function Index() {
         </div>
       </section>
 
-      {/* Turnkey Service — editorial split with category gallery */}
+      {/* Turnkey Service, editorial split with category gallery */}
       <section className="relative bg-cream">
         <div className="mx-auto max-w-[1400px] px-6 pt-24 pb-12 lg:pt-32 lg:pb-16">
           {/* Eyebrow + asymmetric intro */}
@@ -161,7 +161,7 @@ function Index() {
               <p className="text-lg leading-relaxed text-ink/70">
                 Jordal est un chef de file de l'industrie en matière de vêtements
                 et produits corporatifs. Nous décorons vos articles directement
-                sur place — pour un meilleur contrôle de la qualité et des
+                sur place, pour un meilleur contrôle de la qualité et des
                 délais.
               </p>
               <a
@@ -199,7 +199,7 @@ function Index() {
           </div>
         </div>
 
-        {/* Product category gallery — full-bleed editorial cards */}
+        {/* Product category gallery, full-bleed editorial cards */}
         <div className="mx-auto max-w-[1400px] px-6 pb-24 lg:pb-32">
           <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
             {[
@@ -253,7 +253,7 @@ function Index() {
       {/* Partners marquee */}
       <PartnersMarquee />
 
-      {/* Schedule a Visit — split with YouTube video */}
+      {/* Schedule a Visit, split with YouTube video */}
       <section className="relative bg-cream">
         <div className="mx-auto grid max-w-[1400px] grid-cols-1 gap-12 px-6 py-24 lg:grid-cols-12 lg:gap-16 lg:py-32">
           {/* Left: copy + CTA */}
@@ -308,7 +308,7 @@ function Index() {
               <div className="relative aspect-video w-full">
                 <iframe
                   src="https://www.youtube.com/embed/Q2vhKzu-yxk?rel=0&modestbranding=1"
-                  title="Jordal — visite de l'atelier"
+                  title="Jordal, visite de l'atelier"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                   allowFullScreen
                   loading="lazy"

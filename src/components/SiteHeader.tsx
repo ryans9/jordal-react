@@ -88,7 +88,7 @@ export function SiteHeader() {
         ].join(" ")}
       >
         <div className="mx-auto flex h-20 max-w-[1400px] items-center justify-between gap-6 px-6 lg:h-24">
-          <a href="/" className="shrink-0" aria-label="Jordal — Home">
+          <a href="/" className="shrink-0" aria-label="Jordal, Home">
             <JordalLogo className="text-[14px] lg:text-[16px]" />
           </a>
 

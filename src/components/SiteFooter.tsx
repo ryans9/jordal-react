@@ -82,7 +82,7 @@ export function SiteFooter() {
               </em>
             </h2>
             <p className="mt-5 max-w-lg text-cream/60">
-              Ideas, new products, and corporate inspiration — straight to your inbox, once a month.
+              Ideas, new products, and corporate inspiration, straight to your inbox, once a month.
             </p>
           </div>
 
@@ -133,7 +133,7 @@ export function SiteFooter() {
         <div className="grid gap-14 lg:grid-cols-12">
           {/* Brand column */}
           <div className="lg:col-span-4">
-            <a href="/" aria-label="Jordal — Home">
+            <a href="/" aria-label="Jordal, Home">
               <JordalLogo variant="light" className="text-[18px]" />
             </a>
             <p className="mt-6 max-w-sm text-sm leading-relaxed text-cream/60">
@@ -174,13 +174,13 @@ export function SiteFooter() {
               <div className="flex items-baseline justify-between border-b border-cream/10 pb-3">
                 <dt className="text-cream/60">Monday – Thursday</dt>
                 <dd className="font-display text-base font-semibold tabular-nums">
-                  7:00 AM — 4:00 PM
+                  7:00 AM to 4:00 PM
                 </dd>
               </div>
               <div className="flex items-baseline justify-between border-b border-cream/10 pb-3">
                 <dt className="text-cream/60">Friday</dt>
                 <dd className="font-display text-base font-semibold tabular-nums">
-                  7:00 AM — 1:00 PM
+                  7:00 AM to 1:00 PM
                 </dd>
               </div>
               <div className="flex items-baseline justify-between">
@@ -226,7 +226,7 @@ export function SiteFooter() {
         {/* Bottom bar */}
         <div className="mt-16 flex flex-col items-start justify-between gap-6 border-t border-cream/10 pt-8 text-xs text-cream/50 md:flex-row md:items-center">
           <p>
-            © {new Date().getFullYear()} Jordal — Apparel &amp; promotional products. Proudly from Quebec.
+            © {new Date().getFullYear()} Jordal, Apparel &amp; promotional products. Proudly from Quebec.
           </p>
           <div className="flex items-center gap-6">
             <a href="/confidentialite" className="hover:text-cream">Privacy</a>
