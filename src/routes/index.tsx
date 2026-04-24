@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { ArrowUpRight, Sparkles } from "lucide-react";
+import { ArrowUpRight, Sparkles, Calendar, MapPin } from "lucide-react";
 import silkscreenImg from "@/assets/print-silkscreen.jpg";
 import embroideryImg from "@/assets/print-embroidery.jpg";
 import dtfImg from "@/assets/print-dtf.jpg";
@@ -251,6 +251,82 @@ function Index() {
 
       {/* Partners marquee */}
       <PartnersMarquee />
+
+      {/* Schedule a Visit — split with YouTube video */}
+      <section className="relative bg-cream">
+        <div className="mx-auto grid max-w-[1400px] grid-cols-1 gap-12 px-6 py-24 lg:grid-cols-12 lg:gap-16 lg:py-32">
+          {/* Left: copy + CTA */}
+          <div className="flex flex-col justify-center lg:col-span-5">
+            <span className="inline-flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.24em] text-ink/55">
+              <span className="h-px w-8 bg-ink/40" />
+              Salle de montre
+            </span>
+            <h2 className="mt-6 font-display text-[clamp(2.25rem,4.5vw,3.75rem)] font-bold leading-[1] tracking-tight text-ink text-balance">
+              Planifiez une visite{" "}
+              <em className="font-script font-normal not-italic text-lime-deep">
+                à notre showroom.
+              </em>
+            </h2>
+            <p className="mt-6 text-base leading-relaxed text-ink/70">
+              Vous aimeriez toucher les matières, voir la qualité de nos
+              produits et visiter nos installations ? Nos représentants vous
+              accueillent et vous présentent notre vaste catalogue. Nous vous
+              aidons à trouver les bons articles pour votre entreprise.
+            </p>
+            <p className="mt-4 text-base font-semibold leading-relaxed text-ink">
+              Découvrez comment nos produits corporatifs peuvent renforcer votre
+              image de marque et fidéliser votre clientèle.
+            </p>
+            <p className="mt-4 text-sm leading-relaxed text-ink/60">
+              Pas près de Saint-Jérôme ? Nous nous déplaçons pour vous présenter
+              nos échantillons.
+            </p>
+
+            <div className="mt-10 flex flex-wrap items-center gap-4">
+              <a
+                href="/contact"
+                className="group inline-flex items-center gap-2 rounded-full bg-ink px-7 py-4 text-sm font-semibold text-cream transition-all hover:bg-lime hover:text-ink"
+              >
+                <Calendar className="h-4 w-4" />
+                Planifier une visite
+                <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+              </a>
+              <a
+                href="/representants"
+                className="inline-flex items-center gap-2 text-sm font-semibold text-ink underline-grow"
+              >
+                <MapPin className="h-4 w-4 text-lime-deep" />
+                Voir nos représentants
+              </a>
+            </div>
+          </div>
+
+          {/* Right: YouTube video */}
+          <div className="lg:col-span-7">
+            <div className="relative overflow-hidden rounded-3xl bg-ink shadow-soft ring-1 ring-ink/10">
+              <div className="relative aspect-video w-full">
+                <iframe
+                  src="https://www.youtube.com/embed/Q2vhKzu-yxk?rel=0&modestbranding=1"
+                  title="Jordal — visite de l'atelier"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowFullScreen
+                  loading="lazy"
+                  className="absolute inset-0 h-full w-full"
+                />
+              </div>
+            </div>
+            {/* Caption */}
+            <div className="mt-4 flex items-center justify-between px-1">
+              <p className="text-xs uppercase tracking-[0.18em] text-ink/50">
+                Jordal · Atelier Saint-Jérôme
+              </p>
+              <span className="text-xs font-semibold text-ink/40">
+                Vidéo officielle
+              </span>
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* Stats strip */}
       <section className="bg-cream">
