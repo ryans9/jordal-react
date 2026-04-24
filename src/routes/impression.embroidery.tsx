@@ -139,7 +139,6 @@ const SPECS = [
 function EmbroideryPage() {
   return (
     <div className="min-h-screen bg-cream text-ink">
-      <SiteHeader />
       <Hero />
       <Intro />
       <Process />
@@ -148,7 +147,6 @@ function EmbroideryPage() {
       <Advantages />
       <Specs />
       <CTA />
-      <SiteFooter />
     </div>
   );
 }
