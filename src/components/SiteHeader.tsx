@@ -21,6 +21,17 @@ const NAV: NavItem[] = [
   { label: "Catalog", href: "/catalogue", badge: "New" },
   { label: "Products", href: "/produits" },
   {
+    label: "Services",
+    href: "/services",
+    children: [
+      { label: "Promotional Clothing", href: "/services/promotional-clothing", description: "Branded apparel programs" },
+      { label: "Promotional Items", href: "/services/promotional-items", description: "Custom giveaways & gifts" },
+      { label: "Silkscreen Printing", href: "/impression/silkscreen", description: "Bold colors, high volume" },
+      { label: "Embroidery", href: "/impression/embroidery", description: "Stitched, premium finish" },
+      { label: "DTF Transfer", href: "/impression/dtf", description: "Photographic, any fabric" },
+    ],
+  },
+  {
     label: "Printing",
     href: "/impression",
     children: [
@@ -105,7 +116,7 @@ export function SiteHeader() {
                   <div className="invisible absolute left-1/2 top-full z-50 w-[320px] -translate-x-1/2 pt-3 opacity-0 transition-all duration-200 group-hover/nav:visible group-hover/nav:opacity-100">
                     <div className="overflow-hidden rounded-2xl border border-ink/10 bg-cream shadow-[0_20px_60px_-15px_oklch(0_0_0/0.25)]">
                       <div className="border-b border-ink/10 bg-ink px-5 py-3 text-[10px] font-bold uppercase tracking-[0.2em] text-lime">
-                        Printing methods
+                        {item.label}
                       </div>
                       <div className="p-2">
                         {item.children.map((child) => (
