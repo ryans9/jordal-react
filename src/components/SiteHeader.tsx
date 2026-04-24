@@ -173,15 +173,30 @@ export function SiteHeader() {
           <div className="border-t border-ink/10 bg-cream lg:hidden">
             <nav className="mx-auto flex max-w-[1400px] flex-col gap-1 px-6 py-6">
               {NAV.map((item) => (
-                <a
-                  key={item.href}
-                  href={item.href}
-                  onClick={() => setOpen(false)}
-                  className="flex items-center justify-between rounded-2xl px-4 py-4 text-lg font-semibold text-ink hover:bg-ink/5"
-                >
-                  <span>{item.label}</span>
-                  <ArrowUpRight className="h-5 w-5 text-ink/40" />
-                </a>
+                <div key={item.href}>
+                  <a
+                    href={item.href}
+                    onClick={() => setOpen(false)}
+                    className="flex items-center justify-between rounded-2xl px-4 py-4 text-lg font-semibold text-ink hover:bg-ink/5"
+                  >
+                    <span>{item.label}</span>
+                    <ArrowUpRight className="h-5 w-5 text-ink/40" />
+                  </a>
+                  {item.children && (
+                    <div className="ml-4 mb-2 flex flex-col gap-0.5 border-l-2 border-ink/10 pl-4">
+                      {item.children.map((child) => (
+                        <a
+                          key={child.href}
+                          href={child.href}
+                          onClick={() => setOpen(false)}
+                          className="rounded-xl px-3 py-2 text-sm font-medium text-ink/70 hover:bg-ink/5 hover:text-ink"
+                        >
+                          {child.label}
+                        </a>
+                      ))}
+                    </div>
+                  )}
+                </div>
               ))}
               <a
                 href="/contact"
