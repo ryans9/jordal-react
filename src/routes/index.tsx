@@ -8,6 +8,7 @@ import catTshirts from "@/assets/category-tshirts.jpg";
 import catShirts from "@/assets/category-shirts.jpg";
 import catJackets from "@/assets/category-jackets.jpg";
 import catCaps from "@/assets/category-caps.jpg";
+import { PartnersMarquee } from "@/components/PartnersMarquee";
 
 export const Route = createFileRoute("/")({
   component: Index,
@@ -247,6 +248,9 @@ function Index() {
           </div>
         </div>
       </section>
+
+      {/* Partners marquee */}
+      <PartnersMarquee />
 
       {/* Stats strip */}
       <section className="bg-cream">
