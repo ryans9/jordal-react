@@ -164,13 +164,13 @@ function ContactHero() {
         }}
       />
 
-      <div className="relative mx-auto max-w-[1400px] px-6 pt-24 pb-32 lg:pt-36 lg:pb-44">
+      <div className="relative mx-auto max-w-[1400px] px-6 pt-16 pb-20 lg:pt-20 lg:pb-24">
         <span className="inline-flex items-center gap-2 rounded-full border border-cream/15 bg-cream/[0.04] px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.22em] text-cream/70 backdrop-blur">
           <Sparkles className="h-3 w-3 text-lime" />
           Let's talk about your project
         </span>
 
-        <h1 className="mt-8 max-w-5xl font-display text-[clamp(3rem,9vw,8.5rem)] font-bold leading-[0.88] tracking-tight text-balance">
+        <h1 className="mt-6 max-w-5xl font-display text-[clamp(2.5rem,7vw,6.5rem)] font-bold leading-[0.9] tracking-tight text-balance">
           Request a{" "}
           <em className="font-script font-normal not-italic text-lime">
             callback
@@ -179,12 +179,12 @@ function ContactHero() {
           We'll handle the rest.
         </h1>
 
-        <p className="mt-8 max-w-xl text-lg leading-relaxed text-cream/65">
+        <p className="mt-6 max-w-xl text-base leading-relaxed text-cream/65 lg:text-lg">
           Three workshops in Quebec. Reply within{" "}
           <span className="text-cream">24 business hours</span>.
         </p>
 
-        <div className="mt-12 flex flex-wrap items-center gap-x-10 gap-y-6 text-sm">
+        <div className="mt-8 flex flex-wrap items-center gap-x-10 gap-y-6 text-sm">
           <a href="tel:4504198855" className="group inline-flex items-center gap-3">
             <span className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-cream/15 transition-colors group-hover:border-lime group-hover:bg-lime group-hover:text-ink">
               <Phone className="h-4 w-4" />
