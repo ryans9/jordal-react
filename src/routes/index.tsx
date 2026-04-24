@@ -85,9 +85,6 @@ function Index() {
         </div>
       </section>
 
-      {/* Stats strip */}
-      <section className="bg-cream">
-        <div className="mx-auto max-w-[1400px] px-6 pt-16 pb-20">
       {/* Promotional clothing methods strip */}
       <section className="bg-ink">
         <div className="grid w-full grid-cols-1 md:grid-cols-5">
