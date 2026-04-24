@@ -30,7 +30,7 @@ const callbackSchema = z.object({
       message: "Numéro de téléphone invalide",
     }),
   consent: z.literal(true, {
-    errorMap: () => ({ message: "Veuillez accepter la politique de confidentialité" }),
+    message: "Veuillez accepter la politique de confidentialité",
   }),
 });
 
