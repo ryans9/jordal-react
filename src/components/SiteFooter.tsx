@@ -230,8 +230,8 @@ export function SiteFooter() {
             © {new Date().getFullYear()} Jordal — Vêtements &amp; objets promotionnels. Fièrement québécois.
           </p>
           <div className="flex items-center gap-6">
-            <Link href="/confidentialite" className="hover:text-cream">Confidentialité</a>
-            <Link href="/temoins" className="hover:text-cream">Témoins</a>
+            <a href="/confidentialite" className="hover:text-cream">Confidentialité</a>
+            <a href="/temoins" className="hover:text-cream">Témoins</a>
             <span className="flex items-center gap-2">
               Crafted with
               <span className="h-1.5 w-1.5 rounded-full bg-lime" />
@@ -258,7 +258,7 @@ function FooterColumn({
         {items.map((item) => (
           <li key={item.href}>
             <a
-              to={item.href}
+              href={item.href}
               className="group inline-flex items-center gap-1.5 text-sm text-cream/75 transition-colors hover:text-lime"
             >
               <span className="underline-grow">{item.label}</span>
