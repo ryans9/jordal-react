@@ -12,6 +12,8 @@ import {
   Check,
   Sparkles,
   ExternalLink,
+  Star,
+  Navigation,
 } from "lucide-react";
 
 export const Route = createFileRoute("/contact")({
@@ -136,6 +138,7 @@ function ContactPage() {
       />
       <ContactHero />
       <ContactBody />
+      <MapSection />
       <QuickContactStrip />
     </>
   );
