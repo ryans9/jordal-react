@@ -223,7 +223,7 @@ function ContactHero() {
 
 function ContactBody() {
   return (
-    <section className="relative -mt-20 bg-cream pb-32">
+    <section className="relative bg-cream pt-16 pb-32 lg:pt-20">
       <div className="mx-auto grid max-w-[1400px] gap-12 px-6 lg:grid-cols-[1fr_1.25fr] lg:gap-16">
         <SidePanel />
         <FormCard />
