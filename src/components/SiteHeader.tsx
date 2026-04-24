@@ -84,21 +84,65 @@ export function SiteHeader() {
           {/* Desktop nav */}
           <nav className="hidden items-center gap-1 lg:flex">
             {NAV.map((item) => (
-              <a
-                key={item.href}
-                href={item.href}
-                className="group relative flex items-center gap-1.5 rounded-full px-4 py-2 text-sm font-medium text-ink/80 transition-colors hover:text-ink"
-              >
-                {item.label}
-                {item.badge && (
-                  <span className="rounded-full bg-lime px-1.5 py-0.5 text-[9px] font-bold uppercase tracking-wider text-ink">
-                    {item.badge}
-                  </span>
+              <div key={item.href} className="group/nav relative">
+                <a
+                  href={item.href}
+                  className="group relative flex items-center gap-1.5 rounded-full px-4 py-2 text-sm font-medium text-ink/80 transition-colors hover:text-ink"
+                >
+                  {item.label}
+                  {item.badge && (
+                    <span className="rounded-full bg-lime px-1.5 py-0.5 text-[9px] font-bold uppercase tracking-wider text-ink">
+                      {item.badge}
+                    </span>
+                  )}
+                  {item.children && (
+                    <ChevronDown className="h-3.5 w-3.5 text-ink/50 transition-transform group-hover/nav:rotate-180" />
+                  )}
+                  <span className="absolute inset-x-4 -bottom-0.5 h-px scale-x-0 bg-ink transition-transform duration-300 group-hover:scale-x-100" />
+                </a>
+
+                {item.children && (
+                  <div className="invisible absolute left-1/2 top-full z-50 w-[320px] -translate-x-1/2 pt-3 opacity-0 transition-all duration-200 group-hover/nav:visible group-hover/nav:opacity-100">
+                    <div className="overflow-hidden rounded-2xl border border-ink/10 bg-cream shadow-[0_20px_60px_-15px_oklch(0_0_0/0.25)]">
+                      <div className="border-b border-ink/10 bg-ink px-5 py-3 text-[10px] font-bold uppercase tracking-[0.2em] text-lime">
+                        Printing methods
+                      </div>
+                      <div className="p-2">
+                        {item.children.map((child) => (
+                          <a
+                            key={child.href}
+                            href={child.href}
+                            className="group/item flex items-start justify-between gap-3 rounded-xl px-4 py-3 transition-colors hover:bg-ink/5"
+                          >
+                            <div>
+                              <div className="text-sm font-semibold text-ink">{child.label}</div>
+                              {child.description && (
+                                <div className="mt-0.5 text-xs text-ink/55">{child.description}</div>
+                              )}
+                            </div>
+                            <ArrowUpRight className="mt-1 h-4 w-4 shrink-0 text-ink/30 transition-all group-hover/item:translate-x-0.5 group-hover/item:-translate-y-0.5 group-hover/item:text-ink" />
+                          </a>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
                 )}
-                <span className="absolute inset-x-4 -bottom-0.5 h-px scale-x-0 bg-ink transition-transform duration-300 group-hover:scale-x-100" />
-              </a>
+              </div>
             ))}
           </nav>
+
+          <div className="flex items-center gap-3">
+            {/* Language toggle */}
+            <div className="hidden items-center rounded-full border border-ink/15 bg-cream p-0.5 text-xs font-semibold sm:flex">
+              {(["FR", "EN"] as const).map((l) => (
+                <button
+                  key={l}
+                  onClick={() => setLang(l)}
+                  className={[
+                    "rounded-full px-3 py-1.5 transition-all",
+                    lang === l ? "bg-ink text-cream" : "text-ink/60 hover:text-ink",
+                  ].join(" ")}
+                >
 
           <div className="flex items-center gap-3">
             {/* Language toggle */}
