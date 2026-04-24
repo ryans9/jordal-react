@@ -133,9 +133,9 @@ export function SiteFooter() {
         <div className="grid gap-14 lg:grid-cols-12">
           {/* Brand column */}
           <div className="lg:col-span-4">
-            <Link to="/" aria-label="Jordal — Accueil">
+            <Link href="/" aria-label="Jordal — Accueil">
               <JordalLogo variant="light" className="text-[18px]" />
-            </Link>
+            </a>
             <p className="mt-6 max-w-sm text-sm leading-relaxed text-cream/60">
               Atelier québécois spécialisé en vêtements corporatifs, broderie,
               sérigraphie et articles promotionnels haut de gamme depuis plus de
@@ -192,13 +192,13 @@ export function SiteFooter() {
               </div>
             </dl>
 
-            <Link
-              to="/contact"
+            <a
+              href="/contact"
               className="group mt-8 inline-flex items-center gap-2 text-sm font-semibold text-lime"
             >
               Planifier une visite
               <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-            </Link>
+            </a>
           </div>
         </div>
 
@@ -230,8 +230,8 @@ export function SiteFooter() {
             © {new Date().getFullYear()} Jordal — Vêtements &amp; objets promotionnels. Fièrement québécois.
           </p>
           <div className="flex items-center gap-6">
-            <Link to="/confidentialite" className="hover:text-cream">Confidentialité</Link>
-            <Link to="/temoins" className="hover:text-cream">Témoins</Link>
+            <Link href="/confidentialite" className="hover:text-cream">Confidentialité</a>
+            <Link href="/temoins" className="hover:text-cream">Témoins</a>
             <span className="flex items-center gap-2">
               Crafted with
               <span className="h-1.5 w-1.5 rounded-full bg-lime" />
@@ -257,13 +257,13 @@ function FooterColumn({
       <ul className="mt-5 space-y-3.5">
         {items.map((item) => (
           <li key={item.href}>
-            <Link
+            <a
               to={item.href}
               className="group inline-flex items-center gap-1.5 text-sm text-cream/75 transition-colors hover:text-lime"
             >
               <span className="underline-grow">{item.label}</span>
               <ArrowUpRight className="h-3.5 w-3.5 opacity-0 transition-all group-hover:opacity-100" />
-            </Link>
+            </a>
           </li>
         ))}
       </ul>

@@ -61,14 +61,14 @@ export function SiteHeader() {
         ].join(" ")}
       >
         <div className="mx-auto flex h-20 max-w-[1400px] items-center justify-between gap-6 px-6 lg:h-24">
-          <Link to="/" className="shrink-0" aria-label="Jordal — Accueil">
+          <Link href="/" className="shrink-0" aria-label="Jordal — Accueil">
             <JordalLogo className="text-[14px] lg:text-[16px]" />
-          </Link>
+          </a>
 
           {/* Desktop nav */}
           <nav className="hidden items-center gap-1 lg:flex">
             {NAV.map((item) => (
-              <Link
+              <a
                 key={item.href}
                 to={item.href}
                 className="group relative flex items-center gap-1.5 rounded-full px-4 py-2 text-sm font-medium text-ink/80 transition-colors hover:text-ink"
@@ -81,7 +81,7 @@ export function SiteHeader() {
                   </span>
                 )}
                 <span className="absolute inset-x-4 -bottom-0.5 h-px scale-x-0 bg-ink transition-transform duration-300 group-hover:scale-x-100" />
-              </Link>
+              </a>
             ))}
           </nav>
 
@@ -103,13 +103,13 @@ export function SiteHeader() {
             </div>
 
             {/* CTA */}
-            <Link
-              to="/contact"
+            <a
+              href="/contact"
               className="group hidden items-center gap-2 rounded-full bg-ink px-5 py-3 text-sm font-semibold text-cream transition-all hover:bg-lime hover:text-ink hover:shadow-glow md:inline-flex"
             >
               Soumission
               <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-            </Link>
+            </a>
 
             {/* Mobile toggle */}
             <button
@@ -127,7 +127,7 @@ export function SiteHeader() {
           <div className="border-t border-ink/10 bg-cream lg:hidden">
             <nav className="mx-auto flex max-w-[1400px] flex-col gap-1 px-6 py-6">
               {NAV.map((item) => (
-                <Link
+                <a
                   key={item.href}
                   to={item.href}
                   onClick={() => setOpen(false)}
@@ -135,16 +135,16 @@ export function SiteHeader() {
                 >
                   <span>{item.label}</span>
                   <ArrowUpRight className="h-5 w-5 text-ink/40" />
-                </Link>
+                </a>
               ))}
-              <Link
-                to="/contact"
+              <a
+                href="/contact"
                 onClick={() => setOpen(false)}
                 className="mt-3 flex items-center justify-center gap-2 rounded-full bg-ink px-5 py-4 text-sm font-semibold text-cream"
               >
                 Demander une soumission
                 <ArrowUpRight className="h-4 w-4" />
-              </Link>
+              </a>
             </nav>
           </div>
         )}
