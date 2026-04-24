@@ -13,8 +13,6 @@ import {
   ShieldCheck,
 } from "lucide-react";
 
-import { SiteHeader } from "@/components/SiteHeader";
-import { SiteFooter } from "@/components/SiteFooter";
 
 import heroImg from "@/assets/embroidery-hero.jpg";
 import detailImg from "@/assets/embroidery-detail.jpg";
@@ -139,7 +137,6 @@ const SPECS = [
 function EmbroideryPage() {
   return (
     <div className="min-h-screen bg-cream text-ink">
-      <SiteHeader />
       <Hero />
       <Intro />
       <Process />
@@ -148,7 +145,6 @@ function EmbroideryPage() {
       <Advantages />
       <Specs />
       <CTA />
-      <SiteFooter />
     </div>
   );
 }
