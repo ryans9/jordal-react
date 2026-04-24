@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Link } from "@tanstack/react-router";
+
 import { ArrowUpRight, Mail, MapPin, Phone, Instagram, Facebook, Linkedin } from "lucide-react";
 import { JordalLogo } from "./JordalLogo";
 
@@ -133,7 +133,7 @@ export function SiteFooter() {
         <div className="grid gap-14 lg:grid-cols-12">
           {/* Brand column */}
           <div className="lg:col-span-4">
-            <Link href="/" aria-label="Jordal — Accueil">
+            <a href="/" aria-label="Jordal — Accueil">
               <JordalLogo variant="light" className="text-[18px]" />
             </a>
             <p className="mt-6 max-w-sm text-sm leading-relaxed text-cream/60">
