@@ -4,40 +4,40 @@ import { ArrowUpRight, Mail, MapPin, Phone, Instagram, Facebook, Linkedin } from
 import { JordalLogo } from "./JordalLogo";
 
 const SERVICES = [
-  { label: "Articles promotionnels", href: "/produits" },
-  { label: "Vêtements corporatifs", href: "/produits/vetements" },
-  { label: "Broderie", href: "/impression/broderie" },
-  { label: "Transfert DTF", href: "/impression/dtf" },
-  { label: "Sérigraphie", href: "/impression/serigraphie" },
-  { label: "Catalogue en ligne", href: "/catalogue" },
+  { label: "Promotional items", href: "/produits" },
+  { label: "Corporate apparel", href: "/produits/vetements" },
+  { label: "Embroidery", href: "/impression/broderie" },
+  { label: "DTF transfer", href: "/impression/dtf" },
+  { label: "Screen printing", href: "/impression/serigraphie" },
+  { label: "Online catalog", href: "/catalogue" },
 ];
 
 const COMPANY = [
-  { label: "À propos", href: "/a-propos" },
-  { label: "Nos représentants", href: "/representants" },
-  { label: "Nous contacter", href: "/contact" },
-  { label: "Confidentialité", href: "/confidentialite" },
-  { label: "Témoins", href: "/temoins" },
+  { label: "About", href: "/a-propos" },
+  { label: "Our reps", href: "/representants" },
+  { label: "Contact us", href: "/contact" },
+  { label: "Privacy", href: "/confidentialite" },
+  { label: "Cookies", href: "/temoins" },
 ];
 
 const LOCATIONS = [
   {
-    title: "Siège social",
+    title: "Headquarters",
     city: "Saint-Jérôme",
     address: "247 Boul. Maisonneuve, J5L 0A1, QC",
     email: "carl@jordal.ca",
     phone: "450 419-8855 #103",
   },
   {
-    title: "Salle de montre mobile",
-    city: "Rive-Sud",
-    address: "Service mobile sur rendez-vous",
+    title: "Mobile showroom",
+    city: "South Shore",
+    address: "Mobile service by appointment",
     email: "julie@jordal.ca",
     phone: "514 797-1201",
   },
   {
-    title: "Bureau",
-    city: "Estrie",
+    title: "Office",
+    city: "Eastern Townships",
     address: "4050 Lesage St., suite 201, Sherbrooke, J1C 0B6, QC",
     email: "hugo@jordal.ca",
     phone: "819 446-6355",
@@ -45,14 +45,14 @@ const LOCATIONS = [
 ];
 
 const MARQUEE = [
-  "Broderie",
-  "Sérigraphie",
-  "Transfert DTF",
+  "Embroidery",
+  "Screen printing",
+  "DTF transfer",
   "Sublimation",
-  "Articles promotionnels",
-  "Vêtements corporatifs",
-  "Sacs personnalisés",
-  "Cadeaux d'affaires",
+  "Promotional items",
+  "Corporate apparel",
+  "Custom bags",
+  "Business gifts",
 ];
 
 export function SiteFooter() {
@@ -72,17 +72,17 @@ export function SiteFooter() {
         <div className="mx-auto grid max-w-[1400px] gap-10 px-6 py-16 lg:grid-cols-[1.2fr_1fr] lg:items-center lg:py-24">
           <div>
             <span className="inline-flex items-center gap-2 rounded-full border border-lime/40 bg-lime/10 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.2em] text-lime">
-              <span className="h-1.5 w-1.5 rounded-full bg-lime" /> Infolettre
+              <span className="h-1.5 w-1.5 rounded-full bg-lime" /> Newsletter
             </span>
             <h2 className="mt-5 max-w-2xl text-balance font-display text-4xl font-bold leading-[1.05] tracking-tight md:text-5xl lg:text-6xl">
-              Avec plus de <span className="text-lime">20 ans</span>{" "}
-              d'expérience, Jordal voit{" "}
+              With over <span className="text-lime">20 years</span>{" "}
+              of experience, Jordal sees{" "}
               <em className="font-script text-5xl font-normal text-lime md:text-6xl lg:text-7xl">
-                toujours plus loin.
+                further than ever.
               </em>
             </h2>
             <p className="mt-5 max-w-lg text-cream/60">
-              Idées, nouveautés produits et inspirations corporatives — directement dans votre boîte courriel, une fois par mois.
+              Ideas, new products, and corporate inspiration — straight to your inbox, once a month.
             </p>
           </div>
 
@@ -99,14 +99,14 @@ export function SiteFooter() {
               required
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              placeholder="votre@courriel.ca"
+              placeholder="your@email.com"
               className="flex-1 bg-transparent px-4 py-3 text-base text-cream placeholder:text-cream/30 focus:outline-none"
             />
             <button
               type="submit"
               className="inline-flex items-center justify-center gap-2 rounded-full bg-lime px-6 py-3.5 text-sm font-semibold text-ink transition-all hover:shadow-glow"
             >
-              S'abonner
+              Subscribe
               <ArrowUpRight className="h-4 w-4" />
             </button>
           </form>
@@ -133,13 +133,12 @@ export function SiteFooter() {
         <div className="grid gap-14 lg:grid-cols-12">
           {/* Brand column */}
           <div className="lg:col-span-4">
-            <a href="/" aria-label="Jordal — Accueil">
+            <a href="/" aria-label="Jordal — Home">
               <JordalLogo variant="light" className="text-[18px]" />
             </a>
             <p className="mt-6 max-w-sm text-sm leading-relaxed text-cream/60">
-              Atelier québécois spécialisé en vêtements corporatifs, broderie,
-              sérigraphie et articles promotionnels haut de gamme depuis plus de
-              deux décennies.
+              A Quebec workshop specializing in corporate apparel, embroidery,
+              screen printing, and premium promotional items for over two decades.
             </p>
 
             <div className="mt-8 flex items-center gap-3">
@@ -163,31 +162,31 @@ export function SiteFooter() {
           {/* Link columns */}
           <div className="grid gap-10 sm:grid-cols-2 lg:col-span-4">
             <FooterColumn title="Services" items={SERVICES} />
-            <FooterColumn title="Compagnie" items={COMPANY} />
+            <FooterColumn title="Company" items={COMPANY} />
           </div>
 
           {/* Hours */}
           <div className="lg:col-span-4">
             <h4 className="text-[11px] font-bold uppercase tracking-[0.22em] text-lime">
-              Heures d'ouverture
+              Business hours
             </h4>
             <dl className="mt-5 space-y-3 text-sm">
               <div className="flex items-baseline justify-between border-b border-cream/10 pb-3">
-                <dt className="text-cream/60">Lundi – Jeudi</dt>
+                <dt className="text-cream/60">Monday – Thursday</dt>
                 <dd className="font-display text-base font-semibold tabular-nums">
-                  07:00 — 16:00
+                  7:00 AM — 4:00 PM
                 </dd>
               </div>
               <div className="flex items-baseline justify-between border-b border-cream/10 pb-3">
-                <dt className="text-cream/60">Vendredi</dt>
+                <dt className="text-cream/60">Friday</dt>
                 <dd className="font-display text-base font-semibold tabular-nums">
-                  07:00 — 13:00
+                  7:00 AM — 1:00 PM
                 </dd>
               </div>
               <div className="flex items-baseline justify-between">
-                <dt className="text-cream/60">Samedi – Dimanche</dt>
+                <dt className="text-cream/60">Saturday – Sunday</dt>
                 <dd className="font-display text-base font-semibold text-cream/40">
-                  Fermé
+                  Closed
                 </dd>
               </div>
             </dl>
@@ -196,7 +195,7 @@ export function SiteFooter() {
               href="/contact"
               className="group mt-8 inline-flex items-center gap-2 text-sm font-semibold text-lime"
             >
-              Planifier une visite
+              Book a visit
               <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
             </a>
           </div>
@@ -227,15 +226,15 @@ export function SiteFooter() {
         {/* Bottom bar */}
         <div className="mt-16 flex flex-col items-start justify-between gap-6 border-t border-cream/10 pt-8 text-xs text-cream/50 md:flex-row md:items-center">
           <p>
-            © {new Date().getFullYear()} Jordal — Vêtements &amp; objets promotionnels. Fièrement québécois.
+            © {new Date().getFullYear()} Jordal — Apparel &amp; promotional products. Proudly from Quebec.
           </p>
           <div className="flex items-center gap-6">
-            <a href="/confidentialite" className="hover:text-cream">Confidentialité</a>
-            <a href="/temoins" className="hover:text-cream">Témoins</a>
+            <a href="/confidentialite" className="hover:text-cream">Privacy</a>
+            <a href="/temoins" className="hover:text-cream">Cookies</a>
             <span className="flex items-center gap-2">
               Crafted with
               <span className="h-1.5 w-1.5 rounded-full bg-lime" />
-              in Québec
+              in Quebec
             </span>
           </div>
         </div>
