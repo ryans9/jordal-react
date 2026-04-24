@@ -20,13 +20,13 @@ export const Route = createFileRoute("/contact")({
   component: ContactPage,
   head: () => ({
     meta: [
-      { title: "Contact — Jordal · Apparel & promotional products" },
+      { title: "Contact, Jordal · Apparel & promotional products" },
       {
         name: "description",
         content:
-          "Request a quote or schedule a call with our team. Three workshops in Quebec — Saint-Jérôme, South Shore, Eastern Townships.",
+          "Request a quote or schedule a call with our team. Three workshops in Quebec, Saint-Jérôme, South Shore, Eastern Townships.",
       },
-      { property: "og:title", content: "Contact — Jordal" },
+      { property: "og:title", content: "Contact, Jordal" },
       {
         property: "og:description",
         content:
@@ -243,9 +243,9 @@ function SidePanel() {
           </div>
 
           <dl className="mt-6 space-y-4">
-            <Row label="Monday → Thursday" value="7:00 AM — 4:00 PM" />
-            <Row label="Friday" value="7:00 AM — 1:00 PM" />
-            <Row label="Lunch break" value="12:00 — 1:00 PM" muted />
+            <Row label="Monday → Thursday" value="7:00 AM to 4:00 PM" />
+            <Row label="Friday" value="7:00 AM to 1:00 PM" />
+            <Row label="Lunch break" value="12:00  to 1:00 PM" muted />
             <Row label="Saturday & Sunday" value="Closed" muted />
           </dl>
 
@@ -254,7 +254,7 @@ function SidePanel() {
               Need it urgently?
             </p>
             <p className="mt-2 text-sm text-cream/65">
-              For tight deadlines, mention it in your message — a representative
+              For tight deadlines, mention it in your message, a representative
               will call you back as a priority.
             </p>
             <a
@@ -347,7 +347,7 @@ function FormCard() {
       return;
     }
     setSubmitting(true);
-    // Simulated submission — wire to your backend / email service.
+    // Simulated submission, wire to your backend / email service.
     await new Promise((r) => setTimeout(r, 900));
     setSubmitting(false);
     setDone(true);
@@ -367,7 +367,7 @@ function FormCard() {
             <Check className="h-6 w-6" strokeWidth={3} />
           </span>
           <h3 className="mt-6 font-display text-4xl font-bold tracking-tight">
-            Got it — we're on it.
+            Got it, we're on it.
           </h3>
           <p className="mt-4 max-w-md text-cream/70">
             Thanks {values.name.split(" ")[0]}! Your request is in the hands of
@@ -667,7 +667,7 @@ function Field({
 /* ----------------------------------- Map Section ---------------------------------- */
 
 function MapSection() {
-  // Saint-Jérôme HQ — 247 Bd Maisonneuve
+  // Saint-Jérôme HQ, 247 Bd Maisonneuve
   const lat = 45.7747;
   const lng = -74.0036;
   const bbox = `${lng - 0.006},${lat - 0.003},${lng + 0.006},${lat + 0.003}`;
@@ -693,7 +693,7 @@ function MapSection() {
               </span>
 
               <h2 className="mt-6 font-display text-4xl font-bold leading-[1.05] tracking-tight lg:text-5xl">
-                Jordal —{" "}
+                Jordal , {" "}
                 <em className="font-script font-normal not-italic text-lime">
                   Apparel
                 </em>{" "}
@@ -754,7 +754,7 @@ function MapSection() {
           {/* Map */}
           <div className="relative min-h-[420px] bg-stone lg:min-h-[520px]">
             <iframe
-              title="Jordal — Saint-Jérôme location"
+              title="Jordal, Saint-Jérôme location"
               src={osmEmbed}
               loading="lazy"
               className="absolute inset-0 h-full w-full grayscale-[20%] contrast-[0.95]"

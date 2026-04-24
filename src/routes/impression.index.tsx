@@ -20,17 +20,17 @@ export const Route = createFileRoute("/impression/")({
   component: PrintingPage,
   head: () => ({
     meta: [
-      { title: "Printing methods — Jordal · Silkscreen, Embroidery, DTF" },
+      { title: "Printing methods, Jordal · Silkscreen, Embroidery, DTF" },
       {
         name: "description",
         content:
           "Four mastered techniques: silkscreen, embroidery, DTF transfer and promotional items. Master craftsmanship from our Quebec workshops.",
       },
-      { property: "og:title", content: "Printing methods — Jordal" },
+      { property: "og:title", content: "Printing methods, Jordal" },
       {
         property: "og:description",
         content:
-          "From a single piece to thousands of units — choose the right technique for your brand.",
+          "From a single piece to thousands of units, choose the right technique for your brand.",
       },
       { property: "og:image", content: silkscreenImg },
     ],
@@ -65,7 +65,7 @@ const METHODS: Method[] = [
     tagline: "The classic, perfected.",
     intro:
       "A printing process where ink is pushed through the fine mesh of a screen by a squeegee, depositing pigment directly onto the support.",
-    what: "Often called a stencil technique. The screen — fabric stretched on an aluminum frame — is coated with a photosensitive emulsion that hardens under UV light. A film blocks the rays where ink should pass. The screen is then mounted on the press; the squeegee glides across, and the ink crosses the open mesh to reveal the artwork.",
+    what: "Often called a stencil technique. The screen, fabric stretched on an aluminum frame, is coated with a photosensitive emulsion that hardens under UV light. A film blocks the rays where ink should pass. The screen is then mounted on the press; the squeegee glides across, and the ink crosses the open mesh to reveal the artwork.",
     process: [
       {
         title: "Coating",
@@ -103,7 +103,7 @@ const METHODS: Method[] = [
     name: "Embroidery",
     tagline: "Stitched permanence.",
     intro:
-      "Decoration sewn directly into the garment using high-density thread — the most premium, durable signature on corporate apparel.",
+      "Decoration sewn directly into the garment using high-density thread, the most premium, durable signature on corporate apparel.",
     what: "Your logo is digitized into stitch instructions, then executed by multi-head machines running up to fifteen colors at once. The needle plunges thousands of times per minute, building a tactile, three-dimensional emblem that becomes part of the garment itself.",
     process: [
       {
@@ -125,7 +125,7 @@ const METHODS: Method[] = [
     ],
     advantages: [
       "Perceived premium quality, instantly",
-      "Lifetime of the garment — won't crack or peel",
+      "Lifetime of the garment, won't crack or peel",
       "Adds tactile, dimensional texture",
       "Ideal on caps, polos, jackets, fleece",
       "Resistant to industrial laundering",
@@ -142,8 +142,8 @@ const METHODS: Method[] = [
     name: "DTF Transfer",
     tagline: "Photographic, anywhere.",
     intro:
-      "Direct-to-film printing — full-color artwork printed onto a special film, then heat-pressed to virtually any fabric with zero compromise on detail.",
-    what: "DTF lets us print intricate gradients, photographs, and dense color blends without screen setup. The image is printed in CMYK + white onto a PET film, coated with adhesive powder, cured, and pressed onto the garment. The result: a soft, stretchy, ultra-sharp finish on cotton, polyester, blends — even nylon.",
+      "Direct-to-film printing, full-color artwork printed onto a special film, then heat-pressed to virtually any fabric with zero compromise on detail.",
+    what: "DTF lets us print intricate gradients, photographs, and dense color blends without screen setup. The image is printed in CMYK + white onto a PET film, coated with adhesive powder, cured, and pressed onto the garment. The result: a soft, stretchy, ultra-sharp finish on cotton, polyester, blends, even nylon.",
     process: [
       {
         title: "Print",
@@ -166,7 +166,7 @@ const METHODS: Method[] = [
       "Photographic detail and unlimited colors",
       "Works on cotton, polyester, blends, nylon",
       "Cost-effective from a single piece",
-      "Soft, stretchy hand — moves with the fabric",
+      "Soft, stretchy hand, moves with the fabric",
       "Quick turnaround with no screen setup",
     ],
     bestFor: ["Sport jerseys", "Custom one-offs", "Photo prints", "Small runs", "Mixed apparel"],
@@ -182,7 +182,7 @@ const METHODS: Method[] = [
     tagline: "Your brand, beautifully objected.",
     intro:
       "Curated corporate gifts and branded objects sourced from a global catalog, decorated and assembled in our workshop.",
-    what: "Mugs, water bottles, notebooks, tech accessories, leather goods, eco-friendly items — we source the right object for the right occasion, then apply the right decoration technique: pad printing, laser engraving, debossing, sublimation. Every kit assembled and quality-checked before delivery.",
+    what: "Mugs, water bottles, notebooks, tech accessories, leather goods, eco-friendly items, we source the right object for the right occasion, then apply the right decoration technique: pad printing, laser engraving, debossing, sublimation. Every kit assembled and quality-checked before delivery.",
     process: [
       {
         title: "Curate",
@@ -190,7 +190,7 @@ const METHODS: Method[] = [
       },
       {
         title: "Decorate",
-        body: "Pad print, engraving, deboss, or sublimation — chosen per material and effect.",
+        body: "Pad print, engraving, deboss, or sublimation, chosen per material and effect.",
       },
       {
         title: "Assemble",

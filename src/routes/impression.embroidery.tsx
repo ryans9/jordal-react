@@ -22,17 +22,17 @@ export const Route = createFileRoute("/impression/embroidery")({
   component: EmbroideryPage,
   head: () => ({
     meta: [
-      { title: "Embroidery — Jordal · Stitched permanence on every garment" },
+      { title: "Embroidery, Jordal · Stitched permanence on every garment" },
       {
         name: "description",
         content:
           "Premium embroidery from our Quebec workshop. Multi-head Tajima machines, 15-needle precision, Isacord & Pantone-matched threads. Polos, caps, jackets, uniforms.",
       },
-      { property: "og:title", content: "Embroidery — Jordal" },
+      { property: "og:title", content: "Embroidery, Jordal" },
       {
         property: "og:description",
         content:
-          "From digitization to the final stitch — discover how we turn your logo into a tactile, lifetime emblem.",
+          "From digitization to the final stitch, discover how we turn your logo into a tactile, lifetime emblem.",
       },
       { property: "og:image", content: heroImg },
       { property: "twitter:image", content: heroImg },
@@ -49,19 +49,19 @@ const PROCESS = [
     n: "01",
     icon: Wrench,
     title: "Digitization",
-    body: "Your artwork is converted into a precise stitch file — paths, densities, underlay, pull compensation, color sequences. This is the most critical step: a great digitization is what separates a flat-looking logo from a sharp, dimensional emblem.",
+    body: "Your artwork is converted into a precise stitch file, paths, densities, underlay, pull compensation, color sequences. This is the most critical step: a great digitization is what separates a flat-looking logo from a sharp, dimensional emblem.",
   },
   {
     n: "02",
     icon: Ruler,
     title: "Hooping",
-    body: "The garment is fixed in a hoop with the right backing — cut-away, tear-away, or water-soluble depending on fabric. Stabilization prevents distortion, puckering, and mis-registration during the run.",
+    body: "The garment is fixed in a hoop with the right backing, cut-away, tear-away, or water-soluble depending on fabric. Stabilization prevents distortion, puckering, and mis-registration during the run.",
   },
   {
     n: "03",
     icon: Layers,
     title: "Stitching",
-    body: "Multi-needle Tajima heads run up to 15 colors at once, plunging thousands of stitches per minute with surgical precision. Color changes happen automatically — what used to take hours now takes minutes.",
+    body: "Multi-needle Tajima heads run up to 15 colors at once, plunging thousands of stitches per minute with surgical precision. Color changes happen automatically, what used to take hours now takes minutes.",
   },
   {
     n: "04",
@@ -81,7 +81,7 @@ const TYPES = [
   {
     name: "3D puff embroidery",
     aka: "Foam embroidery",
-    body: "A foam underlay is placed beneath satin stitches to create a raised, sculptural effect. Bold, sporty, instantly tactile — the signature look on snapback caps and varsity gear.",
+    body: "A foam underlay is placed beneath satin stitches to create a raised, sculptural effect. Bold, sporty, instantly tactile, the signature look on snapback caps and varsity gear.",
     bestFor: "Caps, beanies, statement varsity pieces",
   },
   {
@@ -107,17 +107,17 @@ const ADVANTAGES = [
   {
     icon: Sparkles,
     title: "Perceived premium",
-    body: "Embroidery instantly elevates a garment — the gold standard for corporate and hospitality apparel.",
+    body: "Embroidery instantly elevates a garment, the gold standard for corporate and hospitality apparel.",
   },
   {
     icon: Palette,
     title: "Pantone-matched thread",
-    body: "We work from Isacord 40 — over 380 colors with a Pantone conversion chart for true brand fidelity.",
+    body: "We work from Isacord 40, over 380 colors with a Pantone conversion chart for true brand fidelity.",
   },
   {
     icon: Shirt,
     title: "Works on the toughest fabrics",
-    body: "Caps, fleece, soft-shell, denim, canvas — fabrics that defeat printing welcome the needle.",
+    body: "Caps, fleece, soft-shell, denim, canvas, fabrics that defeat printing welcome the needle.",
   },
 ];
 
@@ -126,7 +126,7 @@ const SPECS = [
   { label: "Stitch count", value: "Up to 50,000" },
   { label: "Colors per design", value: "Up to 15 simultaneous" },
   { label: "Max area (standard hoop)", value: "30 × 20 cm" },
-  { label: "Standard turnaround", value: "10 — 12 working days" },
+  { label: "Standard turnaround", value: "10  to 12 working days" },
   { label: "Thread system", value: "Isacord 40 · 380+ colors" },
 ];
 
@@ -196,7 +196,7 @@ function Hero() {
 
             <p className="mt-8 max-w-2xl text-lg leading-relaxed text-cream/80 lg:text-xl">
               Embroidery is the most premium signature you can put on a garment.
-              Thread becomes part of the fabric — dimensional, tactile, and built
+              Thread becomes part of the fabric, dimensional, tactile, and built
               to outlast the piece it decorates.
             </p>
 
@@ -269,8 +269,8 @@ function Intro() {
           <div className="col-span-12 lg:col-span-7">
             <p className="text-lg leading-relaxed text-ink/75 lg:text-xl">
               Embroidery is sewing transformed into branding. Your logo is first
-              digitized — translated into the precise language of stitch paths,
-              densities and underlay — and then executed by multi-head Japanese
+              digitized, translated into the precise language of stitch paths,
+              densities and underlay, and then executed by multi-head Japanese
               machines running up to fifteen colors at once.
             </p>
             <p className="mt-6 text-lg leading-relaxed text-ink/75 lg:text-xl">
@@ -448,7 +448,7 @@ function ThreadShowcase() {
               <span className="italic">to your brand.</span>
             </h2>
             <p className="mt-6 text-lg leading-relaxed text-ink/70">
-              We work exclusively with Isacord 40 polyester thread — over 380
+              We work exclusively with Isacord 40 polyester thread, over 380
               shades, color-fast, abrasion-resistant, and engineered for
               industrial laundering.
             </p>
@@ -564,7 +564,7 @@ function Specs() {
             </h2>
           </div>
           <p className="max-w-sm text-sm leading-relaxed text-cream/65">
-            Beyond these defaults? Talk to us — we run jumbo hoops, sequin
+            Beyond these defaults? Talk to us, we run jumbo hoops, sequin
             attachments, and cap frames on demand.
           </p>
         </div>
@@ -628,7 +628,7 @@ function CTA() {
                 <span className="italic">next collection.</span>
               </h2>
               <p className="mt-5 max-w-xl text-lg text-ink/75">
-                Send us your logo and a brief — we&apos;ll come back with
+                Send us your logo and a brief, we&apos;ll come back with
                 recommendations, a sew-out plan, and a quote within 24 hours.
               </p>
             </div>

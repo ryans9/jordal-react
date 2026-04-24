@@ -5,7 +5,7 @@ import { toast } from "sonner";
 import buildingImg from "@/assets/jordal-building.png";
 
 /**
- * Callback request form. Pure frontend — validates with zod and surfaces a
+ * Callback request form. Pure frontend, validates with zod and surfaces a
  * success toast. No backend wired (Lovable Cloud not enabled). When backend
  * lands, POST `data` to a server function from inside `onSubmit`.
  */
@@ -60,7 +60,7 @@ export function CallbackSection() {
 
     setErrors({});
     setSubmitting(true);
-    // Simulated submission — wire to server function when backend is enabled
+    // Simulated submission, wire to server function when backend is enabled
     setTimeout(() => {
       setSubmitting(false);
       setName("");
@@ -147,7 +147,7 @@ export function CallbackSection() {
             </h2>
             <p className="mt-5 text-sm leading-relaxed text-cream/65">
               Communiquez avec Carl Emond pour toute question ou soumission, ou
-              remplissez le formulaire — nous vous rappelons en moins de
+              remplissez le formulaire, nous vous rappelons en moins de
               24 heures ouvrables.
             </p>
 

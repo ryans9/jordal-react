@@ -32,14 +32,14 @@ export const Route = createRootRoute({
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Jordal — Vêtements & objets promotionnels" },
+      { title: "Jordal, Vêtements & objets promotionnels" },
       {
         name: "description",
         content:
           "Atelier québécois de vêtements corporatifs, broderie, sérigraphie, transfert DTF et articles promotionnels haut de gamme depuis plus de 20 ans.",
       },
       { name: "author", content: "Jordal" },
-      { property: "og:title", content: "Jordal — Vêtements & objets promotionnels" },
+      { property: "og:title", content: "Jordal, Vêtements & objets promotionnels" },
       {
         property: "og:description",
         content:

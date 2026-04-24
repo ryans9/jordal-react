@@ -1,5 +1,5 @@
 /**
- * Partners marquee — brand wordmarks rendered as currentColor SVG/text
+ * Partners marquee, brand wordmarks rendered as currentColor SVG/text
  * so they inherit theme tokens. Stylized text logos avoid trademark image
  * usage while signaling the partner brands.
  */

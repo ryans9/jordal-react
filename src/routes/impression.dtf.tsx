@@ -22,17 +22,17 @@ export const Route = createFileRoute("/impression/dtf")({
   component: DTFPage,
   head: () => ({
     meta: [
-      { title: "DTF Transfer — Jordal · Direct-to-Film, no creative limits" },
+      { title: "DTF Transfer, Jordal · Direct-to-Film, no creative limits" },
       {
         name: "description",
         content:
-          "DTF (Direct-to-Film) transfer printing from our Quebec workshop. Photographic detail, vivid color, soft hand and exceptional wash resistance — from one piece to thousands.",
+          "DTF (Direct-to-Film) transfer printing from our Quebec workshop. Photographic detail, vivid color, soft hand and exceptional wash resistance, from one piece to thousands.",
       },
-      { property: "og:title", content: "DTF Transfer — Jordal" },
+      { property: "og:title", content: "DTF Transfer, Jordal" },
       {
         property: "og:description",
         content:
-          "From CMYK + white film to heat-pressed garment — discover how DTF transfer prints unlock unlimited colors and details on any fabric.",
+          "From CMYK + white film to heat-pressed garment, discover how DTF transfer prints unlock unlimited colors and details on any fabric.",
       },
       { property: "og:image", content: heroImg },
       { property: "twitter:image", content: heroImg },
@@ -49,7 +49,7 @@ const PROCESS = [
     n: "01",
     icon: ImageIcon,
     title: "Artwork prep",
-    body: "Your file is color-managed, separated into CMYK plus a white underbase, and arranged on a gang sheet to maximize film usage. No screens, no plates, no setup — just pixels.",
+    body: "Your file is color-managed, separated into CMYK plus a white underbase, and arranged on a gang sheet to maximize film usage. No screens, no plates, no setup, just pixels.",
   },
   {
     n: "02",
@@ -73,7 +73,7 @@ const PROCESS = [
     n: "05",
     icon: Sparkles,
     title: "Peel & finish",
-    body: "After a brief cool-down, the carrier film peels away cleanly to reveal a vivid, high-resolution print bonded to the fabric — soft to the touch and ready to wear.",
+    body: "After a brief cool-down, the carrier film peels away cleanly to reveal a vivid, high-resolution print bonded to the fabric, soft to the touch and ready to wear.",
   },
 ];
 
@@ -81,7 +81,7 @@ const USES = [
   {
     name: "Photographic prints",
     aka: "Full-color, full-detail",
-    body: "Photographs, gradients, fine illustrations — DTF reproduces everything your file contains, with the precision of inkjet and the resilience of textile printing.",
+    body: "Photographs, gradients, fine illustrations, DTF reproduces everything your file contains, with the precision of inkjet and the resilience of textile printing.",
     bestFor: "Memorial pieces, fan merch, art collabs",
   },
   {
@@ -93,7 +93,7 @@ const USES = [
   {
     name: "Mixed-fabric productions",
     aka: "One method, every textile",
-    body: "Cotton, polyester, blends, nylon, fleece, performance fabrics — DTF bonds to virtually any textile. Ideal when one collection mixes many materials.",
+    body: "Cotton, polyester, blends, nylon, fleece, performance fabrics, DTF bonds to virtually any textile. Ideal when one collection mixes many materials.",
     bestFor: "Sportswear, uniforms, mixed apparel lines",
   },
   {
@@ -108,7 +108,7 @@ const ADVANTAGES = [
   {
     icon: ImageIcon,
     title: "Photographic quality",
-    body: "Full CMYK with a white underbase — gradients, photos, fine details and unlimited colors, all in a single pass.",
+    body: "Full CMYK with a white underbase, gradients, photos, fine details and unlimited colors, all in a single pass.",
   },
   {
     icon: ShieldCheck,
@@ -118,17 +118,17 @@ const ADVANTAGES = [
   {
     icon: InfinityIcon,
     title: "No quantity limits",
-    body: "From a single custom piece to thousands of units — no setup costs, no minimum order, no compromise.",
+    body: "From a single custom piece to thousands of units, no setup costs, no minimum order, no compromise.",
   },
   {
     icon: Sparkles,
     title: "Works on any fabric",
-    body: "Cotton, polyester, blends, nylon, fleece, denim, performance wear — light or dark, smooth or textured.",
+    body: "Cotton, polyester, blends, nylon, fleece, denim, performance wear, light or dark, smooth or textured.",
   },
   {
     icon: Zap,
     title: "Fast turnaround",
-    body: "No screens to burn, no setup time. Production-ready as soon as your file is approved — most jobs ship in 5 days.",
+    body: "No screens to burn, no setup time. Production-ready as soon as your file is approved, most jobs ship in 5 days.",
   },
   {
     icon: Palette,
@@ -142,7 +142,7 @@ const SPECS = [
   { label: "Colors per design", value: "Unlimited (CMYK + W)" },
   { label: "Max print area", value: "55 × 100 cm" },
   { label: "Resolution", value: "1440 dpi" },
-  { label: "Standard turnaround", value: "5 — 7 working days" },
+  { label: "Standard turnaround", value: "5  to 7 working days" },
   { label: "Wash resistance", value: "50+ cycles at 30°C" },
 ];
 
@@ -211,7 +211,7 @@ function Hero() {
             <p className="mt-8 max-w-2xl text-lg leading-relaxed text-cream/80 lg:text-xl">
               Direct-to-Film is the modern revolution in textile printing.
               Photographic detail, unlimited colors, soft hand and uncompromising
-              durability — on virtually any fabric, from a single piece up.
+              durability, on virtually any fabric, from a single piece up.
             </p>
 
             <div className="mt-10 flex flex-wrap items-center gap-4">
@@ -284,13 +284,13 @@ function Intro() {
               Direct-to-Film transfer is the most versatile printing method in
               modern apparel. A specialized inkjet lays full-color CMYK ink and
               opaque white directly onto a PET carrier film. A hot-melt
-              adhesive powder is dusted on, cured, and the transfer is ready —
+              adhesive powder is dusted on, cured, and the transfer is ready , 
               no screens, no plates, no minimums.
             </p>
             <p className="mt-6 text-lg leading-relaxed text-ink/75 lg:text-xl">
               On press day, the film is positioned on the garment and bonded
               under heat and pressure. The carrier peels away to reveal a
-              high-resolution print fused into the fabric — vibrant, durable
+              high-resolution print fused into the fabric, vibrant, durable
               and remarkably soft. From a single custom tee to thousands of
               uniforms, from photographs to fine line art, DTF removes the
               traditional limits of textile decoration.
@@ -400,7 +400,7 @@ function Uses() {
             </h2>
           </div>
           <p className="max-w-md text-base leading-relaxed text-ink/65">
-            DTF excels everywhere screens become limiting — full color, mixed
+            DTF excels everywhere screens become limiting, full color, mixed
             fabrics, small runs and tight deadlines. Here are the projects we
             print most often.
           </p>
@@ -464,7 +464,7 @@ function GangShowcase() {
             <p className="mt-6 text-lg leading-relaxed text-ink/70">
               Multiple designs, sizes, and clients can share the same roll of
               film. Our team nests every artwork tightly to maximize coverage,
-              minimize waste, and keep your per-piece cost down — even on
+              minimize waste, and keep your per-piece cost down, even on
               ultra-small production runs.
             </p>
             <p className="mt-4 text-lg leading-relaxed text-ink/70">
@@ -579,7 +579,7 @@ function Specs() {
           </div>
           <p className="max-w-sm text-sm leading-relaxed text-cream/65">
             Need express turnaround, ready-to-press films shipped to your team,
-            or oversized transfers? Just ask — we build around your schedule.
+            or oversized transfers? Just ask, we build around your schedule.
           </p>
         </div>
 
@@ -642,7 +642,7 @@ function CTA() {
                 <span className="italic">next big idea.</span>
               </h2>
               <p className="mt-5 max-w-xl text-lg text-ink/75">
-                Send us your artwork and a quantity — even just one. We&apos;ll
+                Send us your artwork and a quantity, even just one. We&apos;ll
                 come back with a press plan, a fabric recommendation and a
                 quote within 24 hours.
               </p>

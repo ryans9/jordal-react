@@ -22,17 +22,17 @@ export const Route = createFileRoute("/impression/silkscreen")({
   component: SilkscreenPage,
   head: () => ({
     meta: [
-      { title: "Silkscreen Printing — Jordal · The classic, perfected" },
+      { title: "Silkscreen Printing, Jordal · The classic, perfected" },
       {
         name: "description",
         content:
-          "Silkscreen printing from our Quebec workshop. Vivid, opaque, long-lasting prints on apparel and promotional supports — Pantone-matched plastisol & water-based inks.",
+          "Silkscreen printing from our Quebec workshop. Vivid, opaque, long-lasting prints on apparel and promotional supports, Pantone-matched plastisol & water-based inks.",
       },
-      { property: "og:title", content: "Silkscreen Printing — Jordal" },
+      { property: "og:title", content: "Silkscreen Printing, Jordal" },
       {
         property: "og:description",
         content:
-          "From coating to curing — discover how we push pigment through fine mesh to deliver prints with depth, opacity and decade-long durability.",
+          "From coating to curing, discover how we push pigment through fine mesh to deliver prints with depth, opacity and decade-long durability.",
       },
       { property: "og:image", content: heroImg },
       { property: "twitter:image", content: heroImg },
@@ -55,7 +55,7 @@ const PROCESS = [
     n: "02",
     icon: Sun,
     title: "Exposure",
-    body: "A film carrying your artwork is laid over the screen and exposed to UV light. Where light hits, the emulsion hardens. Where the film blocks light, the emulsion stays soluble — and washes out with water to reveal the open mesh.",
+    body: "A film carrying your artwork is laid over the screen and exposed to UV light. Where light hits, the emulsion hardens. Where the film blocks light, the emulsion stays soluble, and washes out with water to reveal the open mesh.",
   },
   {
     n: "03",
@@ -67,13 +67,13 @@ const PROCESS = [
     n: "04",
     icon: Layers,
     title: "Printing",
-    body: "Ink is flooded across the screen, then a squeegee glides under firm pressure — pushing pigment through the open mesh and onto the support. One pass per color, one screen at a time.",
+    body: "Ink is flooded across the screen, then a squeegee glides under firm pressure, pushing pigment through the open mesh and onto the support. One pass per color, one screen at a time.",
   },
   {
     n: "05",
     icon: Zap,
     title: "Curing",
-    body: "The print travels through a conveyor dryer at 160°C. Plastisol cures, water-based inks lock into the fibers — the print becomes permanent, wash-resistant, and ready to wear.",
+    body: "The print travels through a conveyor dryer at 160°C. Plastisol cures, water-based inks lock into the fibers, the print becomes permanent, wash-resistant, and ready to wear.",
   },
 ];
 
@@ -87,13 +87,13 @@ const INK_TYPES = [
   {
     name: "Water-based",
     aka: "The soft hand",
-    body: "Pigment penetrates into the fibers rather than sitting on top. The print becomes part of the fabric — soft to the touch, breathable, with a vintage, fashion-forward feel.",
+    body: "Pigment penetrates into the fibers rather than sitting on top. The print becomes part of the fabric, soft to the touch, breathable, with a vintage, fashion-forward feel.",
     bestFor: "Premium tees, fashion brands, light garments",
   },
   {
     name: "Discharge",
     aka: "The dyed-out look",
-    body: "A bleaching agent removes the original dye and replaces it with new pigment in one pass. Zero hand-feel, ultra-soft finish — exclusive to 100% cotton and reactive-dyed garments.",
+    body: "A bleaching agent removes the original dye and replaces it with new pigment in one pass. Zero hand-feel, ultra-soft finish, exclusive to 100% cotton and reactive-dyed garments.",
     bestFor: "100% cotton, soft vintage prints, retail apparel",
   },
   {
@@ -108,7 +108,7 @@ const ADVANTAGES = [
   {
     icon: Layers,
     title: "Heaviest ink deposit",
-    body: "5 to 10× more pigment than digital methods — that's where the legendary opacity, vibrancy and longevity come from.",
+    body: "5 to 10× more pigment than digital methods, that's where the legendary opacity, vibrancy and longevity come from.",
   },
   {
     icon: ShieldCheck,
@@ -123,7 +123,7 @@ const ADVANTAGES = [
   {
     icon: Sparkles,
     title: "Endless supports",
-    body: "Cotton, polyester, blends, canvas tote bags, hoodies, posters, technical fabrics — different inks for every substrate.",
+    body: "Cotton, polyester, blends, canvas tote bags, hoodies, posters, technical fabrics, different inks for every substrate.",
   },
   {
     icon: Zap,
@@ -141,8 +141,8 @@ const SPECS = [
   { label: "Minimum quantity", value: "25 pieces" },
   { label: "Max colors per design", value: "Up to 8" },
   { label: "Max print area", value: "40 × 50 cm" },
-  { label: "Mesh count", value: "60 — 305 threads/in" },
-  { label: "Standard turnaround", value: "8 — 10 working days" },
+  { label: "Mesh count", value: "60  to 305 threads/in" },
+  { label: "Standard turnaround", value: "8  to 10 working days" },
   { label: "Color matching", value: "Pantone Solid Coated" },
 ];
 
@@ -209,7 +209,7 @@ function Hero() {
             </h1>
 
             <p className="mt-8 max-w-2xl text-lg leading-relaxed text-cream/80 lg:text-xl">
-              Silkscreen is the original printing craft — and still the most
+              Silkscreen is the original printing craft, and still the most
               vivid. Thick, opaque ink pushed through fine mesh, cured into the
               fabric, built to outlast every wash you can throw at it.
             </p>
@@ -281,7 +281,7 @@ function Intro() {
           </div>
           <div className="col-span-12 lg:col-span-7">
             <p className="text-lg leading-relaxed text-ink/75 lg:text-xl">
-              Silkscreen — also called serigraphy — is a stencil-based printing
+              Silkscreen, also called serigraphy, is a stencil-based printing
               process. A fine fabric mesh is stretched over an aluminum frame
               and coated with a UV-sensitive emulsion. Exposed under light
               through a film, the emulsion hardens everywhere except where your
@@ -291,7 +291,7 @@ function Intro() {
             <p className="mt-6 text-lg leading-relaxed text-ink/75 lg:text-xl">
               On the press, a squeegee glides across the screen, forcing ink
               through those open meshes onto the support below. One screen, one
-              color, one pass — repeated for every shade of your design. The
+              color, one pass, repeated for every shade of your design. The
               result is a print with depth, opacity and a tactile presence no
               digital method can match.
             </p>
@@ -578,7 +578,7 @@ function Specs() {
           </div>
           <p className="max-w-sm text-sm leading-relaxed text-cream/65">
             Need oversized, all-over, or sleeve prints? We run jumbo platens
-            and specialty fixtures on demand — just ask.
+            and specialty fixtures on demand, just ask.
           </p>
         </div>
 
@@ -641,7 +641,7 @@ function CTA() {
                 <span className="italic">next collection.</span>
               </h2>
               <p className="mt-5 max-w-xl text-lg text-ink/75">
-                Send us your artwork and quantities — we&apos;ll come back with
+                Send us your artwork and quantities, we&apos;ll come back with
                 ink recommendations, a strike-off plan, and a quote within 24
                 hours.
               </p>

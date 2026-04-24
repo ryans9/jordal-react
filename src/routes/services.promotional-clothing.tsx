@@ -22,17 +22,17 @@ export const Route = createFileRoute("/services/promotional-clothing")({
   component: PromotionalClothingPage,
   head: () => ({
     meta: [
-      { title: "Promotional Clothing — Jordal · Branded apparel that represents you" },
+      { title: "Promotional Clothing, Jordal · Branded apparel that represents you" },
       {
         name: "description",
         content:
-          "Custom corporate apparel designed to carry your brand. T-shirts, polos, jackets, caps and uniforms — printed, embroidered and delivered from our Quebec workshop.",
+          "Custom corporate apparel designed to carry your brand. T-shirts, polos, jackets, caps and uniforms, printed, embroidered and delivered from our Quebec workshop.",
       },
-      { property: "og:title", content: "Promotional Clothing — Jordal" },
+      { property: "og:title", content: "Promotional Clothing, Jordal" },
       {
         property: "og:description",
         content:
-          "From browsing to delivery — a made-to-measure clothing program for your team. 20+ years, 1000+ projects, top brands.",
+          "From browsing to delivery, a made-to-measure clothing program for your team. 20+ years, 1000+ projects, top brands.",
       },
       { property: "og:image", content: heroImg },
       { property: "twitter:image", content: heroImg },
@@ -55,7 +55,7 @@ const BENEFITS = [
     icon: Heart,
     title: "Creates a sense of belonging",
     body:
-      "Wearing the brand turns employees into ambassadors. Teams feel more committed, loyal — and visibly part of something bigger.",
+      "Wearing the brand turns employees into ambassadors. Teams feel more committed, loyal, and visibly part of something bigger.",
   },
   {
     icon: TrendingUp,
@@ -78,21 +78,21 @@ const PROCESS = [
     icon: PenTool,
     title: "Design & decoration",
     body:
-      "We design according to your brand guidelines or bring your idea to life. Logos, colours, placements — every detail validated before production.",
+      "We design according to your brand guidelines or bring your idea to life. Logos, colours, placements, every detail validated before production.",
   },
   {
     n: "03",
     icon: Package,
     title: "In-house manufacturing",
     body:
-      "Production happens under one roof: silkscreen, embroidery, DTF. Nothing outsourced — that is how we keep quality consistent and timelines tight.",
+      "Production happens under one roof: silkscreen, embroidery, DTF. Nothing outsourced, that is how we keep quality consistent and timelines tight.",
   },
   {
     n: "04",
     icon: CheckCircle2,
     title: "Final delivery",
     body:
-      "Once production is done, we pack and ship. You receive your order ready to wear — no surprises, no follow-up calls needed.",
+      "Once production is done, we pack and ship. You receive your order ready to wear, no surprises, no follow-up calls needed.",
   },
 ];
 
@@ -149,7 +149,7 @@ function PromotionalClothingPage() {
                 Service · Promotional Clothing
               </div>
               <h1 className="mt-6 font-display text-[clamp(2.5rem,6vw,5.25rem)] font-bold leading-[0.95] tracking-tight">
-                Apparel that <span className="italic text-lime">represents</span> your brand —
+                Apparel that <span className="italic text-lime">represents</span> your brand , 
                 stitch by stitch.
               </h1>
               <p className="mt-6 max-w-2xl text-lg text-cream/75 lg:text-xl">
@@ -192,7 +192,7 @@ function PromotionalClothingPage() {
         </div>
       </section>
 
-      {/* WHY — benefits */}
+      {/* WHY, benefits */}
       <section className="mx-auto max-w-[1400px] px-6 py-24 lg:py-32">
         <div className="grid gap-12 lg:grid-cols-12 lg:gap-16">
           <div className="lg:col-span-4">
@@ -203,7 +203,7 @@ function PromotionalClothingPage() {
               Why have promotional clothing in your colours?
             </h2>
             <p className="mt-5 text-base text-ink/65">
-              Corporate clothing is often the first thing people notice — and the last thing they
+              Corporate clothing is often the first thing people notice, and the last thing they
               remember. Done well, it does the work of a hundred ads.
             </p>
           </div>
@@ -224,7 +224,7 @@ function PromotionalClothingPage() {
         </div>
       </section>
 
-      {/* THE ULTIMATE SOLUTION — split */}
+      {/* THE ULTIMATE SOLUTION, split */}
       <section className="bg-ink text-cream">
         <div className="mx-auto grid max-w-[1400px] gap-0 lg:grid-cols-2">
           <div className="px-6 py-20 lg:px-12 lg:py-32">
@@ -236,7 +236,7 @@ function PromotionalClothingPage() {
             </h2>
             <p className="mt-6 text-base text-cream/70 lg:text-lg">
               At Jordal, we know promotional clothing has to convey professionalism, cohesion and
-              seriousness — without ever feeling like a uniform. That is why we offer a true
+              seriousness, without ever feeling like a uniform. That is why we offer a true
               made-to-measure customisation service, tailored to your business reality and your
               brand.
             </p>
@@ -247,14 +247,14 @@ function PromotionalClothingPage() {
                 <h3 className="mt-4 font-display text-base font-bold">Fast turnaround</h3>
                 <p className="mt-2 text-sm text-cream/65">
                   Modern facilities and dedicated machines let us deliver your projects faster than
-                  the competition — without cutting corners.
+                  the competition, without cutting corners.
                 </p>
               </div>
               <div className="rounded-2xl border border-cream/10 bg-white/[0.04] p-6">
                 <Award className="h-8 w-8 text-lime" />
                 <h3 className="mt-4 font-display text-base font-bold">+1000 projects done</h3>
                 <p className="mt-2 text-sm text-cream/65">
-                  Two decades, hundreds of teams equipped — across SMBs, sports clubs, municipal
+                  Two decades, hundreds of teams equipped, across SMBs, sports clubs, municipal
                   fleets and national brands.
                 </p>
               </div>
@@ -275,7 +275,7 @@ function PromotionalClothingPage() {
         </div>
       </section>
 
-      {/* PROCESS — Design from A to Z */}
+      {/* PROCESS, Design from A to Z */}
       <section className="mx-auto max-w-[1400px] px-6 py-24 lg:py-32">
         <div className="mx-auto max-w-3xl text-center">
           <div className="text-[11px] font-bold uppercase tracking-[0.22em] text-lime-deep">
@@ -367,7 +367,7 @@ function PromotionalClothingPage() {
                 Let's dress your team in something they'll actually want to wear.
               </h2>
               <p className="mt-5 max-w-xl text-base text-cream/70 lg:text-lg">
-                Tell us about your brand, your timeline and your team — we'll come back with a
+                Tell us about your brand, your timeline and your team, we'll come back with a
                 concrete proposal, samples and a clear quote.
               </p>
             </div>

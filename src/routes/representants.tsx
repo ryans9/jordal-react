@@ -14,17 +14,17 @@ export const Route = createFileRoute("/representants")({
   component: RepresentativesPage,
   head: () => ({
     meta: [
-      { title: "Our Representatives — Jordal · A team across Quebec" },
+      { title: "Our Representatives, Jordal · A team across Quebec" },
       {
         name: "description",
         content:
           "Meet the Jordal sales team. Representatives covering Laurentides, Laval, Montréal, North Shore, South Shore, Estrie, Mauricie and Lanaudière.",
       },
-      { property: "og:title", content: "Our Representatives — Jordal" },
+      { property: "og:title", content: "Our Representatives, Jordal" },
       {
         property: "og:description",
         content:
-          "Find the Jordal representative closest to you across Quebec — direct lines, dedicated territories, real people.",
+          "Find the Jordal representative closest to you across Quebec, direct lines, dedicated territories, real people.",
       },
     ],
   }),
@@ -54,7 +54,7 @@ const GROUPS: { key: GroupKey; label: string; icon: typeof MapPin; blurb: string
     label: "North Shore",
     icon: MapPin,
     blurb:
-      "Our largest team — covering Laurentides, Laval, Montréal, Mauricie, Lanaudière and the North & South Shores.",
+      "Our largest team, covering Laurentides, Laval, Montréal, Mauricie, Lanaudière and the North & South Shores.",
   },
   {
     key: "mobile-south-shore",
@@ -264,7 +264,7 @@ function RepresentativesPage() {
                 <span className="italic text-lime-deep">"{query}"</span>
               </p>
               <p className="mt-3 text-ink/60">
-                Try another name, city or region — or call our head office at{" "}
+                Try another name, city or region, or call our head office at{" "}
                 <a href="tel:4504198855" className="font-semibold text-ink underline-offset-4 hover:underline">
                   450 419-8855
                 </a>
@@ -333,7 +333,7 @@ function Hero({
             <p className="mt-8 max-w-2xl text-lg leading-relaxed text-cream/80 lg:text-xl">
               Behind every Jordal order is a real person who knows your region,
               your fabrics and your deadlines. Find your representative below
-              and call directly — no forms, no chatbots, no queue.
+              and call directly, no forms, no chatbots, no queue.
             </p>
           </div>
 
