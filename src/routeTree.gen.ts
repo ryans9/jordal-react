@@ -14,6 +14,7 @@ import { Route as ImpressionRouteImport } from './routes/impression'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as ImpressionIndexRouteImport } from './routes/impression.index'
+import { Route as ServicesPromotionalClothingRouteImport } from './routes/services.promotional-clothing'
 import { Route as ImpressionSilkscreenRouteImport } from './routes/impression.silkscreen'
 import { Route as ImpressionEmbroideryRouteImport } from './routes/impression.embroidery'
 import { Route as ImpressionDtfRouteImport } from './routes/impression.dtf'
@@ -43,6 +44,12 @@ const ImpressionIndexRoute = ImpressionIndexRouteImport.update({
   path: '/',
   getParentRoute: () => ImpressionRoute,
 } as any)
+const ServicesPromotionalClothingRoute =
+  ServicesPromotionalClothingRouteImport.update({
+    id: '/services/promotional-clothing',
+    path: '/services/promotional-clothing',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const ImpressionSilkscreenRoute = ImpressionSilkscreenRouteImport.update({
   id: '/silkscreen',
   path: '/silkscreen',
@@ -67,6 +74,7 @@ export interface FileRoutesByFullPath {
   '/impression/dtf': typeof ImpressionDtfRoute
   '/impression/embroidery': typeof ImpressionEmbroideryRoute
   '/impression/silkscreen': typeof ImpressionSilkscreenRoute
+  '/services/promotional-clothing': typeof ServicesPromotionalClothingRoute
   '/impression/': typeof ImpressionIndexRoute
 }
 export interface FileRoutesByTo {
@@ -76,6 +84,7 @@ export interface FileRoutesByTo {
   '/impression/dtf': typeof ImpressionDtfRoute
   '/impression/embroidery': typeof ImpressionEmbroideryRoute
   '/impression/silkscreen': typeof ImpressionSilkscreenRoute
+  '/services/promotional-clothing': typeof ServicesPromotionalClothingRoute
   '/impression': typeof ImpressionIndexRoute
 }
 export interface FileRoutesById {
@@ -87,6 +96,7 @@ export interface FileRoutesById {
   '/impression/dtf': typeof ImpressionDtfRoute
   '/impression/embroidery': typeof ImpressionEmbroideryRoute
   '/impression/silkscreen': typeof ImpressionSilkscreenRoute
+  '/services/promotional-clothing': typeof ServicesPromotionalClothingRoute
   '/impression/': typeof ImpressionIndexRoute
 }
 export interface FileRouteTypes {
@@ -99,6 +109,7 @@ export interface FileRouteTypes {
     | '/impression/dtf'
     | '/impression/embroidery'
     | '/impression/silkscreen'
+    | '/services/promotional-clothing'
     | '/impression/'
   fileRoutesByTo: FileRoutesByTo
   to:
@@ -108,6 +119,7 @@ export interface FileRouteTypes {
     | '/impression/dtf'
     | '/impression/embroidery'
     | '/impression/silkscreen'
+    | '/services/promotional-clothing'
     | '/impression'
   id:
     | '__root__'
@@ -118,6 +130,7 @@ export interface FileRouteTypes {
     | '/impression/dtf'
     | '/impression/embroidery'
     | '/impression/silkscreen'
+    | '/services/promotional-clothing'
     | '/impression/'
   fileRoutesById: FileRoutesById
 }
@@ -126,6 +139,7 @@ export interface RootRouteChildren {
   ContactRoute: typeof ContactRoute
   ImpressionRoute: typeof ImpressionRouteWithChildren
   RepresentantsRoute: typeof RepresentantsRoute
+  ServicesPromotionalClothingRoute: typeof ServicesPromotionalClothingRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -164,6 +178,13 @@ declare module '@tanstack/react-router' {
       fullPath: '/impression/'
       preLoaderRoute: typeof ImpressionIndexRouteImport
       parentRoute: typeof ImpressionRoute
+    }
+    '/services/promotional-clothing': {
+      id: '/services/promotional-clothing'
+      path: '/services/promotional-clothing'
+      fullPath: '/services/promotional-clothing'
+      preLoaderRoute: typeof ServicesPromotionalClothingRouteImport
+      parentRoute: typeof rootRouteImport
     }
     '/impression/silkscreen': {
       id: '/impression/silkscreen'
@@ -212,6 +233,7 @@ const rootRouteChildren: RootRouteChildren = {
   ContactRoute: ContactRoute,
   ImpressionRoute: ImpressionRouteWithChildren,
   RepresentantsRoute: RepresentantsRoute,
+  ServicesPromotionalClothingRoute: ServicesPromotionalClothingRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
