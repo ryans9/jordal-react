@@ -176,10 +176,9 @@ function ContactHero() {
           On s'occupe du reste.
         </h1>
 
-        <p className="mt-8 max-w-2xl text-lg leading-relaxed text-cream/65">
-          Une équipe humaine, trois ateliers au Québec, et plus de 20 ans à
-          transformer vos idées en pièces corporatives qui font tourner les
-          têtes. Réponse sous <span className="text-cream">24 heures ouvrables</span>.
+        <p className="mt-8 max-w-xl text-lg leading-relaxed text-cream/65">
+          Trois ateliers au Québec. Réponse sous{" "}
+          <span className="text-cream">24 h ouvrables</span>.
         </p>
 
         <div className="mt-12 flex flex-wrap items-center gap-x-10 gap-y-6 text-sm">
