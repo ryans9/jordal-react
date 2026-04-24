@@ -4,6 +4,10 @@ import silkscreenImg from "@/assets/print-silkscreen.jpg";
 import embroideryImg from "@/assets/print-embroidery.jpg";
 import dtfImg from "@/assets/print-dtf.jpg";
 import promoImg from "@/assets/print-promo.jpg";
+import catTshirts from "@/assets/category-tshirts.jpg";
+import catShirts from "@/assets/category-shirts.jpg";
+import catJackets from "@/assets/category-jackets.jpg";
+import catCaps from "@/assets/category-caps.jpg";
 
 export const Route = createFileRoute("/")({
   component: Index,
@@ -129,6 +133,118 @@ function Index() {
               </div>
             </Link>
           ))}
+        </div>
+      </section>
+
+      {/* Turnkey Service — editorial split with category gallery */}
+      <section className="relative bg-cream">
+        <div className="mx-auto max-w-[1400px] px-6 pt-24 pb-12 lg:pt-32 lg:pb-16">
+          {/* Eyebrow + asymmetric intro */}
+          <div className="grid gap-12 lg:grid-cols-12 lg:gap-16">
+            <div className="lg:col-span-7">
+              <span className="inline-flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.24em] text-ink/55">
+                <span className="h-px w-8 bg-ink/40" />
+                Service clé en main
+              </span>
+              <h2 className="mt-6 font-display text-[clamp(2.5rem,5.5vw,4.75rem)] font-bold leading-[0.95] tracking-tight text-ink text-balance">
+                Une seule équipe,{" "}
+                <em className="font-script font-normal not-italic text-lime-deep">
+                  du concept
+                </em>
+                <br />
+                jusqu'à la livraison.
+              </h2>
+            </div>
+            <div className="flex flex-col justify-end lg:col-span-5">
+              <p className="text-lg leading-relaxed text-ink/70">
+                Jordal est un chef de file de l'industrie en matière de vêtements
+                et produits corporatifs. Nous décorons vos articles directement
+                sur place — pour un meilleur contrôle de la qualité et des
+                délais.
+              </p>
+              <a
+                href="/contact"
+                className="group mt-6 inline-flex w-fit items-center gap-2 text-sm font-semibold text-ink underline-grow"
+              >
+                Personnalisez vos articles
+                <ArrowUpRight className="h-4 w-4 text-lime-deep transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+              </a>
+            </div>
+          </div>
+
+          {/* Numbered process rail */}
+          <div className="mt-16 grid grid-cols-2 gap-x-8 gap-y-6 border-t border-ink/10 pt-10 md:grid-cols-4">
+            {[
+              { n: "01", t: "Concept", d: "Idéation & maquettes" },
+              { n: "02", t: "Sélection", d: "Vêtements & objets" },
+              { n: "03", t: "Décoration", d: "Sur place, au Québec" },
+              { n: "04", t: "Livraison", d: "Dans les délais" },
+            ].map((step) => (
+              <div key={step.n} className="flex items-start gap-4">
+                <span className="font-display text-2xl font-bold text-lime-deep tabular-nums">
+                  {step.n}
+                </span>
+                <div>
+                  <p className="font-display text-base font-semibold text-ink">
+                    {step.t}
+                  </p>
+                  <p className="mt-1 text-xs uppercase tracking-[0.14em] text-ink/50">
+                    {step.d}
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Product category gallery — full-bleed editorial cards */}
+        <div className="mx-auto max-w-[1400px] px-6 pb-24 lg:pb-32">
+          <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
+            {[
+              { label: "T-Shirts & Polos", img: catTshirts, idx: "01" },
+              { label: "Chemises", img: catShirts, idx: "02" },
+              { label: "Manteaux & Vestes", img: catJackets, idx: "03" },
+              { label: "Casquettes & Tuques", img: catCaps, idx: "04" },
+            ].map((cat, i) => (
+              <a
+                key={cat.label}
+                href="/contact"
+                className={`group relative block overflow-hidden rounded-2xl bg-stone ${
+                  i % 2 === 1 ? "lg:translate-y-8" : ""
+                }`}
+              >
+                <div className="aspect-[3/4] overflow-hidden">
+                  <img
+                    src={cat.img}
+                    alt={cat.label}
+                    loading="lazy"
+                    width={768}
+                    height={960}
+                    className="h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.04]"
+                  />
+                </div>
+                {/* Hover overlay */}
+                <div
+                  aria-hidden
+                  className="absolute inset-0 bg-gradient-to-t from-ink/70 via-ink/0 to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100"
+                />
+                {/* Index marker */}
+                <span className="absolute left-5 top-5 font-display text-xs font-semibold tracking-[0.2em] text-ink/70 mix-blend-multiply">
+                  {cat.idx}
+                </span>
+                {/* Caption */}
+                <div className="flex items-center justify-between gap-3 px-5 pt-5 pb-1">
+                  <h3 className="font-display text-lg font-bold tracking-tight text-ink">
+                    {cat.label}
+                  </h3>
+                  <ArrowUpRight className="h-4 w-4 text-ink/40 transition-all group-hover:text-lime-deep group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                </div>
+                <p className="px-5 pb-5 text-xs uppercase tracking-[0.16em] text-ink/45">
+                  Voir la collection
+                </p>
+              </a>
+            ))}
+          </div>
         </div>
       </section>
 
