@@ -381,13 +381,24 @@ function MethodSection({ method, reversed }: { method: Method; reversed: boolean
             </p>
           </div>
 
-          <Link
-            to="/contact"
-            className="hidden items-center gap-2 rounded-full bg-ink px-5 py-3 text-sm font-semibold text-cream transition-colors hover:bg-lime hover:text-ink lg:inline-flex"
-          >
-            Start a project
-            <ArrowUpRight className="h-4 w-4" />
-          </Link>
+          <div className="hidden items-center gap-3 lg:flex">
+            {method.id === "embroidery" && (
+              <Link
+                to="/impression/embroidery"
+                className="inline-flex items-center gap-2 rounded-full border border-ink/20 px-5 py-3 text-sm font-semibold text-ink transition-colors hover:border-ink hover:bg-ink hover:text-cream"
+              >
+                Explore embroidery
+                <ArrowUpRight className="h-4 w-4" />
+              </Link>
+            )}
+            <Link
+              to="/contact"
+              className="inline-flex items-center gap-2 rounded-full bg-ink px-5 py-3 text-sm font-semibold text-cream transition-colors hover:bg-lime hover:text-ink"
+            >
+              Start a project
+              <ArrowUpRight className="h-4 w-4" />
+            </Link>
+          </div>
         </div>
 
         {/* Body */}
