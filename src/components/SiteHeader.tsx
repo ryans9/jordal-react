@@ -1,0 +1,153 @@
+import { useEffect, useState } from "react";
+
+import { Menu, X, ArrowUpRight, Phone } from "lucide-react";
+import { JordalLogo } from "./JordalLogo";
+
+type NavItem = {
+  label: string;
+  href: string;
+  badge?: string;
+};
+
+const NAV: NavItem[] = [
+  { label: "Représentants", href: "/representants" },
+  { label: "Catalogue", href: "/catalogue", badge: "Nouveau" },
+  { label: "Produits", href: "/produits" },
+  { label: "Impression", href: "/impression" },
+  { label: "Contact", href: "/contact" },
+];
+
+export function SiteHeader() {
+  const [scrolled, setScrolled] = useState(false);
+  const [open, setOpen] = useState(false);
+  const [lang, setLang] = useState<"FR" | "EN">("FR");
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 8);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+  return (
+    <>
+      {/* Top utility ribbon */}
+      <div className="hidden border-b border-ink/10 bg-ink text-cream md:block">
+        <div className="mx-auto flex h-9 max-w-[1400px] items-center justify-between px-6 text-[11px] font-medium uppercase tracking-[0.18em]">
+          <div className="flex items-center gap-6 text-cream/70">
+            <span className="flex items-center gap-2">
+              <span className="inline-block h-1.5 w-1.5 rounded-full bg-lime animate-pulse" />
+              En atelier · Saint-Jérôme · Sherbrooke
+            </span>
+          </div>
+          <div className="flex items-center gap-6 text-cream/80">
+            <a href="tel:4504198855" className="flex items-center gap-2 underline-grow">
+              <Phone className="h-3 w-3" />
+              450 419-8855
+            </a>
+            <span className="text-cream/30">/</span>
+            <a href="mailto:carl@jordal.ca" className="underline-grow">carl@jordal.ca</a>
+          </div>
+        </div>
+      </div>
+
+      {/* Main bar */}
+      <header
+        className={[
+          "sticky top-0 z-50 transition-all duration-300",
+          scrolled
+            ? "bg-cream/85 backdrop-blur-xl shadow-[0_1px_0_0_oklch(0_0_0/0.06)]"
+            : "bg-cream",
+        ].join(" ")}
+      >
+        <div className="mx-auto flex h-20 max-w-[1400px] items-center justify-between gap-6 px-6 lg:h-24">
+          <a href="/" className="shrink-0" aria-label="Jordal — Accueil">
+            <JordalLogo className="text-[14px] lg:text-[16px]" />
+          </a>
+
+          {/* Desktop nav */}
+          <nav className="hidden items-center gap-1 lg:flex">
+            {NAV.map((item) => (
+              <a
+                key={item.href}
+                href={item.href}
+                className="group relative flex items-center gap-1.5 rounded-full px-4 py-2 text-sm font-medium text-ink/80 transition-colors hover:text-ink"
+              >
+                {item.label}
+                {item.badge && (
+                  <span className="rounded-full bg-lime px-1.5 py-0.5 text-[9px] font-bold uppercase tracking-wider text-ink">
+                    {item.badge}
+                  </span>
+                )}
+                <span className="absolute inset-x-4 -bottom-0.5 h-px scale-x-0 bg-ink transition-transform duration-300 group-hover:scale-x-100" />
+              </a>
+            ))}
+          </nav>
+
+          <div className="flex items-center gap-3">
+            {/* Language toggle */}
+            <div className="hidden items-center rounded-full border border-ink/15 bg-cream p-0.5 text-xs font-semibold sm:flex">
+              {(["FR", "EN"] as const).map((l) => (
+                <button
+                  key={l}
+                  onClick={() => setLang(l)}
+                  className={[
+                    "rounded-full px-3 py-1.5 transition-all",
+                    lang === l ? "bg-ink text-cream" : "text-ink/60 hover:text-ink",
+                  ].join(" ")}
+                >
+                  {l}
+                </button>
+              ))}
+            </div>
+
+            {/* CTA */}
+            <a
+              href="/contact"
+              className="group hidden items-center gap-2 rounded-full bg-ink px-5 py-3 text-sm font-semibold text-cream transition-all hover:bg-lime hover:text-ink hover:shadow-glow md:inline-flex"
+            >
+              Soumission
+              <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+            </a>
+
+            {/* Mobile toggle */}
+            <button
+              onClick={() => setOpen((s) => !s)}
+              className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-ink/15 text-ink lg:hidden"
+              aria-label="Menu"
+            >
+              {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+            </button>
+          </div>
+        </div>
+
+        {/* Mobile drawer */}
+        {open && (
+          <div className="border-t border-ink/10 bg-cream lg:hidden">
+            <nav className="mx-auto flex max-w-[1400px] flex-col gap-1 px-6 py-6">
+              {NAV.map((item) => (
+                <a
+                  key={item.href}
+                  href={item.href}
+                  onClick={() => setOpen(false)}
+                  className="flex items-center justify-between rounded-2xl px-4 py-4 text-lg font-semibold text-ink hover:bg-ink/5"
+                >
+                  <span>{item.label}</span>
+                  <ArrowUpRight className="h-5 w-5 text-ink/40" />
+                </a>
+              ))}
+              <a
+                href="/contact"
+                onClick={() => setOpen(false)}
+                className="mt-3 flex items-center justify-center gap-2 rounded-full bg-ink px-5 py-4 text-sm font-semibold text-cream"
+              >
+                Demander une soumission
+                <ArrowUpRight className="h-4 w-4" />
+              </a>
+            </nav>
+          </div>
+        )}
+      </header>
+    </>
+  );
+}

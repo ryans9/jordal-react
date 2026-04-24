@@ -1,6 +1,8 @@
 import { Outlet, Link, createRootRoute, HeadContent, Scripts } from "@tanstack/react-router";
 
 import appCss from "../styles.css?url";
+import { SiteHeader } from "@/components/SiteHeader";
+import { SiteFooter } from "@/components/SiteFooter";
 
 function NotFoundComponent() {
   return (
@@ -29,19 +31,29 @@ export const Route = createRootRoute({
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Lovable App" },
-      { name: "description", content: "Lovable Generated Project" },
-      { name: "author", content: "Lovable" },
-      { property: "og:title", content: "Lovable App" },
-      { property: "og:description", content: "Lovable Generated Project" },
+      { title: "Jordal — Vêtements & objets promotionnels" },
+      {
+        name: "description",
+        content:
+          "Atelier québécois de vêtements corporatifs, broderie, sérigraphie, transfert DTF et articles promotionnels haut de gamme depuis plus de 20 ans.",
+      },
+      { name: "author", content: "Jordal" },
+      { property: "og:title", content: "Jordal — Vêtements & objets promotionnels" },
+      {
+        property: "og:description",
+        content:
+          "20+ ans d'expérience. Broderie, sérigraphie, DTF et articles promotionnels personnalisés au Québec.",
+      },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
-      { name: "twitter:site", content: "@Lovable" },
     ],
     links: [
+      { rel: "stylesheet", href: appCss },
+      { rel: "preconnect", href: "https://fonts.googleapis.com" },
+      { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
       {
         rel: "stylesheet",
-        href: appCss,
+        href: "https://fonts.googleapis.com/css2?family=Caveat:wght@500;600;700&family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap",
       },
     ],
   }),
@@ -65,5 +77,13 @@ function RootShell({ children }: { children: React.ReactNode }) {
 }
 
 function RootComponent() {
-  return <Outlet />;
+  return (
+    <>
+      <SiteHeader />
+      <main className="min-h-[60vh]">
+        <Outlet />
+      </main>
+      <SiteFooter />
+    </>
+  );
 }
