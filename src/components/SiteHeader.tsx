@@ -1,19 +1,35 @@
 import { useEffect, useState } from "react";
 
-import { Menu, X, ArrowUpRight, Phone } from "lucide-react";
+import { Menu, X, ArrowUpRight, Phone, ChevronDown } from "lucide-react";
 import { JordalLogo } from "./JordalLogo";
+
+type NavChild = {
+  label: string;
+  href: string;
+  description?: string;
+};
 
 type NavItem = {
   label: string;
   href: string;
   badge?: string;
+  children?: NavChild[];
 };
 
 const NAV: NavItem[] = [
   { label: "Reps", href: "/representants" },
   { label: "Catalog", href: "/catalogue", badge: "New" },
   { label: "Products", href: "/produits" },
-  { label: "Printing", href: "/impression" },
+  {
+    label: "Printing",
+    href: "/impression",
+    children: [
+      { label: "Overview", href: "/impression", description: "All printing methods" },
+      { label: "Embroidery", href: "/impression/embroidery", description: "Stitched, premium finish" },
+      { label: "Silkscreen", href: "/impression/silkscreen", description: "Bold colors, high volume" },
+      { label: "DTF Transfer", href: "/impression/dtf", description: "Photographic, any fabric" },
+    ],
+  },
   { label: "Contact", href: "/contact" },
 ];
 
@@ -68,19 +84,50 @@ export function SiteHeader() {
           {/* Desktop nav */}
           <nav className="hidden items-center gap-1 lg:flex">
             {NAV.map((item) => (
-              <a
-                key={item.href}
-                href={item.href}
-                className="group relative flex items-center gap-1.5 rounded-full px-4 py-2 text-sm font-medium text-ink/80 transition-colors hover:text-ink"
-              >
-                {item.label}
-                {item.badge && (
-                  <span className="rounded-full bg-lime px-1.5 py-0.5 text-[9px] font-bold uppercase tracking-wider text-ink">
-                    {item.badge}
-                  </span>
+              <div key={item.href} className="group/nav relative">
+                <a
+                  href={item.href}
+                  className="group relative flex items-center gap-1.5 rounded-full px-4 py-2 text-sm font-medium text-ink/80 transition-colors hover:text-ink"
+                >
+                  {item.label}
+                  {item.badge && (
+                    <span className="rounded-full bg-lime px-1.5 py-0.5 text-[9px] font-bold uppercase tracking-wider text-ink">
+                      {item.badge}
+                    </span>
+                  )}
+                  {item.children && (
+                    <ChevronDown className="h-3.5 w-3.5 text-ink/50 transition-transform group-hover/nav:rotate-180" />
+                  )}
+                  <span className="absolute inset-x-4 -bottom-0.5 h-px scale-x-0 bg-ink transition-transform duration-300 group-hover:scale-x-100" />
+                </a>
+
+                {item.children && (
+                  <div className="invisible absolute left-1/2 top-full z-50 w-[320px] -translate-x-1/2 pt-3 opacity-0 transition-all duration-200 group-hover/nav:visible group-hover/nav:opacity-100">
+                    <div className="overflow-hidden rounded-2xl border border-ink/10 bg-cream shadow-[0_20px_60px_-15px_oklch(0_0_0/0.25)]">
+                      <div className="border-b border-ink/10 bg-ink px-5 py-3 text-[10px] font-bold uppercase tracking-[0.2em] text-lime">
+                        Printing methods
+                      </div>
+                      <div className="p-2">
+                        {item.children.map((child) => (
+                          <a
+                            key={child.href}
+                            href={child.href}
+                            className="group/item flex items-start justify-between gap-3 rounded-xl px-4 py-3 transition-colors hover:bg-ink/5"
+                          >
+                            <div>
+                              <div className="text-sm font-semibold text-ink">{child.label}</div>
+                              {child.description && (
+                                <div className="mt-0.5 text-xs text-ink/55">{child.description}</div>
+                              )}
+                            </div>
+                            <ArrowUpRight className="mt-1 h-4 w-4 shrink-0 text-ink/30 transition-all group-hover/item:translate-x-0.5 group-hover/item:-translate-y-0.5 group-hover/item:text-ink" />
+                          </a>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
                 )}
-                <span className="absolute inset-x-4 -bottom-0.5 h-px scale-x-0 bg-ink transition-transform duration-300 group-hover:scale-x-100" />
-              </a>
+              </div>
             ))}
           </nav>
 
@@ -126,15 +173,30 @@ export function SiteHeader() {
           <div className="border-t border-ink/10 bg-cream lg:hidden">
             <nav className="mx-auto flex max-w-[1400px] flex-col gap-1 px-6 py-6">
               {NAV.map((item) => (
-                <a
-                  key={item.href}
-                  href={item.href}
-                  onClick={() => setOpen(false)}
-                  className="flex items-center justify-between rounded-2xl px-4 py-4 text-lg font-semibold text-ink hover:bg-ink/5"
-                >
-                  <span>{item.label}</span>
-                  <ArrowUpRight className="h-5 w-5 text-ink/40" />
-                </a>
+                <div key={item.href}>
+                  <a
+                    href={item.href}
+                    onClick={() => setOpen(false)}
+                    className="flex items-center justify-between rounded-2xl px-4 py-4 text-lg font-semibold text-ink hover:bg-ink/5"
+                  >
+                    <span>{item.label}</span>
+                    <ArrowUpRight className="h-5 w-5 text-ink/40" />
+                  </a>
+                  {item.children && (
+                    <div className="ml-4 mb-2 flex flex-col gap-0.5 border-l-2 border-ink/10 pl-4">
+                      {item.children.map((child) => (
+                        <a
+                          key={child.href}
+                          href={child.href}
+                          onClick={() => setOpen(false)}
+                          className="rounded-xl px-3 py-2 text-sm font-medium text-ink/70 hover:bg-ink/5 hover:text-ink"
+                        >
+                          {child.label}
+                        </a>
+                      ))}
+                    </div>
+                  )}
+                </div>
               ))}
               <a
                 href="/contact"
