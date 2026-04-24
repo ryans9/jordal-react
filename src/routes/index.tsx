@@ -9,6 +9,7 @@ import catShirts from "@/assets/category-shirts.jpg";
 import catJackets from "@/assets/category-jackets.jpg";
 import catCaps from "@/assets/category-caps.jpg";
 import { PartnersMarquee } from "@/components/PartnersMarquee";
+import { CallbackSection } from "@/components/CallbackSection";
 
 export const Route = createFileRoute("/")({
   component: Index,
