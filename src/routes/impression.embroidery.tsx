@@ -13,8 +13,6 @@ import {
   ShieldCheck,
 } from "lucide-react";
 
-import { SiteHeader } from "@/components/SiteHeader";
-import { SiteFooter } from "@/components/SiteFooter";
 
 import heroImg from "@/assets/embroidery-hero.jpg";
 import detailImg from "@/assets/embroidery-detail.jpg";
