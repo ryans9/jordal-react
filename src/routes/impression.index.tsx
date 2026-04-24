@@ -16,7 +16,7 @@ import embroideryImg from "@/assets/print-embroidery.jpg";
 import dtfImg from "@/assets/print-dtf.jpg";
 import promoImg from "@/assets/print-promo.jpg";
 
-export const Route = createFileRoute("/impression")({
+export const Route = createFileRoute("/impression/")({
   component: PrintingPage,
   head: () => ({
     meta: [

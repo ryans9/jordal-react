@@ -9,16 +9,11 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
-import { Route as ImpressionRouteImport } from './routes/impression'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as ImpressionIndexRouteImport } from './routes/impression.index'
 import { Route as ImpressionEmbroideryRouteImport } from './routes/impression.embroidery'
 
-const ImpressionRoute = ImpressionRouteImport.update({
-  id: '/impression',
-  path: '/impression',
-  getParentRoute: () => rootRouteImport,
-} as any)
 const ContactRoute = ContactRouteImport.update({
   id: '/contact',
   path: '/contact',
@@ -27,6 +22,11 @@ const ContactRoute = ContactRouteImport.update({
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ImpressionIndexRoute = ImpressionIndexRouteImport.update({
+  id: '/impression/',
+  path: '/impression/',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ImpressionEmbroideryRoute = ImpressionEmbroideryRouteImport.update({
@@ -38,45 +38,38 @@ const ImpressionEmbroideryRoute = ImpressionEmbroideryRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/contact': typeof ContactRoute
-  '/impression': typeof ImpressionRouteWithChildren
   '/impression/embroidery': typeof ImpressionEmbroideryRoute
+  '/impression/': typeof ImpressionIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/contact': typeof ContactRoute
-  '/impression': typeof ImpressionRouteWithChildren
   '/impression/embroidery': typeof ImpressionEmbroideryRoute
+  '/impression': typeof ImpressionIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/contact': typeof ContactRoute
-  '/impression': typeof ImpressionRouteWithChildren
   '/impression/embroidery': typeof ImpressionEmbroideryRoute
+  '/impression/': typeof ImpressionIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/contact' | '/impression' | '/impression/embroidery'
+  fullPaths: '/' | '/contact' | '/impression/embroidery' | '/impression/'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/contact' | '/impression' | '/impression/embroidery'
-  id: '__root__' | '/' | '/contact' | '/impression' | '/impression/embroidery'
+  to: '/' | '/contact' | '/impression/embroidery' | '/impression'
+  id: '__root__' | '/' | '/contact' | '/impression/embroidery' | '/impression/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   ContactRoute: typeof ContactRoute
-  ImpressionRoute: typeof ImpressionRouteWithChildren
+  ImpressionIndexRoute: typeof ImpressionIndexRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
-    '/impression': {
-      id: '/impression'
-      path: '/impression'
-      fullPath: '/impression'
-      preLoaderRoute: typeof ImpressionRouteImport
-      parentRoute: typeof rootRouteImport
-    }
     '/contact': {
       id: '/contact'
       path: '/contact'
@@ -91,6 +84,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/impression/': {
+      id: '/impression/'
+      path: '/impression'
+      fullPath: '/impression/'
+      preLoaderRoute: typeof ImpressionIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/impression/embroidery': {
       id: '/impression/embroidery'
       path: '/embroidery'
@@ -101,22 +101,10 @@ declare module '@tanstack/react-router' {
   }
 }
 
-interface ImpressionRouteChildren {
-  ImpressionEmbroideryRoute: typeof ImpressionEmbroideryRoute
-}
-
-const ImpressionRouteChildren: ImpressionRouteChildren = {
-  ImpressionEmbroideryRoute: ImpressionEmbroideryRoute,
-}
-
-const ImpressionRouteWithChildren = ImpressionRoute._addFileChildren(
-  ImpressionRouteChildren,
-)
-
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   ContactRoute: ContactRoute,
-  ImpressionRoute: ImpressionRouteWithChildren,
+  ImpressionIndexRoute: ImpressionIndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
