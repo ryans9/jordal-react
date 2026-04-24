@@ -143,19 +143,6 @@ export function SiteHeader() {
                     lang === l ? "bg-ink text-cream" : "text-ink/60 hover:text-ink",
                   ].join(" ")}
                 >
-
-          <div className="flex items-center gap-3">
-            {/* Language toggle */}
-            <div className="hidden items-center rounded-full border border-ink/15 bg-cream p-0.5 text-xs font-semibold sm:flex">
-              {(["FR", "EN"] as const).map((l) => (
-                <button
-                  key={l}
-                  onClick={() => setLang(l)}
-                  className={[
-                    "rounded-full px-3 py-1.5 transition-all",
-                    lang === l ? "bg-ink text-cream" : "text-ink/60 hover:text-ink",
-                  ].join(" ")}
-                >
                   {l}
                 </button>
               ))}
