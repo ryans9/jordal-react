@@ -10,8 +10,8 @@ function Index() {
     <>
       {/* Hero with background video */}
       <section className="relative overflow-hidden bg-ink">
-        <div className="relative mx-auto max-w-[1400px] px-6 pt-10 pb-12 lg:pt-14 lg:pb-16">
-          <div className="relative overflow-hidden rounded-[2rem] shadow-2xl">
+        <div className="relative w-full pt-0 pb-12 lg:pb-16">
+          <div className="relative overflow-hidden shadow-2xl">
             {/* Background video */}
             <video
               className="absolute inset-0 h-full w-full object-cover"
@@ -38,7 +38,7 @@ function Index() {
             />
 
             {/* Content */}
-            <div className="relative grid min-h-[520px] gap-10 px-8 py-16 sm:px-12 sm:py-20 lg:min-h-[640px] lg:px-16 lg:py-24">
+            <div className="relative grid min-h-[365px] gap-8 px-6 py-12 sm:px-12 sm:py-14 lg:min-h-[450px] lg:px-16 lg:py-16 mx-auto max-w-[1400px] w-full">
               <div className="max-w-3xl">
                 <span className="inline-flex items-center gap-2 rounded-full border border-cream/25 bg-cream/10 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.22em] text-cream backdrop-blur-sm">
                   <Sparkles className="h-3 w-3 text-lime" />
@@ -83,7 +83,7 @@ function Index() {
 
       {/* Stats strip */}
       <section className="bg-cream">
-        <div className="mx-auto max-w-[1400px] px-6 pb-20">
+        <div className="mx-auto max-w-[1400px] px-6 pt-16 pb-20">
           <dl className="grid grid-cols-2 gap-px overflow-hidden rounded-3xl bg-ink/10 lg:grid-cols-4">
             {[
               { k: "20+", v: "Années d'expérience" },
