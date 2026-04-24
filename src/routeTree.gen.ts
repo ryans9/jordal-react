@@ -13,6 +13,7 @@ import { Route as ImpressionRouteImport } from './routes/impression'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as ImpressionIndexRouteImport } from './routes/impression.index'
+import { Route as ImpressionSilkscreenRouteImport } from './routes/impression.silkscreen'
 import { Route as ImpressionEmbroideryRouteImport } from './routes/impression.embroidery'
 
 const ImpressionRoute = ImpressionRouteImport.update({
@@ -35,6 +36,11 @@ const ImpressionIndexRoute = ImpressionIndexRouteImport.update({
   path: '/',
   getParentRoute: () => ImpressionRoute,
 } as any)
+const ImpressionSilkscreenRoute = ImpressionSilkscreenRouteImport.update({
+  id: '/silkscreen',
+  path: '/silkscreen',
+  getParentRoute: () => ImpressionRoute,
+} as any)
 const ImpressionEmbroideryRoute = ImpressionEmbroideryRouteImport.update({
   id: '/embroidery',
   path: '/embroidery',
@@ -46,12 +52,14 @@ export interface FileRoutesByFullPath {
   '/contact': typeof ContactRoute
   '/impression': typeof ImpressionRouteWithChildren
   '/impression/embroidery': typeof ImpressionEmbroideryRoute
+  '/impression/silkscreen': typeof ImpressionSilkscreenRoute
   '/impression/': typeof ImpressionIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/contact': typeof ContactRoute
   '/impression/embroidery': typeof ImpressionEmbroideryRoute
+  '/impression/silkscreen': typeof ImpressionSilkscreenRoute
   '/impression': typeof ImpressionIndexRoute
 }
 export interface FileRoutesById {
@@ -60,6 +68,7 @@ export interface FileRoutesById {
   '/contact': typeof ContactRoute
   '/impression': typeof ImpressionRouteWithChildren
   '/impression/embroidery': typeof ImpressionEmbroideryRoute
+  '/impression/silkscreen': typeof ImpressionSilkscreenRoute
   '/impression/': typeof ImpressionIndexRoute
 }
 export interface FileRouteTypes {
@@ -69,15 +78,22 @@ export interface FileRouteTypes {
     | '/contact'
     | '/impression'
     | '/impression/embroidery'
+    | '/impression/silkscreen'
     | '/impression/'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/contact' | '/impression/embroidery' | '/impression'
+  to:
+    | '/'
+    | '/contact'
+    | '/impression/embroidery'
+    | '/impression/silkscreen'
+    | '/impression'
   id:
     | '__root__'
     | '/'
     | '/contact'
     | '/impression'
     | '/impression/embroidery'
+    | '/impression/silkscreen'
     | '/impression/'
   fileRoutesById: FileRoutesById
 }
@@ -117,6 +133,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ImpressionIndexRouteImport
       parentRoute: typeof ImpressionRoute
     }
+    '/impression/silkscreen': {
+      id: '/impression/silkscreen'
+      path: '/silkscreen'
+      fullPath: '/impression/silkscreen'
+      preLoaderRoute: typeof ImpressionSilkscreenRouteImport
+      parentRoute: typeof ImpressionRoute
+    }
     '/impression/embroidery': {
       id: '/impression/embroidery'
       path: '/embroidery'
@@ -129,11 +152,13 @@ declare module '@tanstack/react-router' {
 
 interface ImpressionRouteChildren {
   ImpressionEmbroideryRoute: typeof ImpressionEmbroideryRoute
+  ImpressionSilkscreenRoute: typeof ImpressionSilkscreenRoute
   ImpressionIndexRoute: typeof ImpressionIndexRoute
 }
 
 const ImpressionRouteChildren: ImpressionRouteChildren = {
   ImpressionEmbroideryRoute: ImpressionEmbroideryRoute,
+  ImpressionSilkscreenRoute: ImpressionSilkscreenRoute,
   ImpressionIndexRoute: ImpressionIndexRoute,
 }
 
