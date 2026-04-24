@@ -664,6 +664,113 @@ function Field({
   );
 }
 
+/* ----------------------------------- Map ---------------------------------- */
+
+function MapSection() {
+  // Saint-Jérôme HQ — 247 Bd Maisonneuve
+  const lat = 45.7747;
+  const lng = -74.0036;
+  const bbox = `${lng - 0.006},${lat - 0.003},${lng + 0.006},${lat + 0.003}`;
+  const osmEmbed = `https://www.openstreetmap.org/export/embed.html?bbox=${bbox}&layer=mapnik&marker=${lat},${lng}`;
+  const directions = `https://www.google.com/maps/dir/?api=1&destination=${lat},${lng}`;
+  const viewLarger = `https://www.openstreetmap.org/?mlat=${lat}&mlon=${lng}#map=17/${lat}/${lng}`;
+
+  return (
+    <section className="relative bg-cream pb-24">
+      <div className="mx-auto max-w-[1400px] px-6">
+        <div className="grid items-stretch gap-px overflow-hidden rounded-[32px] border border-ink/10 bg-ink/10 shadow-soft lg:grid-cols-[1fr_1.6fr]">
+          {/* Info card */}
+          <div className="relative flex flex-col justify-between bg-ink p-10 text-cream lg:p-12">
+            <div
+              aria-hidden
+              className="pointer-events-none absolute -top-24 -left-16 h-72 w-72 rounded-full opacity-50 blur-3xl"
+              style={{ background: "var(--gradient-radial-lime)" }}
+            />
+            <div className="relative">
+              <span className="inline-flex items-center gap-2 rounded-full border border-cream/15 bg-cream/[0.04] px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.22em] text-cream/70">
+                <MapPin className="h-3 w-3 text-lime" />
+                Visit the workshop
+              </span>
+
+              <h2 className="mt-6 font-display text-4xl font-bold leading-[1.05] tracking-tight lg:text-5xl">
+                Jordal —{" "}
+                <em className="font-script font-normal not-italic text-lime">
+                  Apparel
+                </em>{" "}
+                & promotional items
+              </h2>
+
+              <p className="mt-6 text-base leading-relaxed text-cream/70">
+                247 Bd Maisonneuve
+                <br />
+                Saint-Jérôme, QC J5L 0A1
+                <br />
+                Canada
+              </p>
+
+              <div className="mt-7 flex items-center gap-3">
+                <span className="inline-flex items-center gap-1 rounded-full bg-lime px-3 py-1.5 text-sm font-bold text-ink">
+                  <Star className="h-3.5 w-3.5 fill-ink" strokeWidth={0} />
+                  4.9
+                </span>
+                <div className="flex items-center gap-0.5 text-lime">
+                  {Array.from({ length: 5 }).map((_, i) => (
+                    <Star
+                      key={i}
+                      className="h-4 w-4 fill-lime"
+                      strokeWidth={0}
+                    />
+                  ))}
+                </div>
+                <span className="text-xs uppercase tracking-[0.2em] text-cream/50">
+                  Google reviews
+                </span>
+              </div>
+            </div>
+
+            <div className="relative mt-10 flex flex-col gap-3 sm:flex-row">
+              <a
+                href={directions}
+                target="_blank"
+                rel="noreferrer"
+                className="group inline-flex flex-1 items-center justify-center gap-2 rounded-full bg-lime px-5 py-3.5 text-sm font-semibold text-ink transition-shadow hover:shadow-glow"
+              >
+                <Navigation className="h-4 w-4" />
+                Get directions
+                <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+              </a>
+              <a
+                href={viewLarger}
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex flex-1 items-center justify-center gap-2 rounded-full border border-cream/20 px-5 py-3.5 text-sm font-semibold text-cream transition-colors hover:border-lime hover:text-lime"
+              >
+                Open in maps
+                <ExternalLink className="h-4 w-4" />
+              </a>
+            </div>
+          </div>
+
+          {/* Map */}
+          <div className="relative min-h-[420px] bg-stone lg:min-h-[520px]">
+            <iframe
+              title="Jordal — Saint-Jérôme location"
+              src={osmEmbed}
+              loading="lazy"
+              className="absolute inset-0 h-full w-full grayscale-[20%] contrast-[0.95]"
+              style={{ border: 0 }}
+            />
+            <div className="pointer-events-none absolute left-6 top-6 inline-flex items-center gap-2 rounded-full bg-ink/85 px-3 py-1.5 text-[11px] font-bold uppercase tracking-[0.22em] text-cream backdrop-blur">
+              <span className="h-1.5 w-1.5 rounded-full bg-lime animate-pulse" />
+              Saint-Jérôme HQ
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
 /* --------------------------- Quick contact strip -------------------------- */
 
 function QuickContactStrip() {
