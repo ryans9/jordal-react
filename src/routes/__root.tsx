@@ -32,14 +32,14 @@ export const Route = createRootRoute({
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Jordal, Vêtements & objets promotionnels" },
+      { title: "Test" },
       {
         name: "description",
         content:
           "Atelier québécois de vêtements corporatifs, broderie, sérigraphie, transfert DTF et articles promotionnels haut de gamme depuis plus de 20 ans.",
       },
       { name: "author", content: "Jordal" },
-      { property: "og:title", content: "Jordal, Vêtements & objets promotionnels" },
+      { property: "og:title", content: "Test" },
       {
         property: "og:description",
         content:
@@ -47,6 +47,12 @@ export const Route = createRootRoute({
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
+      { name: "twitter:title", content: "Test" },
+      { name: "description", content: "Creative Canvas reskins and visually experiments with existing websites, focusing on modern design and user experience." },
+      { property: "og:description", content: "Creative Canvas reskins and visually experiments with existing websites, focusing on modern design and user experience." },
+      { name: "twitter:description", content: "Creative Canvas reskins and visually experiments with existing websites, focusing on modern design and user experience." },
+      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/58f89f16-b6fb-438b-b8b0-ee2a2fb7ae3a/id-preview-e235891c--9f73bbd8-b126-4139-9513-d9fa03276c3c.lovable.app-1777059402639.png" },
+      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/58f89f16-b6fb-438b-b8b0-ee2a2fb7ae3a/id-preview-e235891c--9f73bbd8-b126-4139-9513-d9fa03276c3c.lovable.app-1777059402639.png" },
     ],
     links: [
       { rel: "stylesheet", href: appCss },
