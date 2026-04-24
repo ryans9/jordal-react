@@ -329,6 +329,9 @@ function Index() {
         </div>
       </section>
 
+      {/* Request callback */}
+      <CallbackSection />
+
       {/* Stats strip */}
       <section className="bg-cream">
         <div className="mx-auto max-w-[1400px] px-6 pt-16 pb-20">
