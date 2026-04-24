@@ -21,6 +21,17 @@ const NAV: NavItem[] = [
   { label: "Catalog", href: "/catalogue", badge: "New" },
   { label: "Products", href: "/produits" },
   {
+    label: "Services",
+    href: "/services",
+    children: [
+      { label: "Promotional Clothing", href: "/services/promotional-clothing", description: "Branded apparel programs" },
+      { label: "Promotional Items", href: "/services/promotional-items", description: "Custom giveaways & gifts" },
+      { label: "Silkscreen Printing", href: "/impression/silkscreen", description: "Bold colors, high volume" },
+      { label: "Embroidery", href: "/impression/embroidery", description: "Stitched, premium finish" },
+      { label: "DTF Transfer", href: "/impression/dtf", description: "Photographic, any fabric" },
+    ],
+  },
+  {
     label: "Printing",
     href: "/impression",
     children: [
