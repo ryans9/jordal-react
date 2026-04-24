@@ -1,5 +1,9 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowUpRight, Sparkles } from "lucide-react";
+import silkscreenImg from "@/assets/print-silkscreen.jpg";
+import embroideryImg from "@/assets/print-embroidery.jpg";
+import dtfImg from "@/assets/print-dtf.jpg";
+import promoImg from "@/assets/print-promo.jpg";
 
 export const Route = createFileRoute("/")({
   component: Index,
@@ -78,6 +82,53 @@ function Index() {
               </div>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* Promotional clothing methods strip */}
+      <section className="bg-ink">
+        <div className="grid w-full grid-cols-1 md:grid-cols-5">
+          {/* Label panel */}
+          <div className="flex items-center bg-ink px-8 py-12 md:py-16 lg:px-12">
+            <div>
+              <h2 className="font-display text-3xl font-bold leading-[1.05] tracking-tight text-lime sm:text-4xl lg:text-[2.75rem]">
+                Vêtements
+                <br />
+                promotionnels
+              </h2>
+              <div className="mt-5 h-px w-16 bg-cream/40" />
+            </div>
+          </div>
+
+          {/* 4 method tiles */}
+          {[
+            { label: "Sérigraphie", img: silkscreenImg, to: "/impression/silkscreen" },
+            { label: "Broderie", img: embroideryImg, to: "/impression/embroidery" },
+            { label: "Transfert DTF", img: dtfImg, to: "/impression/dtf" },
+            { label: "Objets promotionnels", img: promoImg, to: "/impression" },
+          ].map((m) => (
+            <Link
+              key={m.label}
+              to={m.to}
+              className="group relative block aspect-[3/4] overflow-hidden md:aspect-auto md:h-[360px] lg:h-[420px]"
+            >
+              <img
+                src={m.img}
+                alt={m.label}
+                className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+              />
+              <div
+                aria-hidden
+                className="absolute inset-0 bg-gradient-to-t from-ink/85 via-ink/30 to-transparent transition-opacity group-hover:from-ink/70"
+              />
+              <div className="absolute inset-x-0 bottom-0 flex items-end justify-between gap-3 p-6 lg:p-7">
+                <h3 className="font-display text-2xl font-bold leading-tight tracking-tight text-cream lg:text-[1.75rem]">
+                  {m.label}
+                </h3>
+                <ArrowUpRight className="h-5 w-5 shrink-0 text-lime opacity-0 transition-all group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-hover:opacity-100" />
+              </div>
+            </Link>
+          ))}
         </div>
       </section>
 
