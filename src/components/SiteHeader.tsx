@@ -1,19 +1,35 @@
 import { useEffect, useState } from "react";
 
-import { Menu, X, ArrowUpRight, Phone } from "lucide-react";
+import { Menu, X, ArrowUpRight, Phone, ChevronDown } from "lucide-react";
 import { JordalLogo } from "./JordalLogo";
+
+type NavChild = {
+  label: string;
+  href: string;
+  description?: string;
+};
 
 type NavItem = {
   label: string;
   href: string;
   badge?: string;
+  children?: NavChild[];
 };
 
 const NAV: NavItem[] = [
   { label: "Reps", href: "/representants" },
   { label: "Catalog", href: "/catalogue", badge: "New" },
   { label: "Products", href: "/produits" },
-  { label: "Printing", href: "/impression" },
+  {
+    label: "Printing",
+    href: "/impression",
+    children: [
+      { label: "Overview", href: "/impression", description: "All printing methods" },
+      { label: "Embroidery", href: "/impression/embroidery", description: "Stitched, premium finish" },
+      { label: "Silkscreen", href: "/impression/silkscreen", description: "Bold colors, high volume" },
+      { label: "DTF Transfer", href: "/impression/dtf", description: "Photographic, any fabric" },
+    ],
+  },
   { label: "Contact", href: "/contact" },
 ];
 
