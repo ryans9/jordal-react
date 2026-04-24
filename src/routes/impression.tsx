@@ -314,7 +314,7 @@ function MethodsNav() {
     <div className="sticky top-16 z-30 -mt-4 border-y border-ink/10 bg-cream/85 backdrop-blur-xl">
       <div className="mx-auto flex max-w-[1400px] items-center gap-2 overflow-x-auto px-6 py-3">
         <span className="hidden whitespace-nowrap text-[10px] font-bold uppercase tracking-[0.22em] text-ink/40 md:block">
-          Jump to —
+          Jump to
         </span>
         {METHODS.map((m) => (
           <a
@@ -425,7 +425,7 @@ function MethodSection({ method, reversed }: { method: Method; reversed: boolean
             {/* Best for chips */}
             <div className="mt-6 flex flex-wrap gap-2">
               <span className="text-[10px] font-bold uppercase tracking-[0.22em] text-ink/40 self-center">
-                Best for —
+                Best for
               </span>
               {method.bestFor.map((b) => (
                 <span
@@ -588,7 +588,7 @@ function ComparisonTable() {
           </div>
           <p className="max-w-md text-sm leading-relaxed text-ink/65">
             A side-by-side reference. Not sure which technique fits? Send us
-            your project — we recommend the right approach within a day.
+            your project and we recommend the right approach within a day.
           </p>
         </div>
 
