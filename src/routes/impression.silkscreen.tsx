@@ -412,12 +412,12 @@ function InkTypes() {
               key={type.name}
               className="group relative overflow-hidden rounded-3xl border border-ink/10 bg-card p-8 transition-all hover:-translate-y-1 hover:border-lime hover:shadow-soft lg:p-10"
             >
-              <div className="mb-6 flex items-center gap-4">
+              {/* <div className="mb-6 flex items-center gap-4">
                 <span className="font-display text-2xl font-bold text-ink/30">
                   0{i + 1}
                 </span>
                 <span className="h-px flex-1 bg-ink/10 transition-colors group-hover:bg-lime" />
-              </div>
+              </div> */}
               <h3 className="font-display text-2xl font-semibold tracking-tight lg:text-3xl">
                 {type.name}
               </h3>

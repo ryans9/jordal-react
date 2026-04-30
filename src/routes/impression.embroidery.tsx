@@ -374,7 +374,7 @@ function Types() {
   return (
     <section className="relative bg-cream py-24 lg:py-32">
       <div className="mx-auto max-w-[1400px] px-6">
-        <div className="mb-16 flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
+        <div className="mb-16">
           <div className="max-w-2xl">
             <p className="text-[11px] font-medium uppercase tracking-[0.28em] text-ink/50">
               The styles
@@ -385,7 +385,7 @@ function Types() {
               your <span className="italic">signature.</span>
             </h2>
           </div>
-          <p className="max-w-md text-base leading-relaxed text-ink/65">
+          <p className="max-w-md mt-8 text-base leading-relaxed text-ink/65">
             We choose the right finish based on the fabric, the placement, and
             the visual impact you want. Below, the techniques we run most often
             in our cap and apparel programs.
@@ -398,12 +398,12 @@ function Types() {
               key={type.name}
               className="group relative overflow-hidden rounded-3xl border border-ink/10 bg-card p-8 transition-all hover:-translate-y-1 hover:border-lime hover:shadow-soft lg:p-10"
             >
-              <div className="mb-6 flex items-center gap-4">
+              {/* <div className="mb-6 flex items-center gap-4">
                 <span className="font-display text-2xl font-bold text-ink/30">
                   0{i + 1}
                 </span>
                 <span className="h-px flex-1 bg-ink/10 transition-colors group-hover:bg-lime" />
-              </div>
+              </div> */}
               <h3 className="font-display text-2xl font-semibold tracking-tight lg:text-3xl">
                 {type.name}
               </h3>

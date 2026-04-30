@@ -297,9 +297,9 @@ function PromotionalClothingPage() {
               className="group relative overflow-hidden rounded-3xl border border-ink/10 bg-white p-7 transition-all hover:-translate-y-1 hover:border-lime/40 hover:shadow-soft"
             >
               <div className="flex items-start justify-between">
-                <span className="font-display text-5xl font-bold leading-none text-ink/10 transition-colors group-hover:text-lime/60">
+                {/* <span className="font-display text-5xl font-bold leading-none text-ink/10 transition-colors group-hover:text-lime/60">
                   {p.n}
-                </span>
+                </span> */}
                 <div className="inline-flex h-11 w-11 items-center justify-center rounded-xl bg-ink text-lime">
                   <p.icon className="h-5 w-5" />
                 </div>
