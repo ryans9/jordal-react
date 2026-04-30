@@ -71,7 +71,7 @@ export function PartnersMarquee() {
               className="flex shrink-0 items-center gap-12 px-8 lg:gap-16 lg:px-12"
             >
               <span
-                className={`whitespace-nowrap text-3xl font-bold uppercase text-cream/45 transition-colors hover:text-cream lg:text-4xl ${p.style}`}
+                className={`whitespace-nowrap text-3xl font-bold uppercase text-cream transition-colors hover:text-cream lg:text-4xl ${p.style}`}
               >
                 {p.name}
               </span>
