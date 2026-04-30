@@ -267,7 +267,7 @@ function SidePanel() {
             </a>
           </div>
 
-          <ul className="mt-10 space-y-3 text-sm">
+          <ul className="mt-10 space-y-3 text-sm lg:mt-auto lg:pt-10">
             {[
               "Free quote, no commitment",
               "Samples available on request",
