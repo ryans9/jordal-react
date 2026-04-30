@@ -94,15 +94,24 @@ function Index() {
       {/* Promotional clothing methods strip */}
       <section className="bg-ink">
         <div className="grid w-full grid-cols-1 md:grid-cols-5">
-          {/* Label panel */}
-          <div className="flex items-center bg-ink px-8 py-12 md:py-16 lg:px-12">
-            <div>
-              <h2 className="font-display text-3xl font-bold leading-[1.05] tracking-tight text-lime sm:text-4xl lg:text-[2.75rem]">
+          {/* Label panel, styled to match the 4 tiles */}
+          <div className="group relative block aspect-[3/4] overflow-hidden bg-ink md:aspect-auto md:h-[360px] lg:h-[420px]">
+            {/* Subtle lime radial glow */}
+            <div
+              aria-hidden
+              className="pointer-events-none absolute -left-16 -top-16 h-64 w-64 rounded-full opacity-40 blur-3xl"
+              style={{ background: "var(--gradient-radial-lime)" }}
+            />
+            <div
+              aria-hidden
+              className="absolute inset-0 bg-gradient-to-t from-ink/85 via-ink/30 to-transparent"
+            />
+            <div className="absolute inset-x-0 bottom-0 flex items-end justify-between gap-3 p-6 lg:p-7">
+              <h3 className="font-display text-2xl font-bold leading-tight tracking-tight text-lime lg:text-[1.75rem]">
                 Vêtements
                 <br />
                 promotionnels
-              </h2>
-              <div className="mt-5 h-px w-16 bg-cream/40" />
+              </h3>
             </div>
           </div>
 
