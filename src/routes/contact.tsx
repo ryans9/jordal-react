@@ -170,7 +170,7 @@ function ContactHero() {
           Let's talk about your project
         </span>
 
-        <h1 className="mt-6 max-w-5xl font-display text-[clamp(2.5rem,7vw,6.5rem)] font-bold leading-[0.9] tracking-tight text-balance">
+        <h1 className="mt-6 max-w-5xl font-display text-[clamp(2rem,5.5vw,5rem)] font-bold leading-[0.9] tracking-tight text-balance">
           Request a{" "}
           <em className="font-script font-normal not-italic text-lime">
             callback

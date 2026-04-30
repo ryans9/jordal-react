@@ -324,7 +324,7 @@ function Hero({
               </span>
             </div>
 
-            <h1 className="font-display text-[clamp(3rem,9vw,7.5rem)] font-bold leading-[0.92] tracking-[-0.035em] text-balance">
+            <h1 className="font-display text-[clamp(2.5rem,7vw,5.75rem)] font-bold leading-[0.92] tracking-[-0.035em] text-balance">
               People you can
               <br />
               <span className="italic text-lime">actually call.</span>

@@ -148,7 +148,7 @@ function PromotionalClothingPage() {
                 <Sparkles className="h-3 w-3" />
                 Service · Promotional Clothing
               </div>
-              <h1 className="mt-6 font-display text-[clamp(2.5rem,6vw,5.25rem)] font-bold leading-[0.95] tracking-tight">
+              <h1 className="mt-6 font-display text-[clamp(2rem,4.5vw,4rem)] font-bold leading-[0.95] tracking-tight">
                 Apparel that <span className="italic text-lime">represents</span> your brand , 
                 stitch by stitch.
               </h1>
