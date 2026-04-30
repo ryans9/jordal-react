@@ -234,9 +234,9 @@ function ContactBody() {
 
 function SidePanel() {
   return (
-    <aside className="lg:sticky lg:top-32 lg:self-start">
-      <div className="rounded-3xl border border-ink/10 bg-cream p-1.5 shadow-soft">
-        <div className="rounded-[20px] bg-gradient-to-br from-stone to-cream p-8 lg:p-10">
+    <aside className="h-full">
+      <div className="flex h-full flex-col rounded-3xl border border-ink/10 bg-cream p-1.5 shadow-soft">
+        <div className="flex h-full flex-col rounded-[20px] bg-gradient-to-br from-stone to-cream p-8 lg:p-10">
           <div className="flex items-center gap-2 text-[11px] font-bold uppercase tracking-[0.22em] text-ink/55">
             <Clock className="h-3.5 w-3.5 text-lime" />
             Business hours
@@ -267,7 +267,7 @@ function SidePanel() {
             </a>
           </div>
 
-          <ul className="mt-10 space-y-3 text-sm">
+          <ul className="mt-10 space-y-3 text-sm lg:mt-auto lg:pt-10">
             {[
               "Free quote, no commitment",
               "Samples available on request",
