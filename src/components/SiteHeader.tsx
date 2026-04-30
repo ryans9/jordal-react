@@ -25,7 +25,7 @@ export function SiteHeader() {
     children?: { label: string; href: string; description?: string }[];
   }[] = [
     { label: t("header.nav.reps"), href: "/representants" },
-    { label: t("header.nav.catalog"), href: "/catalogue", badge: t("header.nav.new") },
+    { label: t("header.nav.catalog"), href: "https://www.promoplace.com/jordal", badge: t("header.nav.new") },
     {
       label: t("header.nav.products"),
       href: "/produits",
