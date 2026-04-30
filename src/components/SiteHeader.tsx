@@ -1,53 +1,15 @@
 import { useEffect, useState } from "react";
+import { useTranslation } from "react-i18next";
 
 import { Menu, X, ArrowUpRight, Phone, ChevronDown } from "lucide-react";
 import { JordalLogo } from "./JordalLogo";
-
-type NavChild = {
-  label: string;
-  href: string;
-  description?: string;
-};
-
-type NavItem = {
-  label: string;
-  href: string;
-  badge?: string;
-  children?: NavChild[];
-};
-
-const NAV: NavItem[] = [
-  { label: "Reps", href: "/representants" },
-  { label: "Catalog", href: "/catalogue", badge: "New" },
-  { label: "Products", href: "/produits" },
-  {
-    label: "Services",
-    href: "/services",
-    children: [
-      { label: "Promotional Clothing", href: "/services/promotional-clothing", description: "Branded apparel programs" },
-      { label: "Promotional Items", href: "/services/promotional-items", description: "Custom giveaways & gifts" },
-      { label: "Silkscreen Printing", href: "/impression/silkscreen", description: "Bold colors, high volume" },
-      { label: "Embroidery", href: "/impression/embroidery", description: "Stitched, premium finish" },
-      { label: "DTF Transfer", href: "/impression/dtf", description: "Photographic, any fabric" },
-    ],
-  },
-  {
-    label: "Printing",
-    href: "/impression",
-    children: [
-      { label: "Overview", href: "/impression", description: "All printing methods" },
-      { label: "Embroidery", href: "/impression/embroidery", description: "Stitched, premium finish" },
-      { label: "Silkscreen", href: "/impression/silkscreen", description: "Bold colors, high volume" },
-      { label: "DTF Transfer", href: "/impression/dtf", description: "Photographic, any fabric" },
-    ],
-  },
-  { label: "Contact", href: "/contact" },
-];
+import { setLanguage } from "@/i18n";
 
 export function SiteHeader() {
+  const { t, i18n } = useTranslation();
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
-  const [lang, setLang] = useState<"FR" | "EN">("FR");
+  const lang = (i18n.language?.startsWith("en") ? "EN" : "FR") as "FR" | "EN";
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 8);
@@ -56,15 +18,47 @@ export function SiteHeader() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+  const NAV: {
+    label: string;
+    href: string;
+    badge?: string;
+    children?: { label: string; href: string; description?: string }[];
+  }[] = [
+    { label: t("header.nav.reps"), href: "/representants" },
+    { label: t("header.nav.catalog"), href: "/catalogue", badge: t("header.nav.new") },
+    { label: t("header.nav.products"), href: "/produits" },
+    {
+      label: t("header.nav.services"),
+      href: "/services",
+      children: [
+        { label: t("header.services.promoClothing"), href: "/services/promotional-clothing", description: t("header.services.promoClothingDesc") },
+        { label: t("header.services.promoItems"), href: "/services/promotional-items", description: t("header.services.promoItemsDesc") },
+        { label: t("header.services.silkscreen"), href: "/impression/silkscreen", description: t("header.services.silkscreenDesc") },
+        { label: t("header.services.embroidery"), href: "/impression/embroidery", description: t("header.services.embroideryDesc") },
+        { label: t("header.services.dtf"), href: "/impression/dtf", description: t("header.services.dtfDesc") },
+      ],
+    },
+    {
+      label: t("header.nav.printing"),
+      href: "/impression",
+      children: [
+        { label: t("header.printing.overview"), href: "/impression", description: t("header.printing.overviewDesc") },
+        { label: t("header.printing.embroidery"), href: "/impression/embroidery", description: t("header.printing.embroideryDesc") },
+        { label: t("header.printing.silkscreen"), href: "/impression/silkscreen", description: t("header.printing.silkscreenDesc") },
+        { label: t("header.printing.dtf"), href: "/impression/dtf", description: t("header.printing.dtfDesc") },
+      ],
+    },
+    { label: t("header.nav.contact"), href: "/contact" },
+  ];
+
   return (
     <>
-      {/* Top utility ribbon */}
       <div className="hidden border-b border-ink/10 bg-ink text-cream md:block">
         <div className="mx-auto flex h-9 max-w-[1400px] items-center justify-between px-6 text-[11px] font-medium uppercase tracking-[0.18em]">
           <div className="flex items-center gap-6 text-cream/70">
             <span className="flex items-center gap-2">
               <span className="inline-block h-1.5 w-1.5 rounded-full bg-lime animate-pulse" />
-              In workshop · Saint-Jérôme · Sherbrooke
+              {t("header.statusLine")}
             </span>
           </div>
           <div className="flex items-center gap-6 text-cream/80">
@@ -78,7 +72,6 @@ export function SiteHeader() {
         </div>
       </div>
 
-      {/* Main bar */}
       <header
         className={[
           "sticky top-0 z-50 transition-all duration-300",
@@ -88,11 +81,10 @@ export function SiteHeader() {
         ].join(" ")}
       >
         <div className="mx-auto flex h-20 max-w-[1400px] items-center justify-between gap-6 px-6 lg:h-24">
-          <a href="/" className="shrink-0" aria-label="Jordal, Home">
+          <a href="/" className="shrink-0" aria-label="Jordal">
             <JordalLogo className="text-[14px] lg:text-[16px]" />
           </a>
 
-          {/* Desktop nav */}
           <nav className="hidden items-center gap-1 lg:flex">
             {NAV.map((item) => (
               <div key={item.href} className="group/nav relative">
@@ -143,12 +135,11 @@ export function SiteHeader() {
           </nav>
 
           <div className="flex items-center gap-3">
-            {/* Language toggle */}
             <div className="hidden items-center rounded-full border border-ink/15 bg-cream p-0.5 text-xs font-semibold sm:flex">
               {(["FR", "EN"] as const).map((l) => (
                 <button
                   key={l}
-                  onClick={() => setLang(l)}
+                  onClick={() => setLanguage(l.toLowerCase() as "fr" | "en")}
                   className={[
                     "rounded-full px-3 py-1.5 transition-all",
                     lang === l ? "bg-ink text-cream" : "text-ink/60 hover:text-ink",
@@ -159,27 +150,24 @@ export function SiteHeader() {
               ))}
             </div>
 
-            {/* CTA */}
             <a
               href="/contact"
               className="group hidden items-center gap-2 rounded-full bg-ink px-5 py-3 text-sm font-semibold text-cream transition-all hover:bg-lime hover:text-ink hover:shadow-glow md:inline-flex"
             >
-              Get a quote
+              {t("common.getQuote")}
               <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
             </a>
 
-            {/* Mobile toggle */}
             <button
               onClick={() => setOpen((s) => !s)}
               className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-ink/15 text-ink lg:hidden"
-              aria-label="Menu"
+              aria-label={t("header.menu")}
             >
               {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
             </button>
           </div>
         </div>
 
-        {/* Mobile drawer */}
         {open && (
           <div className="border-t border-ink/10 bg-cream lg:hidden">
             <nav className="mx-auto flex max-w-[1400px] flex-col gap-1 px-6 py-6">
@@ -209,12 +197,26 @@ export function SiteHeader() {
                   )}
                 </div>
               ))}
+              <div className="mt-3 flex items-center justify-center gap-2 rounded-full border border-ink/15 p-1">
+                {(["FR", "EN"] as const).map((l) => (
+                  <button
+                    key={l}
+                    onClick={() => setLanguage(l.toLowerCase() as "fr" | "en")}
+                    className={[
+                      "flex-1 rounded-full px-3 py-2 text-xs font-semibold transition-all",
+                      lang === l ? "bg-ink text-cream" : "text-ink/60",
+                    ].join(" ")}
+                  >
+                    {l}
+                  </button>
+                ))}
+              </div>
               <a
                 href="/contact"
                 onClick={() => setOpen(false)}
                 className="mt-3 flex items-center justify-center gap-2 rounded-full bg-ink px-5 py-4 text-sm font-semibold text-cream"
               >
-                Request a quote
+                {t("header.requestQuoteMobile")}
                 <ArrowUpRight className="h-4 w-4" />
               </a>
             </nav>
