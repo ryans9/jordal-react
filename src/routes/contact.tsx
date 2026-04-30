@@ -165,7 +165,7 @@ function ContactHero() {
       />
 
       <div className="relative mx-auto max-w-[1400px] px-6 pt-16 pb-20 lg:pt-20 lg:pb-24">
-        <span className="inline-flex items-center gap-2 rounded-full border border-cream/15 bg-cream/[0.04] px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.22em] text-cream/70 backdrop-blur">
+        <span className="inline-flex items-center gap-2 rounded-full border border-cream/15 bg-cream/[0.04] px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.22em] text-cream backdrop-blur">
           <Sparkles className="h-3 w-3 text-lime" />
           Let's talk about your project
         </span>
@@ -179,7 +179,7 @@ function ContactHero() {
           We'll handle the rest.
         </h1>
 
-        <p className="mt-6 max-w-xl text-base leading-relaxed text-cream/65 lg:text-lg">
+        <p className="mt-6 max-w-xl text-base leading-relaxed text-cream lg:text-lg">
           Three workshops in Quebec. Reply within{" "}
           <span className="text-cream">24 business hours</span>.
         </p>
@@ -190,7 +190,7 @@ function ContactHero() {
               <Phone className="h-4 w-4" />
             </span>
             <span>
-              <span className="block text-[10px] font-semibold uppercase tracking-[0.22em] text-cream/40">
+              <span className="block text-[10px] font-semibold uppercase tracking-[0.22em] text-cream">
                 Call us
               </span>
               <span className="font-display text-lg font-semibold">450 419-8855</span>
@@ -204,7 +204,7 @@ function ContactHero() {
               <Mail className="h-4 w-4" />
             </span>
             <span>
-              <span className="block text-[10px] font-semibold uppercase tracking-[0.22em] text-cream/40">
+              <span className="block text-[10px] font-semibold uppercase tracking-[0.22em] text-cream">
                 Email us
               </span>
               <span className="font-display text-lg font-semibold">carl@jordal.ca</span>
@@ -253,7 +253,7 @@ function SidePanel() {
             <p className="font-display text-2xl font-semibold leading-tight tracking-tight">
               Need it urgently?
             </p>
-            <p className="mt-2 text-sm text-cream/65">
+            <p className="mt-2 text-sm text-cream">
               For tight deadlines, mention it in your message, a representative
               will call you back as a priority.
             </p>
@@ -369,7 +369,7 @@ function FormCard() {
           <h3 className="mt-6 font-display text-4xl font-bold tracking-tight">
             Got it, we're on it.
           </h3>
-          <p className="mt-4 max-w-md text-cream/70">
+          <p className="mt-4 max-w-md text-cream">
             Thanks {values.name.split(" ")[0]}! Your request is in the hands of
             the Jordal team. You'll get a personalized reply within 24 business
             hours.
@@ -687,7 +687,7 @@ function MapSection() {
               style={{ background: "var(--gradient-radial-lime)" }}
             />
             <div className="relative">
-              <span className="inline-flex items-center gap-2 rounded-full border border-cream/15 bg-cream/[0.04] px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.22em] text-cream/70">
+              <span className="inline-flex items-center gap-2 rounded-full border border-cream/15 bg-cream/[0.04] px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.22em] text-cream">
                 <MapPin className="h-3 w-3 text-lime" />
                 Visit the workshop
               </span>
@@ -700,7 +700,7 @@ function MapSection() {
                 & promotional items
               </h2>
 
-              <p className="mt-6 text-base leading-relaxed text-cream/70">
+              <p className="mt-6 text-base leading-relaxed text-cream">
                 247 Bd Maisonneuve
                 <br />
                 Saint-Jérôme, QC J5L 0A1
@@ -722,7 +722,7 @@ function MapSection() {
                     />
                   ))}
                 </div>
-                <span className="text-xs uppercase tracking-[0.2em] text-cream/50">
+                <span className="text-xs uppercase tracking-[0.2em] text-cream">
                   Google reviews
                 </span>
               </div>
@@ -804,7 +804,7 @@ function QuickContactStrip() {
                   "inline-flex w-fit items-center gap-2 rounded-full border px-3 py-1 text-[10px] font-bold uppercase tracking-[0.22em]",
                   loc.accent === "lime"
                     ? "border-ink/25 text-ink/80"
-                    : "border-cream/20 text-cream/70",
+                    : "border-cream/20 text-cream",
                 ].join(" ")}
               >
                 <MapPin className="h-3 w-3" />
@@ -817,7 +817,7 @@ function QuickContactStrip() {
               <p
                 className={[
                   "mt-3 text-sm leading-relaxed",
-                  loc.accent === "lime" ? "text-ink/70" : "text-cream/65",
+                  loc.accent === "lime" ? "text-ink/70" : "text-cream",
                 ].join(" ")}
               >
                 {loc.address}

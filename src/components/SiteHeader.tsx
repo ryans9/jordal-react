@@ -62,18 +62,18 @@ export function SiteHeader() {
     <>
       <div className="hidden border-b border-ink/10 bg-ink text-cream md:block">
         <div className="mx-auto flex h-9 max-w-[1400px] items-center justify-between px-6 text-[11px] font-medium uppercase tracking-[0.18em]">
-          <div className="flex items-center gap-6 text-cream/70">
+          <div className="flex items-center gap-6 text-cream">
             <span className="flex items-center gap-2">
               <span className="inline-block h-1.5 w-1.5 rounded-full bg-lime animate-pulse" />
               {t("header.statusLine")}
             </span>
           </div>
-          <div className="flex items-center gap-6 text-cream/80">
+          <div className="flex items-center gap-6 text-cream">
             <a href="tel:4504198855" className="flex items-center gap-2 underline-grow">
               <Phone className="h-3 w-3" />
               450 419-8855
             </a>
-            <span className="text-cream/30">/</span>
+            <span className="text-cream">/</span>
             <a href="mailto:carl@jordal.ca" className="underline-grow">carl@jordal.ca</a>
           </div>
         </div>

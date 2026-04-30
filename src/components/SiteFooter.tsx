@@ -81,7 +81,7 @@ export function SiteFooter() {
                 further than ever.
               </em>
             </h2>
-            <p className="mt-5 max-w-lg text-cream/60">
+            <p className="mt-5 max-w-lg text-cream">
               Ideas, new products, and corporate inspiration, straight to your inbox, once a month.
             </p>
           </div>
@@ -93,14 +93,14 @@ export function SiteFooter() {
             }}
             className="group relative flex flex-col gap-3 rounded-3xl border border-cream/10 bg-cream/[0.04] p-3 backdrop-blur-sm sm:flex-row sm:items-center sm:p-2"
           >
-            <Mail className="ml-3 hidden h-5 w-5 shrink-0 text-cream/40 sm:block" />
+            <Mail className="ml-3 hidden h-5 w-5 shrink-0 text-cream sm:block" />
             <input
               type="email"
               required
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               placeholder="your@email.com"
-              className="flex-1 bg-transparent px-4 py-3 text-base text-cream placeholder:text-cream/30 focus:outline-none"
+              className="flex-1 bg-transparent px-4 py-3 text-base text-cream placeholder:text-cream focus:outline-none"
             />
             <button
               type="submit"
@@ -119,7 +119,7 @@ export function SiteFooter() {
           {[...MARQUEE, ...MARQUEE].map((item, i) => (
             <span
               key={i}
-              className="flex items-center gap-12 font-display text-2xl font-medium text-cream/40 md:text-3xl"
+              className="flex items-center gap-12 font-display text-2xl font-medium text-cream md:text-3xl"
             >
               {item}
               <span className="h-2 w-2 rotate-45 bg-lime" />
@@ -136,7 +136,7 @@ export function SiteFooter() {
             <a href="/" aria-label="Jordal, Home">
               <JordalLogo variant="light" className="text-[18px]" />
             </a>
-            <p className="mt-6 max-w-sm text-sm leading-relaxed text-cream/60">
+            <p className="mt-6 max-w-sm text-sm leading-relaxed text-cream">
               A Quebec workshop specializing in corporate apparel, embroidery,
               screen printing, and premium promotional items for over two decades.
             </p>
@@ -172,20 +172,20 @@ export function SiteFooter() {
             </h4>
             <dl className="mt-5 space-y-3 text-sm">
               <div className="flex items-baseline justify-between border-b border-cream/10 pb-3">
-                <dt className="text-cream/60">Monday – Thursday</dt>
+                <dt className="text-cream">Monday – Thursday</dt>
                 <dd className="font-display text-base font-semibold tabular-nums">
                   7:00 AM to 4:00 PM
                 </dd>
               </div>
               <div className="flex items-baseline justify-between border-b border-cream/10 pb-3">
-                <dt className="text-cream/60">Friday</dt>
+                <dt className="text-cream">Friday</dt>
                 <dd className="font-display text-base font-semibold tabular-nums">
                   7:00 AM to 1:00 PM
                 </dd>
               </div>
               <div className="flex items-baseline justify-between">
-                <dt className="text-cream/60">Saturday – Sunday</dt>
-                <dd className="font-display text-base font-semibold text-cream/40">
+                <dt className="text-cream">Saturday – Sunday</dt>
+                <dd className="font-display text-base font-semibold text-cream">
                   Closed
                 </dd>
               </div>
@@ -210,12 +210,12 @@ export function SiteFooter() {
                 {loc.title}
               </div>
               <h5 className="mt-3 font-display text-2xl font-bold tracking-tight">{loc.city}</h5>
-              <p className="mt-3 text-sm leading-relaxed text-cream/60">{loc.address}</p>
+              <p className="mt-3 text-sm leading-relaxed text-cream">{loc.address}</p>
               <div className="mt-5 space-y-2 text-sm">
-                <a href={`mailto:${loc.email}`} className="flex items-center gap-2 text-cream/80 transition-colors hover:text-lime">
+                <a href={`mailto:${loc.email}`} className="flex items-center gap-2 text-cream transition-colors hover:text-lime">
                   <Mail className="h-3.5 w-3.5" /> {loc.email}
                 </a>
-                <a href={`tel:${loc.phone}`} className="flex items-center gap-2 text-cream/80 transition-colors hover:text-lime">
+                <a href={`tel:${loc.phone}`} className="flex items-center gap-2 text-cream transition-colors hover:text-lime">
                   <Phone className="h-3.5 w-3.5" /> {loc.phone}
                 </a>
               </div>
@@ -224,7 +224,7 @@ export function SiteFooter() {
         </div>
 
         {/* Bottom bar */}
-        <div className="mt-16 flex flex-col items-start justify-between gap-6 border-t border-cream/10 pt-8 text-xs text-cream/50 md:flex-row md:items-center">
+        <div className="mt-16 flex flex-col items-start justify-between gap-6 border-t border-cream/10 pt-8 text-xs text-cream md:flex-row md:items-center">
           <p>
             © {new Date().getFullYear()} Jordal, Apparel &amp; promotional products. Proudly from Quebec.
           </p>
@@ -258,7 +258,7 @@ function FooterColumn({
           <li key={item.href}>
             <a
               href={item.href}
-              className="group inline-flex items-center gap-1.5 text-sm text-cream/75 transition-colors hover:text-lime"
+              className="group inline-flex items-center gap-1.5 text-sm text-cream transition-colors hover:text-lime"
             >
               <span className="underline-grow">{item.label}</span>
               <ArrowUpRight className="h-3.5 w-3.5 opacity-0 transition-all group-hover:opacity-100" />

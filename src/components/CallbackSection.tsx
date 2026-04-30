@@ -135,7 +135,7 @@ export function CallbackSection() {
           />
 
           <div className="relative w-full max-w-xl">
-            <span className="inline-flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.24em] text-cream/55">
+            <span className="inline-flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.24em] text-cream">
               <span className="h-px w-8 bg-cream/40" />
               Demande de rappel
             </span>
@@ -145,7 +145,7 @@ export function CallbackSection() {
                 projet.
               </em>
             </h2>
-            <p className="mt-5 text-sm leading-relaxed text-cream/65">
+            <p className="mt-5 text-sm leading-relaxed text-cream">
               Communiquez avec Carl Emond pour toute question ou soumission, ou
               remplissez le formulaire, nous vous rappelons en moins de
               24 heures ouvrables.
@@ -156,7 +156,7 @@ export function CallbackSection() {
               <div>
                 <label
                   htmlFor="cb-name"
-                  className="block text-xs font-semibold uppercase tracking-[0.18em] text-cream/70"
+                  className="block text-xs font-semibold uppercase tracking-[0.18em] text-cream"
                 >
                   Votre nom <span className="text-lime">*</span>
                 </label>
@@ -169,7 +169,7 @@ export function CallbackSection() {
                   autoComplete="name"
                   aria-invalid={!!errors.name}
                   aria-describedby={errors.name ? "cb-name-err" : undefined}
-                  className="mt-2 w-full rounded-lg border border-cream/15 bg-cream/5 px-4 py-3 text-cream placeholder:text-cream/30 outline-none ring-lime/0 focus:border-lime/60 focus:ring-2 focus:ring-lime/30"
+                  className="mt-2 w-full rounded-lg border border-cream/15 bg-cream/5 px-4 py-3 text-cream placeholder:text-cream outline-none ring-lime/0 focus:border-lime/60 focus:ring-2 focus:ring-lime/30"
                 />
                 {errors.name && (
                   <p id="cb-name-err" className="mt-1.5 text-xs text-lime">
@@ -182,7 +182,7 @@ export function CallbackSection() {
               <div>
                 <label
                   htmlFor="cb-email"
-                  className="block text-xs font-semibold uppercase tracking-[0.18em] text-cream/70"
+                  className="block text-xs font-semibold uppercase tracking-[0.18em] text-cream"
                 >
                   Courriel
                 </label>
@@ -195,7 +195,7 @@ export function CallbackSection() {
                   autoComplete="email"
                   aria-invalid={!!errors.email}
                   aria-describedby={errors.email ? "cb-email-err" : undefined}
-                  className="mt-2 w-full rounded-lg border border-cream/15 bg-cream/5 px-4 py-3 text-cream placeholder:text-cream/30 outline-none focus:border-lime/60 focus:ring-2 focus:ring-lime/30"
+                  className="mt-2 w-full rounded-lg border border-cream/15 bg-cream/5 px-4 py-3 text-cream placeholder:text-cream outline-none focus:border-lime/60 focus:ring-2 focus:ring-lime/30"
                 />
                 {errors.email && (
                   <p id="cb-email-err" className="mt-1.5 text-xs text-lime">
@@ -208,7 +208,7 @@ export function CallbackSection() {
               <div>
                 <label
                   htmlFor="cb-phone"
-                  className="block text-xs font-semibold uppercase tracking-[0.18em] text-cream/70"
+                  className="block text-xs font-semibold uppercase tracking-[0.18em] text-cream"
                 >
                   Téléphone <span className="text-lime">*</span>
                 </label>
@@ -221,7 +221,7 @@ export function CallbackSection() {
                   autoComplete="tel"
                   aria-invalid={!!errors.phone}
                   aria-describedby={errors.phone ? "cb-phone-err" : undefined}
-                  className="mt-2 w-full rounded-lg border border-cream/15 bg-cream/5 px-4 py-3 text-cream placeholder:text-cream/30 outline-none focus:border-lime/60 focus:ring-2 focus:ring-lime/30"
+                  className="mt-2 w-full rounded-lg border border-cream/15 bg-cream/5 px-4 py-3 text-cream placeholder:text-cream outline-none focus:border-lime/60 focus:ring-2 focus:ring-lime/30"
                 />
                 {errors.phone && (
                   <p id="cb-phone-err" className="mt-1.5 text-xs text-lime">
@@ -231,7 +231,7 @@ export function CallbackSection() {
               </div>
 
               {/* Consent */}
-              <label className="flex cursor-pointer items-start gap-3 pt-1 text-sm text-cream/70">
+              <label className="flex cursor-pointer items-start gap-3 pt-1 text-sm text-cream">
                 <input
                   type="checkbox"
                   checked={consent}
@@ -268,7 +268,7 @@ export function CallbackSection() {
                     </>
                   )}
                 </button>
-                <span className="text-xs uppercase tracking-[0.16em] text-cream/40">
+                <span className="text-xs uppercase tracking-[0.16em] text-cream">
                   Réponse sous 24h
                 </span>
               </div>
