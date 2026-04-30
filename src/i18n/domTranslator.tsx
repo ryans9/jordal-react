@@ -47,34 +47,45 @@ for (let i = 0; i < Math.min(frStrings.length, enStrings.length); i++) {
   if (!EN_TO_FR[e]) EN_TO_FR[e] = f;
 }
 
-// Cache original (FR) text per text node so EN -> FR works even when the FR
-// dictionary doesn't include a given snippet.
-const ORIGINAL = new WeakMap<Text, string>();
+// Cache both language variants per text node so we can switch in either direction
+// regardless of whether the source markup was authored in FR or EN.
+type Variants = { fr: string; en: string };
+const VARIANTS = new WeakMap<Text, Variants>();
+
+function deriveVariants(raw: string): Variants | null {
+  const trimmed = raw.trim();
+  if (!trimmed) return null;
+  const leading = raw.match(/^\s*/)?.[0] ?? "";
+  const trailing = raw.match(/\s*$/)?.[0] ?? "";
+
+  // Source could be FR (translate to EN) or EN (translate to FR).
+  const enFromFr = FR_TO_EN[trimmed];
+  const frFromEn = EN_TO_FR[trimmed];
+
+  if (enFromFr) {
+    return { fr: raw, en: leading + enFromFr + trailing };
+  }
+  if (frFromEn) {
+    return { en: raw, fr: leading + frFromEn + trailing };
+  }
+  // Untranslatable — same in both languages (proper nouns, numbers, etc.)
+  return { fr: raw, en: raw };
+}
 
 function translateNode(node: Text, target: "en" | "fr") {
   const raw = node.nodeValue;
   if (!raw) return;
-  const trimmed = raw.trim();
-  if (!trimmed) return;
 
-  // Remember original (assumed FR) the first time we see the node.
-  if (!ORIGINAL.has(node)) ORIGINAL.set(node, raw);
-
-  if (target === "fr") {
-    const original = ORIGINAL.get(node);
-    if (original && original !== raw) node.nodeValue = original;
-    return;
+  let variants = VARIANTS.get(node);
+  if (!variants) {
+    const derived = deriveVariants(raw);
+    if (!derived) return;
+    variants = derived;
+    VARIANTS.set(node, variants);
   }
 
-  // target === "en"
-  const lookupKey = trimmed;
-  const translated = FR_TO_EN[lookupKey];
-  if (translated) {
-    // Preserve surrounding whitespace
-    const leading = raw.match(/^\s*/)?.[0] ?? "";
-    const trailing = raw.match(/\s*$/)?.[0] ?? "";
-    node.nodeValue = leading + translated + trailing;
-  }
+  const next = variants[target];
+  if (next && next !== raw) node.nodeValue = next;
 }
 
 function walk(root: Node, target: "en" | "fr") {
@@ -101,27 +112,28 @@ function walk(root: Node, target: "en" | "fr") {
 
 // Translate placeholder/title/aria-label/alt attributes too.
 const ATTRS = ["placeholder", "title", "aria-label", "alt"] as const;
-const ORIGINAL_ATTR = new WeakMap<Element, Map<string, string>>();
+const ATTR_VARIANTS = new WeakMap<Element, Map<string, Variants>>();
 
 function translateAttrs(root: ParentNode, target: "en" | "fr") {
   const all = root.querySelectorAll("[placeholder],[title],[aria-label],[alt]");
   all.forEach((el) => {
-    let cache = ORIGINAL_ATTR.get(el);
+    let cache = ATTR_VARIANTS.get(el);
     if (!cache) {
       cache = new Map();
-      ORIGINAL_ATTR.set(el, cache);
+      ATTR_VARIANTS.set(el, cache);
     }
     for (const attr of ATTRS) {
       const cur = el.getAttribute(attr);
       if (cur == null) continue;
-      if (!cache.has(attr)) cache.set(attr, cur);
-      if (target === "fr") {
-        const original = cache.get(attr);
-        if (original != null && original !== cur) el.setAttribute(attr, original);
-      } else {
-        const t = FR_TO_EN[cur.trim()];
-        if (t) el.setAttribute(attr, t);
+      let variants = cache.get(attr);
+      if (!variants) {
+        const derived = deriveVariants(cur);
+        if (!derived) continue;
+        variants = derived;
+        cache.set(attr, variants);
       }
+      const next = variants[target];
+      if (next != null && next !== cur) el.setAttribute(attr, next);
     }
   });
 }
@@ -140,8 +152,8 @@ function startObserver() {
   if (typeof document === "undefined") return;
   if (observer) return;
   observer = new MutationObserver((mutations) => {
-    if (currentTarget === "fr") return; // FR is the source of truth, no work needed
     for (const m of mutations) {
+
       m.addedNodes.forEach((node) => {
         if (node.nodeType === Node.TEXT_NODE) {
           translateNode(node as Text, currentTarget);
