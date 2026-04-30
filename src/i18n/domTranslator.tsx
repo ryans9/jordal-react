@@ -112,27 +112,28 @@ function walk(root: Node, target: "en" | "fr") {
 
 // Translate placeholder/title/aria-label/alt attributes too.
 const ATTRS = ["placeholder", "title", "aria-label", "alt"] as const;
-const ORIGINAL_ATTR = new WeakMap<Element, Map<string, string>>();
+const ATTR_VARIANTS = new WeakMap<Element, Map<string, Variants>>();
 
 function translateAttrs(root: ParentNode, target: "en" | "fr") {
   const all = root.querySelectorAll("[placeholder],[title],[aria-label],[alt]");
   all.forEach((el) => {
-    let cache = ORIGINAL_ATTR.get(el);
+    let cache = ATTR_VARIANTS.get(el);
     if (!cache) {
       cache = new Map();
-      ORIGINAL_ATTR.set(el, cache);
+      ATTR_VARIANTS.set(el, cache);
     }
     for (const attr of ATTRS) {
       const cur = el.getAttribute(attr);
       if (cur == null) continue;
-      if (!cache.has(attr)) cache.set(attr, cur);
-      if (target === "fr") {
-        const original = cache.get(attr);
-        if (original != null && original !== cur) el.setAttribute(attr, original);
-      } else {
-        const t = FR_TO_EN[cur.trim()];
-        if (t) el.setAttribute(attr, t);
+      let variants = cache.get(attr);
+      if (!variants) {
+        const derived = deriveVariants(cur);
+        if (!derived) continue;
+        variants = derived;
+        cache.set(attr, variants);
       }
+      const next = variants[target];
+      if (next != null && next !== cur) el.setAttribute(attr, next);
     }
   });
 }
@@ -151,8 +152,8 @@ function startObserver() {
   if (typeof document === "undefined") return;
   if (observer) return;
   observer = new MutationObserver((mutations) => {
-    if (currentTarget === "fr") return; // FR is the source of truth, no work needed
     for (const m of mutations) {
+
       m.addedNodes.forEach((node) => {
         if (node.nodeType === Node.TEXT_NODE) {
           translateNode(node as Text, currentTarget);
