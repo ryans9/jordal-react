@@ -34,14 +34,14 @@ export const Route = createRootRoute({
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Test" },
+      { title: "Jordal" },
       {
         name: "description",
         content:
           "Atelier québécois de vêtements corporatifs, broderie, sérigraphie, transfert DTF et articles promotionnels haut de gamme depuis plus de 20 ans.",
       },
       { name: "author", content: "Jordal" },
-      { property: "og:title", content: "Test" },
+      { property: "og:title", content: "Jordal" },
       {
         property: "og:description",
         content:
@@ -49,7 +49,7 @@ export const Route = createRootRoute({
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
-      { name: "twitter:title", content: "Test" },
+      { name: "twitter:title", content: "Jordal" },
       { name: "description", content: "Creative Canvas reskins and visually experiments with existing websites, focusing on modern design and user experience." },
       { property: "og:description", content: "Creative Canvas reskins and visually experiments with existing websites, focusing on modern design and user experience." },
       { name: "twitter:description", content: "Creative Canvas reskins and visually experiments with existing websites, focusing on modern design and user experience." },

@@ -202,9 +202,9 @@ function Index() {
               { n: "04", t: "Livraison", d: "Dans les délais" },
             ].map((step) => (
               <div key={step.n} className="flex items-start gap-4">
-                <span className="font-display text-2xl font-bold text-lime-deep tabular-nums">
+                {/* <span className="font-display text-2xl font-bold text-lime-deep tabular-nums">
                   {step.n}
-                </span>
+                </span> */}
                 <div>
                   <p className="font-display text-base font-semibold text-ink">
                     {step.t}
@@ -226,13 +226,11 @@ function Index() {
               { label: "Chemises", img: catShirts, idx: "02" },
               { label: "Manteaux & Vestes", img: catJackets, idx: "03" },
               { label: "Casquettes & Tuques", img: catCaps, idx: "04" },
-            ].map((cat, i) => (
+            ].map((cat) => (
               <a
                 key={cat.label}
                 href="/contact"
-                className={`group relative block overflow-hidden rounded-2xl bg-white ring-1 ring-ink/5 ${
-                  i % 2 === 1 ? "lg:translate-y-8" : ""
-                }`}
+                className="group relative block overflow-hidden rounded-2xl bg-white ring-1 ring-ink/5"
               >
                 <div className="aspect-square overflow-hidden bg-white">
                   <img
@@ -244,22 +242,15 @@ function Index() {
                     className="h-full w-full object-contain p-6 transition-transform duration-700 ease-out group-hover:scale-[1.04]"
                   />
                 </div>
-                {/* Hover overlay */}
-                <div
-                  aria-hidden
-                  className="absolute inset-0 bg-gradient-to-t from-ink/70 via-ink/0 to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100"
-                />
-                {/* Index marker */}
-                <span className="absolute left-5 top-5 font-display text-xs font-semibold tracking-[0.2em] text-ink/70 mix-blend-multiply">
-                  {cat.idx}
-                </span>
-                {/* Caption */}
+
+                <div className="absolute inset-0 bg-gradient-to-t from-ink/70 via-ink/0 to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
+
                 <div className="flex items-center justify-between gap-3 px-5 pt-5 pb-1">
                   <h3 className="font-display text-lg font-bold tracking-tight text-ink">
                     {cat.label}
                   </h3>
-                  <ArrowUpRight className="h-4 w-4 text-ink/40 transition-all group-hover:text-lime-deep group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
                 </div>
+
                 <p className="px-5 pb-5 text-xs uppercase tracking-[0.16em] text-ink/45">
                   Voir la collection
                 </p>
