@@ -96,7 +96,15 @@ function Index() {
       <section className="bg-ink">
         <div className="grid w-full grid-cols-1 md:grid-cols-5">
           {/* Label panel, styled to match the 4 tiles */}
-          <div className="group relative block aspect-[3/4] overflow-hidden bg-ink md:aspect-auto md:h-[360px] lg:h-[420px]">
+          <Link
+            to="/services/promotional-clothing"
+            className="group relative block aspect-[3/4] overflow-hidden bg-ink md:aspect-auto md:h-[360px] lg:h-[420px]"
+          >
+            <img
+              src={promoClothingHero}
+              alt="Vêtements promotionnels"
+              className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+            />
             {/* Subtle lime radial glow */}
             <div
               aria-hidden
@@ -105,7 +113,7 @@ function Index() {
             />
             <div
               aria-hidden
-              className="absolute inset-0 bg-gradient-to-t from-ink/85 via-ink/30 to-transparent"
+              className="absolute inset-0 bg-gradient-to-t from-ink/85 via-ink/40 to-ink/10 transition-opacity group-hover:from-ink/70"
             />
             <div className="absolute inset-x-0 bottom-0 flex items-end justify-between gap-3 p-6 lg:p-7">
               <h3 className="font-display text-2xl font-bold leading-tight tracking-tight text-lime lg:text-[1.75rem]">
@@ -113,8 +121,9 @@ function Index() {
                 <br />
                 promotionnels
               </h3>
+              <ArrowUpRight className="h-5 w-5 shrink-0 text-lime opacity-0 transition-all group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-hover:opacity-100" />
             </div>
-          </div>
+          </Link>
 
           {/* 4 method tiles */}
           {[
