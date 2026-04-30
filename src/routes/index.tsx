@@ -8,6 +8,7 @@ import catTshirts from "@/assets/category-tshirts.jpg";
 import catShirts from "@/assets/category-shirts.jpg";
 import catJackets from "@/assets/category-jackets.jpg";
 import catCaps from "@/assets/category-caps.jpg";
+import promoClothingHero from "@/assets/promo-clothing-hero.jpg";
 import { PartnersMarquee } from "@/components/PartnersMarquee";
 import { CallbackSection } from "@/components/CallbackSection";
 
