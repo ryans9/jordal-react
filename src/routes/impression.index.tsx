@@ -257,7 +257,7 @@ function PrintingHero() {
       <div className="relative mx-auto max-w-[1400px] px-6 pt-20 pb-24 lg:pt-24 lg:pb-32">
         <div className="grid gap-16 lg:grid-cols-[1.3fr_1fr] lg:items-end">
           <div>
-            <span className="inline-flex items-center gap-2 rounded-full border border-cream/15 bg-cream/[0.04] px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.22em] text-cream/70 backdrop-blur">
+            <span className="inline-flex items-center gap-2 rounded-full border border-cream/15 bg-cream/[0.04] px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.22em] text-cream backdrop-blur">
               <Sparkles className="h-3 w-3 text-lime" />
               Four mastered techniques
             </span>
@@ -271,7 +271,7 @@ function PrintingHero() {
               for every brand.
             </h1>
 
-            <p className="mt-7 max-w-xl text-base leading-relaxed text-cream/65 lg:text-lg">
+            <p className="mt-7 max-w-xl text-base leading-relaxed text-cream lg:text-lg">
               Silkscreen, embroidery, DTF transfer, promotional items. Each
               technique chosen for the substrate, the volume, and the story you
               want to tell.
@@ -293,7 +293,7 @@ function PrintingHero() {
                     {m.name}
                   </div>
                 </div>
-                <ArrowUpRight className="h-4 w-4 text-cream/40 transition-all group-hover:text-lime group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
+                <ArrowUpRight className="h-4 w-4 text-cream transition-all group-hover:text-lime group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
               </a>
             ))}
           </div>
@@ -528,7 +528,7 @@ function MethodSection({ method, reversed }: { method: Method; reversed: boolean
                 <span
                   className={[
                     "text-[11px] font-bold uppercase tracking-[0.22em]",
-                    isLime ? "text-ink/70" : "text-cream/70",
+                    isLime ? "text-ink/70" : "text-cream",
                   ].join(" ")}
                 >
                   Advantages
@@ -623,7 +623,7 @@ function ComparisonTable() {
 
         <div className="overflow-hidden rounded-3xl border border-ink/10 bg-cream shadow-soft">
           <div className="grid grid-cols-5 border-b border-ink/10 bg-ink text-cream">
-            <div className="p-5 text-[10px] font-bold uppercase tracking-[0.22em] text-cream/50">
+            <div className="p-5 text-[10px] font-bold uppercase tracking-[0.22em] text-cream">
               Criterion
             </div>
             {METHODS.map((m) => (
@@ -683,7 +683,7 @@ function PrintingCta() {
         style={{ background: "var(--gradient-radial-lime)" }}
       />
       <div className="relative mx-auto max-w-[1100px] px-6 text-center">
-        <span className="inline-flex items-center gap-2 rounded-full border border-cream/15 bg-cream/[0.04] px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.22em] text-cream/70">
+        <span className="inline-flex items-center gap-2 rounded-full border border-cream/15 bg-cream/[0.04] px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.22em] text-cream">
           <Sparkles className="h-3 w-3 text-lime" />
           Ready when you are
         </span>
@@ -694,7 +694,7 @@ function PrintingCta() {
           </em>{" "}
           together.
         </h2>
-        <p className="mx-auto mt-6 max-w-xl text-base leading-relaxed text-cream/65 lg:text-lg">
+        <p className="mx-auto mt-6 max-w-xl text-base leading-relaxed text-cream lg:text-lg">
           Send us your artwork, your quantity, your timeline. We reply within
           24 business hours with a recommendation and quote.
         </p>

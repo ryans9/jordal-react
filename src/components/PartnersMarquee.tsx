@@ -33,7 +33,7 @@ export function PartnersMarquee() {
         {/* Heading row */}
         <div className="flex flex-col items-start justify-between gap-6 md:flex-row md:items-end">
           <div>
-            <span className="inline-flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.24em] text-cream/55">
+            <span className="inline-flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.24em] text-cream">
               <span className="h-px w-8 bg-cream/40" />
               Nos partenaires
             </span>
@@ -45,7 +45,7 @@ export function PartnersMarquee() {
               chez Jordal.
             </h2>
           </div>
-          <p className="max-w-sm text-sm leading-relaxed text-cream/60">
+          <p className="max-w-sm text-sm leading-relaxed text-cream">
             Plus de 40 fournisseurs reconnus pour vous offrir le meilleur
             assortiment de vêtements et d'objets promotionnels.
           </p>
@@ -71,7 +71,7 @@ export function PartnersMarquee() {
               className="flex shrink-0 items-center gap-12 px-8 lg:gap-16 lg:px-12"
             >
               <span
-                className={`whitespace-nowrap text-3xl font-bold uppercase text-cream/45 transition-colors hover:text-cream lg:text-4xl ${p.style}`}
+                className={`whitespace-nowrap text-3xl font-bold uppercase text-cream transition-colors hover:text-cream lg:text-4xl ${p.style}`}
               >
                 {p.name}
               </span>

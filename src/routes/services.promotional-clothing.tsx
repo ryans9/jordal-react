@@ -136,7 +136,7 @@ function PromotionalClothingPage() {
         <div className="relative mx-auto max-w-[1400px] px-6 pt-16 pb-24 lg:pt-24 lg:pb-32">
           <Link
             to="/"
-            className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.2em] text-cream/60 transition-colors hover:text-lime"
+            className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.2em] text-cream transition-colors hover:text-lime"
           >
             <ArrowLeft className="h-3 w-3" />
             Back to home
@@ -152,7 +152,7 @@ function PromotionalClothingPage() {
                 Apparel that <span className="italic text-lime">represents</span> your brand , 
                 stitch by stitch.
               </h1>
-              <p className="mt-6 max-w-2xl text-lg text-cream/75 lg:text-xl">
+              <p className="mt-6 max-w-2xl text-lg text-cream lg:text-xl">
                 Whether for events, uniforms or everyday workwear, we customise a wide range of
                 quality garments designed to carry your brand the right way: cohesive, durable,
                 unmistakably yours.
@@ -181,7 +181,7 @@ function PromotionalClothingPage() {
                     <div className="font-display text-3xl font-bold text-lime lg:text-4xl">
                       {s.value}
                     </div>
-                    <div className="mt-1 text-[11px] font-medium uppercase tracking-[0.18em] text-cream/55">
+                    <div className="mt-1 text-[11px] font-medium uppercase tracking-[0.18em] text-cream">
                       {s.label}
                     </div>
                   </div>
@@ -234,7 +234,7 @@ function PromotionalClothingPage() {
             <h2 className="mt-3 font-display text-4xl font-bold leading-[1.05] tracking-tight lg:text-[3.25rem]">
               The complete answer for your company's clothing.
             </h2>
-            <p className="mt-6 text-base text-cream/70 lg:text-lg">
+            <p className="mt-6 text-base text-cream lg:text-lg">
               At Jordal, we know promotional clothing has to convey professionalism, cohesion and
               seriousness, without ever feeling like a uniform. That is why we offer a true
               made-to-measure customisation service, tailored to your business reality and your
@@ -245,7 +245,7 @@ function PromotionalClothingPage() {
               <div className="rounded-2xl border border-cream/10 bg-white/[0.04] p-6">
                 <Truck className="h-8 w-8 text-lime" />
                 <h3 className="mt-4 font-display text-base font-bold">Fast turnaround</h3>
-                <p className="mt-2 text-sm text-cream/65">
+                <p className="mt-2 text-sm text-cream">
                   Modern facilities and dedicated machines let us deliver your projects faster than
                   the competition, without cutting corners.
                 </p>
@@ -253,7 +253,7 @@ function PromotionalClothingPage() {
               <div className="rounded-2xl border border-cream/10 bg-white/[0.04] p-6">
                 <Award className="h-8 w-8 text-lime" />
                 <h3 className="mt-4 font-display text-base font-bold">+1000 projects done</h3>
-                <p className="mt-2 text-sm text-cream/65">
+                <p className="mt-2 text-sm text-cream">
                   Two decades, hundreds of teams equipped, across SMBs, sports clubs, municipal
                   fleets and national brands.
                 </p>
@@ -366,7 +366,7 @@ function PromotionalClothingPage() {
               <h2 className="mt-4 font-display text-4xl font-bold leading-[1.05] tracking-tight lg:text-5xl">
                 Let's dress your team in something they'll actually want to wear.
               </h2>
-              <p className="mt-5 max-w-xl text-base text-cream/70 lg:text-lg">
+              <p className="mt-5 max-w-xl text-base text-cream lg:text-lg">
                 Tell us about your brand, your timeline and your team, we'll come back with a
                 concrete proposal, samples and a clear quote.
               </p>
