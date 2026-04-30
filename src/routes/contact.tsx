@@ -214,7 +214,7 @@ function ContactHero() {
       </div>
 
       {/* Curved bottom transition */}
-      <div className="absolute inset-x-0 -bottom-px h-16 bg-cream [clip-path:ellipse(75%_100%_at_50%_100%)]" />
+      {/* <div className="absolute inset-x-0 -bottom-px h-16 bg-cream [clip-path:ellipse(75%_100%_at_50%_100%)]" /> */}
     </section>
   );
 }
