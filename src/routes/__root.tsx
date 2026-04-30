@@ -5,6 +5,7 @@ import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import { Toaster } from "@/components/ui/sonner";
 import "@/i18n";
+import { DomTranslator } from "@/i18n/domTranslator";
 
 function NotFoundComponent() {
   return (
@@ -91,6 +92,7 @@ function RootComponent() {
       </main>
       <SiteFooter />
       <Toaster richColors position="top-center" />
+      <DomTranslator />
     </>
   );
 }
