@@ -26,7 +26,14 @@ export function SiteHeader() {
   }[] = [
     { label: t("header.nav.reps"), href: "/representants" },
     { label: t("header.nav.catalog"), href: "/catalogue", badge: t("header.nav.new") },
-    { label: t("header.nav.products"), href: "/produits" },
+    {
+      label: t("header.nav.products"),
+      href: "/produits",
+      children: [
+        { label: t("header.services.promoItems"), href: "/services/promotional-items", description: t("header.services.promoItemsDesc") },
+        { label: t("header.services.promoClothing"), href: "/services/promotional-clothing", description: t("header.services.promoClothingDesc") },
+      ],
+    },
     {
       label: t("header.nav.services"),
       href: "/services",
