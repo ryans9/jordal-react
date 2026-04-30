@@ -647,7 +647,7 @@ function CTA() {
                 quote within 24 hours.
               </p>
             </div>
-            <div className="col-span-12 gap-5 lg:col-span-4 lg:text-right">
+            <div className="col-span-12 flex flex-col items-start gap-5 lg:col-span-4 lg:items-end">
               <Link
                 to="/contact"
                 className="group inline-flex items-center gap-3 rounded-full bg-ink px-7 py-5 text-base font-semibold text-cream shadow-soft transition-all hover:bg-ink-soft"
@@ -657,7 +657,7 @@ function CTA() {
               </Link>
               <Link
                 to="/impression"
-                className="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-ink/70 hover:text-ink lg:ml-0"
+                className="inline-flex items-center gap-2 text-sm font-semibold text-ink/70 hover:text-ink"
               >
                 <ArrowLeft className="h-4 w-4" />
                 Back to all methods
