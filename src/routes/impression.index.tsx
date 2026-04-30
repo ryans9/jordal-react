@@ -300,7 +300,15 @@ function PrintingHero() {
         </div>
       </div>
 
-      <div className="absolute inset-x-0 -bottom-px h-16 bg-cream [clip-path:ellipse(75%_100%_at_50%_100%)]" />
+      <svg
+        aria-hidden
+        className="absolute inset-x-0 -bottom-px block w-full"
+        viewBox="0 0 1440 80"
+        preserveAspectRatio="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path d="M0,80 L0,40 Q720,0 1440,40 L1440,80 Z" fill="var(--cream)" />
+      </svg>
     </section>
   );
 }
