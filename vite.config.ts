@@ -9,8 +9,5 @@ import { defineConfig } from "@lovable.dev/vite-tanstack-config";
 // When deploying to Vercel, set env var DEPLOY_TARGET=vercel in the Vercel dashboard.
 // Lovable hosting continues to use the default (cloudflare) target.
 export default defineConfig({
-  tanstackStart:
-    process.env.DEPLOY_TARGET === "vercel"
-      ? { target: "vercel" }
-      : undefined,
+  tanstackStart: { target: "vercel" },
 });
