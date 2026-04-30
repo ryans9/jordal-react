@@ -24,39 +24,39 @@ export function SiteHeader() {
     badge?: string;
     children?: { label: string; href: string; description?: string }[];
   }[] = [
-    { label: t("header.nav.reps"), href: "/representants" },
-    { label: t("header.nav.catalog"), href: "https://www.promoplace.com/jordal", badge: t("header.nav.new") },
-    {
-      label: t("header.nav.products"),
-      href: "/produits",
-      children: [
-        { label: t("header.services.promoItems"), href: "/services/promotional-items", description: t("header.services.promoItemsDesc") },
-        { label: t("header.services.promoClothing"), href: "/services/promotional-clothing", description: t("header.services.promoClothingDesc") },
-      ],
-    },
-    {
-      label: t("header.nav.services"),
-      href: "/services",
-      children: [
-        { label: t("header.services.promoClothing"), href: "/services/promotional-clothing", description: t("header.services.promoClothingDesc") },
-        { label: t("header.services.promoItems"), href: "/services/promotional-items", description: t("header.services.promoItemsDesc") },
-        { label: t("header.services.silkscreen"), href: "/impression/silkscreen", description: t("header.services.silkscreenDesc") },
-        { label: t("header.services.embroidery"), href: "/impression/embroidery", description: t("header.services.embroideryDesc") },
-        { label: t("header.services.dtf"), href: "/impression/dtf", description: t("header.services.dtfDesc") },
-      ],
-    },
-    {
-      label: t("header.nav.printing"),
-      href: "/impression",
-      children: [
-        { label: t("header.printing.overview"), href: "/impression", description: t("header.printing.overviewDesc") },
-        { label: t("header.printing.embroidery"), href: "/impression/embroidery", description: t("header.printing.embroideryDesc") },
-        { label: t("header.printing.silkscreen"), href: "/impression/silkscreen", description: t("header.printing.silkscreenDesc") },
-        { label: t("header.printing.dtf"), href: "/impression/dtf", description: t("header.printing.dtfDesc") },
-      ],
-    },
-    { label: t("header.nav.contact"), href: "/contact" },
-  ];
+      { label: t("header.nav.reps"), href: "/representants" },
+      { label: t("header.nav.catalog"), href: "https://www.promoplace.com/jordal", badge: t("header.nav.new") },
+      {
+        label: t("header.nav.products"),
+        href: "/produits",
+        children: [
+          { label: t("header.services.promoItems"), href: "/services/promotional-items", description: t("header.services.promoItemsDesc") },
+          { label: t("header.services.promoClothing"), href: "/services/promotional-clothing", description: t("header.services.promoClothingDesc") },
+        ],
+      },
+      {
+        label: t("header.nav.services"),
+        href: "/services",
+        children: [
+          { label: t("header.services.promoClothing"), href: "/services/promotional-clothing", description: t("header.services.promoClothingDesc") },
+          { label: t("header.services.promoItems"), href: "/services/promotional-items", description: t("header.services.promoItemsDesc") },
+          { label: t("header.services.silkscreen"), href: "/impression/silkscreen", description: t("header.services.silkscreenDesc") },
+          { label: t("header.services.embroidery"), href: "/impression/embroidery", description: t("header.services.embroideryDesc") },
+          { label: t("header.services.dtf"), href: "/impression/dtf", description: t("header.services.dtfDesc") },
+        ],
+      },
+      {
+        label: t("header.nav.printing"),
+        href: "/impression",
+        children: [
+          { label: t("header.printing.overview"), href: "/impression", description: t("header.printing.overviewDesc") },
+          { label: t("header.printing.embroidery"), href: "/impression/embroidery", description: t("header.printing.embroideryDesc") },
+          { label: t("header.printing.silkscreen"), href: "/impression/silkscreen", description: t("header.printing.silkscreenDesc") },
+          { label: t("header.printing.dtf"), href: "/impression/dtf", description: t("header.printing.dtfDesc") },
+        ],
+      },
+      { label: t("header.nav.contact"), href: "/contact" },
+    ];
 
   return (
     <>
