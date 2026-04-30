@@ -171,11 +171,11 @@ function Hero() {
 
       <div className="relative mx-auto max-w-[1400px] px-6 pt-12 pb-24 lg:pt-20 lg:pb-32">
         {/* Breadcrumb */}
-        <nav className="mb-10 flex items-center gap-2 text-[11px] font-medium uppercase tracking-[0.22em] text-cream/70">
+        <nav className="mb-10 flex items-center gap-2 text-[11px] font-medium uppercase tracking-[0.22em] text-cream">
           <Link to="/" className="hover:text-lime">Home</Link>
-          <span className="text-cream/30">/</span>
+          <span className="text-cream">/</span>
           <Link to="/impression" className="hover:text-lime">Printing methods</Link>
-          <span className="text-cream/30">/</span>
+          <span className="text-cream">/</span>
           <span className="text-lime">Embroidery</span>
         </nav>
 
@@ -183,7 +183,7 @@ function Hero() {
           <div className="col-span-12 lg:col-span-8">
             <div className="mb-6 inline-flex items-center gap-3 rounded-full border border-cream/20 bg-cream/5 px-4 py-2 backdrop-blur-sm">
               <span className="inline-block h-1.5 w-1.5 rounded-full bg-lime" />
-              <span className="text-[11px] font-medium uppercase tracking-[0.22em] text-cream/80">
+              <span className="text-[11px] font-medium uppercase tracking-[0.22em] text-cream">
                 Method 02 · Embroidery
               </span>
             </div>
@@ -194,7 +194,7 @@ function Hero() {
               <span className="italic text-lime">permanence.</span>
             </h1>
 
-            <p className="mt-8 max-w-2xl text-lg leading-relaxed text-cream/80 lg:text-xl">
+            <p className="mt-8 max-w-2xl text-lg leading-relaxed text-cream lg:text-xl">
               Embroidery is the most premium signature you can put on a garment.
               Thread becomes part of the fabric, dimensional, tactile, and built
               to outlast the piece it decorates.
@@ -228,7 +228,7 @@ function Hero() {
                     key={spec.label}
                     className="flex items-baseline justify-between gap-4 border-b border-cream/10 pb-3 last:border-0"
                   >
-                    <dt className="text-xs uppercase tracking-[0.18em] text-cream/55">
+                    <dt className="text-xs uppercase tracking-[0.18em] text-cream">
                       {spec.label}
                     </dt>
                     <dd className="text-right font-display text-lg font-semibold text-cream">
@@ -349,12 +349,12 @@ function Process() {
                   <span className="font-display text-5xl font-bold text-lime/90">
                     {step.n}
                   </span>
-                  <Icon className="h-6 w-6 text-cream/40 transition-colors group-hover:text-lime" />
+                  <Icon className="h-6 w-6 text-cream transition-colors group-hover:text-lime" />
                 </div>
                 <h3 className="font-display text-2xl font-semibold tracking-tight">
                   {step.title}
                 </h3>
-                <p className="text-sm leading-relaxed text-cream/70">
+                <p className="text-sm leading-relaxed text-cream">
                   {step.body}
                 </p>
               </li>
@@ -488,7 +488,7 @@ function ThreadShowcase() {
               <div className="absolute bottom-0 left-0 right-0 flex items-end justify-between bg-gradient-to-t from-ink/80 to-transparent p-6 text-cream">
                 <div>
                   <p className="font-script text-2xl text-lime">Isacord 40</p>
-                  <p className="text-xs uppercase tracking-[0.2em] text-cream/80">
+                  <p className="text-xs uppercase tracking-[0.2em] text-cream">
                     380+ shades · Pantone matched
                   </p>
                 </div>
@@ -563,7 +563,7 @@ function Specs() {
               The numbers behind every run.
             </h2>
           </div>
-          <p className="max-w-sm text-sm leading-relaxed text-cream/65">
+          <p className="max-w-sm text-sm leading-relaxed text-cream">
             Beyond these defaults? Talk to us, we run jumbo hoops, sequin
             attachments, and cap frames on demand.
           </p>
@@ -575,7 +575,7 @@ function Specs() {
               key={spec.label}
               className="flex flex-col gap-2 bg-ink p-7 transition-colors hover:bg-ink-soft"
             >
-              <dt className="text-[11px] uppercase tracking-[0.22em] text-cream/55">
+              <dt className="text-[11px] uppercase tracking-[0.22em] text-cream">
                 {spec.label}
               </dt>
               <dd className="font-display text-2xl font-semibold tracking-tight">
@@ -593,7 +593,7 @@ function Specs() {
           ].map((item) => (
             <li
               key={item}
-              className="flex items-center gap-3 rounded-2xl border border-cream/10 bg-cream/5 px-5 py-4 text-sm text-cream/85"
+              className="flex items-center gap-3 rounded-2xl border border-cream/10 bg-cream/5 px-5 py-4 text-sm text-cream"
             >
               <Check className="h-4 w-4 shrink-0 text-lime" />
               {item}

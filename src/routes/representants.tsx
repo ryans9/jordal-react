@@ -307,11 +307,11 @@ function Hero({
 
       <div className="relative mx-auto max-w-[1400px] px-6 pt-12 pb-20 lg:pt-20 lg:pb-28">
         {/* Breadcrumb */}
-        <nav className="mb-10 flex items-center gap-2 text-[11px] font-medium uppercase tracking-[0.22em] text-cream/70">
+        <nav className="mb-10 flex items-center gap-2 text-[11px] font-medium uppercase tracking-[0.22em] text-cream">
           <Link to="/" className="hover:text-lime">
             Home
           </Link>
-          <span className="text-cream/30">/</span>
+          <span className="text-cream">/</span>
           <span className="text-lime">Our Representatives</span>
         </nav>
 
@@ -319,7 +319,7 @@ function Hero({
           <div className="col-span-12 lg:col-span-8">
             <div className="mb-6 inline-flex items-center gap-3 rounded-full border border-cream/20 bg-cream/5 px-4 py-2 backdrop-blur-sm">
               <span className="inline-block h-1.5 w-1.5 rounded-full bg-lime" />
-              <span className="text-[11px] font-medium uppercase tracking-[0.22em] text-cream/80">
+              <span className="text-[11px] font-medium uppercase tracking-[0.22em] text-cream">
                 The team · {totalCount} representatives
               </span>
             </div>
@@ -330,7 +330,7 @@ function Hero({
               <span className="italic text-lime">actually call.</span>
             </h1>
 
-            <p className="mt-8 max-w-2xl text-lg leading-relaxed text-cream/80 lg:text-xl">
+            <p className="mt-8 max-w-2xl text-lg leading-relaxed text-cream lg:text-xl">
               Behind every Jordal order is a real person who knows your region,
               your fabrics and your deadlines. Find your representative below
               and call directly, no forms, no chatbots, no queue.
@@ -370,7 +370,7 @@ function Stat({
       <div className="font-display text-4xl font-bold tracking-tight text-cream lg:text-5xl">
         {value}
       </div>
-      <div className="text-[11px] uppercase tracking-[0.18em] text-cream/55">
+      <div className="text-[11px] uppercase tracking-[0.18em] text-cream">
         {label}
       </div>
     </div>
@@ -538,7 +538,7 @@ function RepCard({ rep }: { rep: Rep }) {
         <div
           className={[
             "mt-5 flex items-start gap-2 text-sm leading-relaxed",
-            isLeadership ? "text-cream/75" : "text-ink/70",
+            isLeadership ? "text-cream" : "text-ink/70",
           ].join(" ")}
         >
           <MapPin

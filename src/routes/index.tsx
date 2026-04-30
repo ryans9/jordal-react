@@ -65,7 +65,7 @@ function Index() {
                   </em>
                 </h1>
 
-                <p className="mt-8 max-w-xl text-lg leading-relaxed text-cream/80">
+                <p className="mt-8 max-w-xl text-lg leading-relaxed text-cream">
                   Quels que soient vos besoins, nous pouvons vous aider à
                   consolider votre image de marque, du concept jusqu'à la
                   production.
