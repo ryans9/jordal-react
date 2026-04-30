@@ -202,7 +202,7 @@ function Hero() {
               </span>
             </div>
 
-            <h1 className="font-display text-[clamp(3rem,9vw,7.5rem)] font-bold leading-[0.92] tracking-[-0.035em] text-balance">
+            <h1 className="font-display text-[clamp(2.5rem,7vw,5.75rem)] font-bold leading-[0.92] tracking-[-0.035em] text-balance">
               The classic,
               <br />
               <span className="italic text-lime">perfected.</span>
@@ -388,7 +388,7 @@ function InkTypes() {
   return (
     <section className="relative bg-cream py-24 lg:py-32">
       <div className="mx-auto max-w-[1400px] px-6">
-        <div className="mb-16 flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
+        <div className="mb-16 ">
           <div className="max-w-2xl">
             <p className="text-[11px] font-medium uppercase tracking-[0.28em] text-ink/50">
               The inks
@@ -399,7 +399,7 @@ function InkTypes() {
               countless <span className="italic">finishes.</span>
             </h2>
           </div>
-          <p className="max-w-md text-base leading-relaxed text-ink/65">
+          <p className="max-w-md mt-8 text-base leading-relaxed text-ink/65">
             The ink choice defines the look, the feel and the longevity of the
             print. We help you pick the right system for your fabric, your
             audience, and your brand vocabulary.

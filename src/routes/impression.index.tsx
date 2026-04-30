@@ -262,7 +262,7 @@ function PrintingHero() {
               Four mastered techniques
             </span>
 
-            <h1 className="mt-6 font-display text-[clamp(2.75rem,7.5vw,7rem)] font-bold leading-[0.9] tracking-tight text-balance">
+            <h1 className="mt-6 font-display text-[clamp(2.25rem,6vw,5.5rem)] font-bold leading-[0.9] tracking-tight text-balance">
               The right{" "}
               <em className="font-script font-normal not-italic text-lime">
                 method
