@@ -10,8 +10,9 @@ import { defineConfig } from "@lovable.dev/vite-tanstack-config";
 // DEPLOY_TARGET remains as an explicit override for local testing.
 const deployTarget = process.env.DEPLOY_TARGET;
 const isVercel = process.env.VERCEL === "1";
+const useVercelTarget = deployTarget === "vercel" || isVercel;
 
 export default defineConfig({
-  tanstackStart:
-    deployTarget === "vercel" || isVercel ? { target: "vercel" } : undefined,
+  tanstackStart: useVercelTarget ? { target: "vercel" } : undefined,
+  cloudflare: useVercelTarget ? false : undefined,
 });
